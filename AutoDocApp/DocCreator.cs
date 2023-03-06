@@ -59,7 +59,7 @@ namespace AutoDocApp
       {
          // format as table
          // Adding a new List Object to the worksheet
-         Aspose.Cells.Tables.ListObject listObject = worksheet.ListObjects[worksheet.ListObjects.Add("A1", $"F{rowsCount+1}", true)];
+         Aspose.Cells.Tables.ListObject listObject = worksheet.ListObjects[worksheet.ListObjects.Add("A1", $"G{rowsCount+1}", true)];
 
          // Adding Style to the listobject
          listObject.TableStyleType = Aspose.Cells.Tables.TableStyleType.TableStyleMedium6;
@@ -80,11 +80,13 @@ namespace AutoDocApp
 
          // Auto fit
          worksheet.AutoFitColumns();
-         worksheet.Cells.Columns[2].Width = 90;
+
+         // set description column width
+         worksheet.Cells.Columns[3].Width = 90;
 
          // set word wrap for description
          style.IsTextWrapped = true;
-         worksheet.Cells.Columns[2].SetStyle(style);
+         worksheet.Cells.Columns[3].SetStyle(style);
 
          // Create an object for AutoFitterOptions
          AutoFitterOptions options = new AutoFitterOptions();
@@ -106,10 +108,11 @@ namespace AutoDocApp
          int index = 0;
          worksheet.Cells[index, 0].Value = "Table";
          worksheet.Cells[index, 1].Value = "Field";
-         worksheet.Cells[index, 2].Value = "Description";
-         worksheet.Cells[index, 3].Value = "Data Type";
-         worksheet.Cells[index, 4].Value = "Type";
-         worksheet.Cells[index, 5].Value = "Foreign Key";
+         worksheet.Cells[index, 2].Value = "Caption";
+         worksheet.Cells[index, 3].Value = "Description";
+         worksheet.Cells[index, 4].Value = "Data Type";
+         worksheet.Cells[index, 5].Value = "Type";
+         worksheet.Cells[index, 6].Value = "Lookup";
       }
 
       private void WriteFieldsRows(Worksheet worksheet, List<DataRow> tableFields, RepoExcelReader excelReader)
@@ -120,10 +123,11 @@ namespace AutoDocApp
          {
             worksheet.Cells[index, 0].Value = tableField.Field<string>("TABLE_NAME");
             worksheet.Cells[index, 1].Value = tableField.Field<string>("FIELD_NAME");
-            worksheet.Cells[index, 2].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), false, "DESCRIPTION");
-            worksheet.Cells[index, 3].Value = tableField.Field<string>("FIELD_DATATYPE");
-            worksheet.Cells[index, 4].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), true, "FIELD_TYPE");
-            worksheet.Cells[index, 5].Value = tableField.Field<string>("IS_FOREIGN_KEY");
+            worksheet.Cells[index, 2].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), false, "FIELD_CAPTION");
+            worksheet.Cells[index, 3].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), false, "DESCRIPTION");
+            worksheet.Cells[index, 4].Value = tableField.Field<string>("FIELD_DATATYPE");
+            worksheet.Cells[index, 5].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), true, "FIELD_TYPE");
+            worksheet.Cells[index, 6].Value = string.IsNullOrEmpty(tableField.Field<string>("IS_FOREIGN_KEY")) ? excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), false, "LOOKUP_LIST"): tableField.Field<string>("IS_FOREIGN_KEY");
 
             index++;
          }

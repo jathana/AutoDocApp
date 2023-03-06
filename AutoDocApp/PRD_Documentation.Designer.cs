@@ -1388,11 +1388,21 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        AUX_WORKSHEET.*\r\nFROM            AUX_WORKSHEET";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        COUNT(1)\r\nFROM            AUX_WORKSHEET\r\nWHERE        (ENTITY_WORKS" +
+                "HEET = @entity_worksheet) AND (AUX_WORKSHEET = @aux_worksheet) AND (TABLE_NAME =" +
+                " @table_name) AND (FIELD_NAME = @field_name)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entity_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aux_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@table_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@field_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1502,6 +1512,58 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object FieldExists(string entity_worksheet, string aux_worksheet, string table_name, string field_name) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((entity_worksheet == null)) {
+                throw new global::System.ArgumentNullException("entity_worksheet");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(entity_worksheet));
+            }
+            if ((aux_worksheet == null)) {
+                throw new global::System.ArgumentNullException("aux_worksheet");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(aux_worksheet));
+            }
+            if ((table_name == null)) {
+                throw new global::System.ArgumentNullException("table_name");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(table_name));
+            }
+            if ((field_name == null)) {
+                throw new global::System.ArgumentNullException("field_name");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(field_name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
             }
         }
     }
@@ -1656,11 +1718,20 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        ENTITY_WORKSHEET.*\r\nFROM            ENTITY_WORKSHEET";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        COUNT(1)\r\nFROM            ENTITY_WORKSHEET\r\nWHERE        (ENTITY_WO" +
+                "RKSHEET = @entity_worksheet) AND (AUX_WORKSHEET = @aux_worksheet) AND (DRIVER_DB" +
+                "_FIELD = @driver_db_field)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entity_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aux_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@driver_db_field", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "DRIVER_DB_FIELD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1764,6 +1835,52 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object FieldExists(string entity_worksheet, string aux_worksheet, string driver_db_field) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((entity_worksheet == null)) {
+                throw new global::System.ArgumentNullException("entity_worksheet");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(entity_worksheet));
+            }
+            if ((aux_worksheet == null)) {
+                throw new global::System.ArgumentNullException("aux_worksheet");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(aux_worksheet));
+            }
+            if ((driver_db_field == null)) {
+                throw new global::System.ArgumentNullException("driver_db_field");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(driver_db_field));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
             }
         }
     }

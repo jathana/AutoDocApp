@@ -13,17 +13,17 @@ namespace AutoDocApp
    public class RepoExcelReader
    {
       public DataSet Data { get; internal set; }
-      public void LoadData(string excelFilename, string group)
+      public void LoadData(string excelFilename)
       {
 
          Data = CreateEmptyDataset();
          Workbook workbook = new Workbook(excelFilename);
 
          // load entity worksheets
-         LoadEntityWorksheets(workbook, group, Data);
+         LoadEntityWorksheets(workbook, Data);
 
          // load aux worksheets
-         LoadAuxWorksheets(workbook, group, Data);
+         LoadAuxWorksheets(workbook, Data);
       }
 
       /// <summary>
@@ -72,9 +72,9 @@ namespace AutoDocApp
       }
 
 
-      private void LoadEntityWorksheets(Workbook workbook, string group, DataSet dataset)
+      private void LoadEntityWorksheets(Workbook workbook, DataSet dataset)
       {
-         XmlNodeList xnList = RepoExcelSettings.GetEntityWorksheetsNodes(group);
+         XmlNodeList xnList = RepoExcelSettings.GetEntityWorksheetsNodes();
          foreach (XmlNode xn in xnList)
          {
             // read worksheet configuration info
@@ -82,8 +82,9 @@ namespace AutoDocApp
             string auxWorksheetName = xn.Attributes["aux_worksheet"].InnerText;
             int worksheetDataStart = Convert.ToInt32(GetWorksheetAttribute(xn, "data_start")?.InnerText);
             int driverDBFieldColIndex = CellsHelper.ColumnNameToIndex(GetWorksheetAttribute(xn, "column_driver_dbfield")?.InnerText);
-            int fieldNameColIndex = CellsHelper.ColumnNameToIndex(GetWorksheetAttribute(xn, "column_field_name")?.InnerText);
+            int fieldCaptionColIndex = CellsHelper.ColumnNameToIndex(GetWorksheetAttribute(xn, "column_field_caption")?.InnerText);
             int descColIndex = CellsHelper.ColumnNameToIndex(GetWorksheetAttribute(xn, "column_description")?.InnerText);
+            int lookupListColIndex = CellsHelper.ColumnNameToIndex(GetWorksheetAttribute(xn, "column_lookup_list")?.InnerText);
 
             // get worksheet
             Worksheet worksheet = workbook.Worksheets[entityWorksheetName];
@@ -96,9 +97,10 @@ namespace AutoDocApp
 
                row["ENTITY_WORKSHEET"] = entityWorksheetName;
                row["AUX_WORKSHEET"] = auxWorksheetName;
-               row["DRIVER_DB_FIELD"] = excelRow.GetCellOrNull(driverDBFieldColIndex).Value;
-               row["FIELD_NAME"] = excelRow.GetCellOrNull(fieldNameColIndex).Value;
-               row["DESCRIPTION"] = excelRow.GetCellOrNull(descColIndex).Value;
+               row["DRIVER_DB_FIELD"] = excelRow.GetCellOrNull(driverDBFieldColIndex)?.Value;
+               row["FIELD_CAPTION"] = excelRow.GetCellOrNull(fieldCaptionColIndex)?.Value;
+               row["DESCRIPTION"] = excelRow.GetCellOrNull(descColIndex)?.Value;
+               row["LOOKUP_LIST"] = excelRow.GetCellOrNull(lookupListColIndex)?.Value;
                dataset.Tables["ENTITY_WORKSHEET"].Rows.Add(row);
 
                InsertEntityToDB(row);
@@ -107,9 +109,9 @@ namespace AutoDocApp
          dataset.AcceptChanges();
       }
 
-      private void LoadAuxWorksheets(Workbook workbook, string group, DataSet dataset)
+      private void LoadAuxWorksheets(Workbook workbook, DataSet dataset)
       {
-         XmlNodeList xnList = RepoExcelSettings.GetAuxWorksheetsNodes(group);
+         XmlNodeList xnList = RepoExcelSettings.GetAuxWorksheetsNodes();
          foreach (XmlNode xn in xnList)
          {
             // read worksheet configuration info
@@ -132,10 +134,10 @@ namespace AutoDocApp
 
                row["ENTITY_WORKSHEET"] = entityWorksheetName;
                row["AUX_WORKSHEET"] = auxWorksheetName;
-               row["TABLE"] = excelRow.GetCellOrNull(tableColIndex).Value;
-               row["FIELD_NAME"] = excelRow.GetCellOrNull(fieldColIndex).Value;
-               row["FIELD_TYPE"] = excelRow.GetCellOrNull(fieldTypeColIndex).Value;
-               row["RESERVED_FOR"] = excelRow.GetCellOrNull(reserverdForColIndex).Value;
+               row["TABLE"] = excelRow.GetCellOrNull(tableColIndex)?.Value;
+               row["FIELD_NAME"] = excelRow.GetCellOrNull(fieldColIndex)?.Value;
+               row["FIELD_TYPE"] = excelRow.GetCellOrNull(fieldTypeColIndex)?.Value;
+               row["RESERVED_FOR"] = excelRow.GetCellOrNull(reserverdForColIndex)?.Value;
                dataset.Tables["AUX_WORKSHEET"].Rows.Add(row);
                InsertAuxToDB(row);
             }
@@ -164,9 +166,10 @@ namespace AutoDocApp
          entityTable.TableName = "ENTITY_WORKSHEET";
          entityTable.Columns.Add("ENTITY_WORKSHEET", typeof(string));
          entityTable.Columns.Add("AUX_WORKSHEET", typeof(string));
-         entityTable.Columns.Add("DRIVER_DB_FIELD", typeof(string));
-         entityTable.Columns.Add("FIELD_NAME", typeof(string));
+         entityTable.Columns.Add("DRIVER_DB_FIELD", typeof(string));  // DATABASE FIELD NAME
+         entityTable.Columns.Add("FIELD_CAPTION", typeof(string));  // FIELD CAPTION
          entityTable.Columns.Add("DESCRIPTION", typeof(string));
+         entityTable.Columns.Add("LOOKUP_LIST", typeof(string));
 
 
          DataTable entityAuxTable = dataset.Tables.Add();
@@ -189,21 +192,36 @@ namespace AutoDocApp
          PRD_DocumentationTableAdapters.AUX_WORKSHEETTableAdapter auxAdapter = new PRD_DocumentationTableAdapters.AUX_WORKSHEETTableAdapter();
          try
          {
-            auxAdapter.Insert(
-                  auxRow.Field<string>("ENTITY_WORKSHEET"),
-                  auxRow.Field<string>("AUX_WORKSHEET"),
-                  auxRow.Field<string>("TABLE"),
-                  auxRow.Field<string>("FIELD_NAME"),
-                  auxRow.Field<string>("FIELD_TYPE"),
-                  auxRow.Field<string>("RESERVED_FOR"));
+            var fieldExists = auxAdapter.FieldExists(
+                           auxRow.Field<string>("ENTITY_WORKSHEET"),
+                           auxRow.Field<string>("AUX_WORKSHEET"),
+                           auxRow.Field<string>("TABLE"),
+                           auxRow.Field<string>("FIELD_NAME"));
+            if (Convert.ToBoolean(fieldExists))
+            {
+               auxAdapter.Update(auxRow);
+            }
+            else
+            {
+               auxAdapter.Insert(
+                     auxRow.Field<string>("ENTITY_WORKSHEET"),
+                     auxRow.Field<string>("AUX_WORKSHEET"),
+                     auxRow.Field<string>("TABLE"),
+                     auxRow.Field<string>("FIELD_NAME"),
+                     auxRow.Field<string>("FIELD_TYPE"),
+                     auxRow.Field<string>("RESERVED_FOR"));
+            }
+            
          }
          catch (Exception ex)
          {
-            Log.Write($@"ENTITY_WORKSHEET:{entityRow.Field<string>("ENTITY_WORKSHEET") }
-                           AUX_WORKSHEET: {entityRow.Field<string>("AUX_WORKSHEET")}
-                           DRIVER_DB_FIELD: {entityRow.Field<string>("DRIVER_DB_FIELD")}
-                           FIELD_NAME: {entityRow.Field<string>("FIELD_NAME")}
-                           DESCRIPTION: {entityRow.Field<string>("DESCRIPTION")}            
+            Log.Write($@"
+                  ENTITY_WORKSHEET: {auxRow.Field<string>("ENTITY_WORKSHEET")}
+                  AUX_WORKSHEET: {auxRow.Field<string>("AUX_WORKSHEET")}
+                  TABLE: {auxRow.Field<string>("TABLE")}
+                  FIELD_NAME: {auxRow.Field<string>("FIELD_NAME")}
+                  FIELD_TYPE: {auxRow.Field<string>("FIELD_TYPE")}
+                  RESERVED_FOR: {auxRow.Field<string>("RESERVED_FOR")}
                   ");
             Log.Write(ex.Message);
          }
@@ -214,19 +232,29 @@ namespace AutoDocApp
          PRD_DocumentationTableAdapters.ENTITY_WORKSHEETTableAdapter entityAdapter = new PRD_DocumentationTableAdapters.ENTITY_WORKSHEETTableAdapter();
          try
          {
-            entityAdapter.Insert(
-                  entityRow.Field<string>("ENTITY_WORKSHEET"),
+            var fieldExists = entityAdapter.FieldExists(entityRow.Field<string>("ENTITY_WORKSHEET"),
                   entityRow.Field<string>("AUX_WORKSHEET"),
-                  entityRow.Field<string>("DRIVER_DB_FIELD"),
-                  entityRow.Field<string>("FIELD_NAME"),
-                  entityRow.Field<string>("DESCRIPTION"));
+                  entityRow.Field<string>("DRIVER_DB_FIELD"));
+            if (Convert.ToBoolean(fieldExists))
+            {
+               entityAdapter.Update(entityRow);
+            }
+            else
+            {
+               entityAdapter.Insert(
+                     entityRow.Field<string>("ENTITY_WORKSHEET"),
+                     entityRow.Field<string>("AUX_WORKSHEET"),
+                     entityRow.Field<string>("DRIVER_DB_FIELD"),
+                     entityRow.Field<string>("FIELD_CAPTION"),
+                     entityRow.Field<string>("DESCRIPTION"));
+            }
          }
          catch (Exception ex)
          {
             Log.Write($@"ENTITY_WORKSHEET:{entityRow.Field<string>("ENTITY_WORKSHEET") }
                            AUX_WORKSHEET: {entityRow.Field<string>("AUX_WORKSHEET")}
                            DRIVER_DB_FIELD: {entityRow.Field<string>("DRIVER_DB_FIELD")}
-                           FIELD_NAME: {entityRow.Field<string>("FIELD_NAME")}
+                           FIELD_NAME: {entityRow.Field<string>("FIELD_CAPTION")}
                            DESCRIPTION: {entityRow.Field<string>("DESCRIPTION")}            
                   ");
             Log.Write(ex.Message);

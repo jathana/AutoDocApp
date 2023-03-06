@@ -25,26 +25,14 @@ namespace AutoDocApp
          Xml.Load("RepoExcelSettings.xml");
       }
 
-      public static XmlNodeList GetEntityWorksheetsNodes(string docGroup)
+      public static XmlNodeList GetEntityWorksheetsNodes()
       {
-         return Xml.SelectNodes($"/root/entity_worksheets/entity_worksheet[@doc_group='{docGroup}']");
+         return Xml.SelectNodes($"/root/entity_worksheets/entity_worksheet");
       }
 
-      public static XmlNodeList GetAuxWorksheetsNodes(string docGroup)
+      public static XmlNodeList GetAuxWorksheetsNodes()
       {
-         return Xml.SelectNodes($"/root/aux_worksheets/aux_worksheet[@doc_group='{docGroup}']");
-      }
-
-      public static List<string> GetDocGroupTables(string docGroup)
-      {
-         List<string> retVal = new List<string>();
-         var node = Xml.SelectSingleNode($"/root/doc_groups/doc_group[@name='{docGroup}']");
-         string tablesFile = node.Attributes["tables_file"].InnerText;
-         if (File.Exists(tablesFile))
-         {
-            retVal = File.ReadAllLines(tablesFile).ToList<string>();
-         }
-         return retVal;
+         return Xml.SelectNodes($"/root/aux_worksheets/aux_worksheet");
       }
 
       public static DocGroup GetDocGroup(string docGroup)

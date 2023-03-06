@@ -63,14 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consts.cs" />
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DocCreator.cs" />
-    <Compile Include="DocCreatorNoDB.cs" />
     <Compile Include="Log.cs" />
+    <Compile Include="PRD_Documentation.cs">
+      <DependentUpon>PRD_Documentation.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PRD_Documentation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,17 +97,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="PRD_Documentation.xsc">
       <DependentUpon>PRD_Documentation.xsd</DependentUpon>
@@ -135,9 +121,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RepoExcelSettings.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CustCaseDebt_tables.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SQL\CaseCustDebt_TableFields.sql">

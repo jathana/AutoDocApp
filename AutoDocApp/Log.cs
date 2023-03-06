@@ -12,7 +12,7 @@ namespace AutoDocApp
       private static string LogFile = "Log.txt";
       public static void Write(string msg)
       {
-         File.AppendAllLines(LogFile, new string[] { $"{DateTime.Now} : {msg}" });
+         File.AppendAllLines(LogFile, new string[] { $"{DateTime.Now} : {msg}"});
       }
    }
 }

@@ -30,7 +30,7 @@ namespace AutoDocApp
       private void btnRun_Click(object sender, EventArgs e)
       {
          RepoExcelReader reader = new RepoExcelReader();
-         reader.LoadData(bteProductRepoExcel.Text, Consts.CUST_CASE_DEBT_GROUP);
+         reader.LoadData(bteProductRepoExcel.Text);
 
          DocCreator creator = new DocCreator();
          creator.CreateExcelOfTableFields(reader, Consts.CUST_CASE_DEBT_GROUP,$"{Consts.CUST_CASE_DEBT_GROUP}.xlsx");

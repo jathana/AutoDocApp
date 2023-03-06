@@ -1,43 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 	<doc_groups>
-		<doc_group name="CustCaseDebt" tables_file="CustCaseDebt_tables.txt" sql_file="SQL\CaseCustDebt_TableFields.sql"/>
+		<doc_group name="CustCaseDebt" sql_file="SQL\CaseCustDebt_TableFields.sql"/>
 	</doc_groups>
 	
-	<entity_worksheets data_start="2" column_driver_dbfield="D" column_field_name="E" column_description="F">
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Cases" aux_worksheet="Aux_CaseFields" />
+	<entity_worksheets data_start="2" column_driver_dbfield="D" column_field_caption="E" column_description="F" column_lookup_list="H">
+		<entity_worksheet entity_worksheet="Cases" aux_worksheet="Aux_CaseFields" />
 		
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Debts" aux_worksheet="Aux_DebtFields" />
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="DebtItems" aux_worksheet="Aux_DebtItemFields" />
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="DebtItemMemos" aux_worksheet="Aux_DebtItemMemosFields" />
+		<entity_worksheet entity_worksheet="Debts" aux_worksheet="Aux_DebtFields" />
+		<entity_worksheet entity_worksheet="DebtItems" aux_worksheet="Aux_DebtItemFields" />
+		<entity_worksheet entity_worksheet="DebtItemMemos" aux_worksheet="Aux_DebtItemMemosFields" />
 
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="MovedCases" aux_worksheet="Aux_MovedCasesFields" />
+		<entity_worksheet entity_worksheet="MovedCases" aux_worksheet="Aux_MovedCasesFields" />
 
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Customers" aux_worksheet="Aux_Customer Fields" />
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Addresses" aux_worksheet="Aux_AddressesFields" />
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Phones" aux_worksheet="Aux_PhonesFields" />
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Mails" aux_worksheet="Aux_MailsFields" />
-		<entity_worksheet doc_group="CustCaseDebt" entity_worksheet="Contacts" aux_worksheet="Aux_ContactsFields" />
+		<entity_worksheet entity_worksheet="Customers" aux_worksheet="Aux_Customer Fields" />
+		<entity_worksheet entity_worksheet="Addresses" aux_worksheet="Aux_AddressesFields" />
+		<entity_worksheet entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
+		<entity_worksheet entity_worksheet="Phones" aux_worksheet="Aux_PhonesFields" />
+		<entity_worksheet entity_worksheet="Mails" aux_worksheet="Aux_MailsFields" />
+		<entity_worksheet entity_worksheet="Contacts" aux_worksheet="Aux_ContactsFields" />
 		
 	</entity_worksheets>
 
 	<aux_worksheets data_start="2" column_table="A" column_field="B" column_field_type="F"  column_reserved_for="G">
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Cases" aux_worksheet="Aux_CaseFields" />
+		<aux_worksheet  entity_worksheet="Cases" aux_worksheet="Aux_CaseFields" />
 		
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Debts" aux_worksheet="Aux_DebtFields" />
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="DebtItems" aux_worksheet="Aux_DebtItemFields" />
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="DebtItemMemos" aux_worksheet="Aux_DebtItemMemosFields" />
+		<aux_worksheet entity_worksheet="Debts" aux_worksheet="Aux_DebtFields" />
+		<aux_worksheet entity_worksheet="DebtItems" aux_worksheet="Aux_DebtItemFields" />
+		<aux_worksheet entity_worksheet="DebtItemMemos" aux_worksheet="Aux_DebtItemMemosFields" />
 
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="MovedCases" aux_worksheet="Aux_MovedCasesFields" />
+		<aux_worksheet entity_worksheet="MovedCases" aux_worksheet="Aux_MovedCasesFields" />
 
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Customers" aux_worksheet="Aux_Customer Fields" />
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Addresses" aux_worksheet="Aux_AddressesFields" />
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Phones" aux_worksheet="Aux_PhonesFields" />
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Mails" aux_worksheet="Aux_MailsFields" />
-		<aux_worksheet doc_group="CustCaseDebt" entity_worksheet="Contacts" aux_worksheet="Aux_ContactsFields" />
-
+		<aux_worksheet entity_worksheet="Customers" aux_worksheet="Aux_Customer Fields" />
+		<aux_worksheet entity_worksheet="Addresses" aux_worksheet="Aux_AddressesFields" />
+		<aux_worksheet entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
+		<aux_worksheet entity_worksheet="Phones" aux_worksheet="Aux_PhonesFields" />
+		<aux_worksheet entity_worksheet="Mails" aux_worksheet="Aux_MailsFields" />
+		<aux_worksheet entity_worksheet="Contacts" aux_worksheet="Aux_ContactsFields" />
 
 	</aux_worksheets>
 </root>
