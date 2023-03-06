@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDocApp", "AutoDocApp\AutoDocApp.csproj", "{16AE70A2-008B-4209-B66B-E142A4B1D075}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16AE70A2-008B-4209-B66B-E142A4B1D075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AE70A2-008B-4209-B66B-E142A4B1D075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AE70A2-008B-4209-B66B-E142A4B1D075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AE70A2-008B-4209-B66B-E142A4B1D075}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC9C5901-DE8F-4D4F-9E23-B0FDDB551E73}
+	EndGlobalSection
+EndGlobal
