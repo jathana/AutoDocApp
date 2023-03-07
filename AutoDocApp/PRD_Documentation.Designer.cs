@@ -24,9 +24,13 @@ namespace AutoDocApp {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class PRD_Documentation : global::System.Data.DataSet {
         
-        private AUX_WORKSHEETDataTable tableAUX_WORKSHEET;
+        private WS_AUX_WORKSHEETDataTable tableWS_AUX_WORKSHEET;
         
-        private ENTITY_WORKSHEETDataTable tableENTITY_WORKSHEET;
+        private WS_ENTITY_WORKSHEETDataTable tableWS_ENTITY_WORKSHEET;
+        
+        private AT_DOC_AUTO_TABLE_FIELDSDataTable tableAT_DOC_AUTO_TABLE_FIELDS;
+        
+        private AT_DOC_MANUAL_TABLE_FIELDSDataTable tableAT_DOC_MANUAL_TABLE_FIELDS;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -56,11 +60,17 @@ namespace AutoDocApp {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["AUX_WORKSHEET"] != null)) {
-                    base.Tables.Add(new AUX_WORKSHEETDataTable(ds.Tables["AUX_WORKSHEET"]));
+                if ((ds.Tables["WS_AUX_WORKSHEET"] != null)) {
+                    base.Tables.Add(new WS_AUX_WORKSHEETDataTable(ds.Tables["WS_AUX_WORKSHEET"]));
                 }
-                if ((ds.Tables["ENTITY_WORKSHEET"] != null)) {
-                    base.Tables.Add(new ENTITY_WORKSHEETDataTable(ds.Tables["ENTITY_WORKSHEET"]));
+                if ((ds.Tables["WS_ENTITY_WORKSHEET"] != null)) {
+                    base.Tables.Add(new WS_ENTITY_WORKSHEETDataTable(ds.Tables["WS_ENTITY_WORKSHEET"]));
+                }
+                if ((ds.Tables["AT_DOC_AUTO_TABLE_FIELDS"] != null)) {
+                    base.Tables.Add(new AT_DOC_AUTO_TABLE_FIELDSDataTable(ds.Tables["AT_DOC_AUTO_TABLE_FIELDS"]));
+                }
+                if ((ds.Tables["AT_DOC_MANUAL_TABLE_FIELDS"] != null)) {
+                    base.Tables.Add(new AT_DOC_MANUAL_TABLE_FIELDSDataTable(ds.Tables["AT_DOC_MANUAL_TABLE_FIELDS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +94,9 @@ namespace AutoDocApp {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AUX_WORKSHEETDataTable AUX_WORKSHEET {
+        public WS_AUX_WORKSHEETDataTable WS_AUX_WORKSHEET {
             get {
-                return this.tableAUX_WORKSHEET;
+                return this.tableWS_AUX_WORKSHEET;
             }
         }
         
@@ -94,9 +104,29 @@ namespace AutoDocApp {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ENTITY_WORKSHEETDataTable ENTITY_WORKSHEET {
+        public WS_ENTITY_WORKSHEETDataTable WS_ENTITY_WORKSHEET {
             get {
-                return this.tableENTITY_WORKSHEET;
+                return this.tableWS_ENTITY_WORKSHEET;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AT_DOC_AUTO_TABLE_FIELDSDataTable AT_DOC_AUTO_TABLE_FIELDS {
+            get {
+                return this.tableAT_DOC_AUTO_TABLE_FIELDS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AT_DOC_MANUAL_TABLE_FIELDSDataTable AT_DOC_MANUAL_TABLE_FIELDS {
+            get {
+                return this.tableAT_DOC_MANUAL_TABLE_FIELDS;
             }
         }
         
@@ -167,11 +197,17 @@ namespace AutoDocApp {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["AUX_WORKSHEET"] != null)) {
-                    base.Tables.Add(new AUX_WORKSHEETDataTable(ds.Tables["AUX_WORKSHEET"]));
+                if ((ds.Tables["WS_AUX_WORKSHEET"] != null)) {
+                    base.Tables.Add(new WS_AUX_WORKSHEETDataTable(ds.Tables["WS_AUX_WORKSHEET"]));
                 }
-                if ((ds.Tables["ENTITY_WORKSHEET"] != null)) {
-                    base.Tables.Add(new ENTITY_WORKSHEETDataTable(ds.Tables["ENTITY_WORKSHEET"]));
+                if ((ds.Tables["WS_ENTITY_WORKSHEET"] != null)) {
+                    base.Tables.Add(new WS_ENTITY_WORKSHEETDataTable(ds.Tables["WS_ENTITY_WORKSHEET"]));
+                }
+                if ((ds.Tables["AT_DOC_AUTO_TABLE_FIELDS"] != null)) {
+                    base.Tables.Add(new AT_DOC_AUTO_TABLE_FIELDSDataTable(ds.Tables["AT_DOC_AUTO_TABLE_FIELDS"]));
+                }
+                if ((ds.Tables["AT_DOC_MANUAL_TABLE_FIELDS"] != null)) {
+                    base.Tables.Add(new AT_DOC_MANUAL_TABLE_FIELDSDataTable(ds.Tables["AT_DOC_MANUAL_TABLE_FIELDS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +242,28 @@ namespace AutoDocApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAUX_WORKSHEET = ((AUX_WORKSHEETDataTable)(base.Tables["AUX_WORKSHEET"]));
+            this.tableWS_AUX_WORKSHEET = ((WS_AUX_WORKSHEETDataTable)(base.Tables["WS_AUX_WORKSHEET"]));
             if ((initTable == true)) {
-                if ((this.tableAUX_WORKSHEET != null)) {
-                    this.tableAUX_WORKSHEET.InitVars();
+                if ((this.tableWS_AUX_WORKSHEET != null)) {
+                    this.tableWS_AUX_WORKSHEET.InitVars();
                 }
             }
-            this.tableENTITY_WORKSHEET = ((ENTITY_WORKSHEETDataTable)(base.Tables["ENTITY_WORKSHEET"]));
+            this.tableWS_ENTITY_WORKSHEET = ((WS_ENTITY_WORKSHEETDataTable)(base.Tables["WS_ENTITY_WORKSHEET"]));
             if ((initTable == true)) {
-                if ((this.tableENTITY_WORKSHEET != null)) {
-                    this.tableENTITY_WORKSHEET.InitVars();
+                if ((this.tableWS_ENTITY_WORKSHEET != null)) {
+                    this.tableWS_ENTITY_WORKSHEET.InitVars();
+                }
+            }
+            this.tableAT_DOC_AUTO_TABLE_FIELDS = ((AT_DOC_AUTO_TABLE_FIELDSDataTable)(base.Tables["AT_DOC_AUTO_TABLE_FIELDS"]));
+            if ((initTable == true)) {
+                if ((this.tableAT_DOC_AUTO_TABLE_FIELDS != null)) {
+                    this.tableAT_DOC_AUTO_TABLE_FIELDS.InitVars();
+                }
+            }
+            this.tableAT_DOC_MANUAL_TABLE_FIELDS = ((AT_DOC_MANUAL_TABLE_FIELDSDataTable)(base.Tables["AT_DOC_MANUAL_TABLE_FIELDS"]));
+            if ((initTable == true)) {
+                if ((this.tableAT_DOC_MANUAL_TABLE_FIELDS != null)) {
+                    this.tableAT_DOC_MANUAL_TABLE_FIELDS.InitVars();
                 }
             }
         }
@@ -228,21 +276,37 @@ namespace AutoDocApp {
             this.Namespace = "http://tempuri.org/PRD_Documentation.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAUX_WORKSHEET = new AUX_WORKSHEETDataTable();
-            base.Tables.Add(this.tableAUX_WORKSHEET);
-            this.tableENTITY_WORKSHEET = new ENTITY_WORKSHEETDataTable();
-            base.Tables.Add(this.tableENTITY_WORKSHEET);
+            this.tableWS_AUX_WORKSHEET = new WS_AUX_WORKSHEETDataTable();
+            base.Tables.Add(this.tableWS_AUX_WORKSHEET);
+            this.tableWS_ENTITY_WORKSHEET = new WS_ENTITY_WORKSHEETDataTable();
+            base.Tables.Add(this.tableWS_ENTITY_WORKSHEET);
+            this.tableAT_DOC_AUTO_TABLE_FIELDS = new AT_DOC_AUTO_TABLE_FIELDSDataTable();
+            base.Tables.Add(this.tableAT_DOC_AUTO_TABLE_FIELDS);
+            this.tableAT_DOC_MANUAL_TABLE_FIELDS = new AT_DOC_MANUAL_TABLE_FIELDSDataTable();
+            base.Tables.Add(this.tableAT_DOC_MANUAL_TABLE_FIELDS);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeAUX_WORKSHEET() {
+        private bool ShouldSerializeWS_AUX_WORKSHEET() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeENTITY_WORKSHEET() {
+        private bool ShouldSerializeWS_ENTITY_WORKSHEET() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeAT_DOC_AUTO_TABLE_FIELDS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeAT_DOC_MANUAL_TABLE_FIELDS() {
             return false;
         }
         
@@ -302,17 +366,23 @@ namespace AutoDocApp {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void AUX_WORKSHEETRowChangeEventHandler(object sender, AUX_WORKSHEETRowChangeEvent e);
+        public delegate void WS_AUX_WORKSHEETRowChangeEventHandler(object sender, WS_AUX_WORKSHEETRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ENTITY_WORKSHEETRowChangeEventHandler(object sender, ENTITY_WORKSHEETRowChangeEvent e);
+        public delegate void WS_ENTITY_WORKSHEETRowChangeEventHandler(object sender, WS_ENTITY_WORKSHEETRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void AT_DOC_AUTO_TABLE_FIELDSRowChangeEventHandler(object sender, AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void AT_DOC_MANUAL_TABLE_FIELDSRowChangeEventHandler(object sender, AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AUX_WORKSHEETDataTable : global::System.Data.TypedTableBase<AUX_WORKSHEETRow> {
+        public partial class WS_AUX_WORKSHEETDataTable : global::System.Data.TypedTableBase<WS_AUX_WORKSHEETRow> {
             
             private global::System.Data.DataColumn columnENTITY_WORKSHEET;
             
@@ -328,8 +398,8 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AUX_WORKSHEETDataTable() {
-                this.TableName = "AUX_WORKSHEET";
+            public WS_AUX_WORKSHEETDataTable() {
+                this.TableName = "WS_AUX_WORKSHEET";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -337,7 +407,7 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AUX_WORKSHEETDataTable(global::System.Data.DataTable table) {
+            internal WS_AUX_WORKSHEETDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -354,7 +424,7 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected AUX_WORKSHEETDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected WS_AUX_WORKSHEETDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -418,34 +488,34 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AUX_WORKSHEETRow this[int index] {
+            public WS_AUX_WORKSHEETRow this[int index] {
                 get {
-                    return ((AUX_WORKSHEETRow)(this.Rows[index]));
+                    return ((WS_AUX_WORKSHEETRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AUX_WORKSHEETRowChangeEventHandler AUX_WORKSHEETRowChanging;
+            public event WS_AUX_WORKSHEETRowChangeEventHandler WS_AUX_WORKSHEETRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AUX_WORKSHEETRowChangeEventHandler AUX_WORKSHEETRowChanged;
+            public event WS_AUX_WORKSHEETRowChangeEventHandler WS_AUX_WORKSHEETRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AUX_WORKSHEETRowChangeEventHandler AUX_WORKSHEETRowDeleting;
+            public event WS_AUX_WORKSHEETRowChangeEventHandler WS_AUX_WORKSHEETRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AUX_WORKSHEETRowChangeEventHandler AUX_WORKSHEETRowDeleted;
+            public event WS_AUX_WORKSHEETRowChangeEventHandler WS_AUX_WORKSHEETRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddAUX_WORKSHEETRow(AUX_WORKSHEETRow row) {
+            public void AddWS_AUX_WORKSHEETRow(WS_AUX_WORKSHEETRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AUX_WORKSHEETRow AddAUX_WORKSHEETRow(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string TABLE_NAME, string FIELD_NAME, string FIELD_TYPE, string RESERVED_FOR) {
-                AUX_WORKSHEETRow rowAUX_WORKSHEETRow = ((AUX_WORKSHEETRow)(this.NewRow()));
+            public WS_AUX_WORKSHEETRow AddWS_AUX_WORKSHEETRow(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string TABLE_NAME, string FIELD_NAME, string FIELD_TYPE, string RESERVED_FOR) {
+                WS_AUX_WORKSHEETRow rowWS_AUX_WORKSHEETRow = ((WS_AUX_WORKSHEETRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ENTITY_WORKSHEET,
                         AUX_WORKSHEET,
@@ -453,15 +523,25 @@ namespace AutoDocApp {
                         FIELD_NAME,
                         FIELD_TYPE,
                         RESERVED_FOR};
-                rowAUX_WORKSHEETRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAUX_WORKSHEETRow);
-                return rowAUX_WORKSHEETRow;
+                rowWS_AUX_WORKSHEETRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWS_AUX_WORKSHEETRow);
+                return rowWS_AUX_WORKSHEETRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WS_AUX_WORKSHEETRow FindByENTITY_WORKSHEETAUX_WORKSHEETTABLE_NAMEFIELD_NAME(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string TABLE_NAME, string FIELD_NAME) {
+                return ((WS_AUX_WORKSHEETRow)(this.Rows.Find(new object[] {
+                            ENTITY_WORKSHEET,
+                            AUX_WORKSHEET,
+                            TABLE_NAME,
+                            FIELD_NAME})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AUX_WORKSHEETDataTable cln = ((AUX_WORKSHEETDataTable)(base.Clone()));
+                WS_AUX_WORKSHEETDataTable cln = ((WS_AUX_WORKSHEETDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -469,7 +549,7 @@ namespace AutoDocApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AUX_WORKSHEETDataTable();
+                return new WS_AUX_WORKSHEETDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,6 +578,11 @@ namespace AutoDocApp {
                 base.Columns.Add(this.columnFIELD_TYPE);
                 this.columnRESERVED_FOR = new global::System.Data.DataColumn("RESERVED_FOR", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRESERVED_FOR);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnENTITY_WORKSHEET,
+                                this.columnAUX_WORKSHEET,
+                                this.columnTABLE_NAME,
+                                this.columnFIELD_NAME}, true));
                 this.columnENTITY_WORKSHEET.AllowDBNull = false;
                 this.columnENTITY_WORKSHEET.MaxLength = 100;
                 this.columnAUX_WORKSHEET.AllowDBNull = false;
@@ -512,28 +597,28 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AUX_WORKSHEETRow NewAUX_WORKSHEETRow() {
-                return ((AUX_WORKSHEETRow)(this.NewRow()));
+            public WS_AUX_WORKSHEETRow NewWS_AUX_WORKSHEETRow() {
+                return ((WS_AUX_WORKSHEETRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AUX_WORKSHEETRow(builder);
+                return new WS_AUX_WORKSHEETRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AUX_WORKSHEETRow);
+                return typeof(WS_AUX_WORKSHEETRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AUX_WORKSHEETRowChanged != null)) {
-                    this.AUX_WORKSHEETRowChanged(this, new AUX_WORKSHEETRowChangeEvent(((AUX_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_AUX_WORKSHEETRowChanged != null)) {
+                    this.WS_AUX_WORKSHEETRowChanged(this, new WS_AUX_WORKSHEETRowChangeEvent(((WS_AUX_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
@@ -541,8 +626,8 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AUX_WORKSHEETRowChanging != null)) {
-                    this.AUX_WORKSHEETRowChanging(this, new AUX_WORKSHEETRowChangeEvent(((AUX_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_AUX_WORKSHEETRowChanging != null)) {
+                    this.WS_AUX_WORKSHEETRowChanging(this, new WS_AUX_WORKSHEETRowChangeEvent(((WS_AUX_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
@@ -550,8 +635,8 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AUX_WORKSHEETRowDeleted != null)) {
-                    this.AUX_WORKSHEETRowDeleted(this, new AUX_WORKSHEETRowChangeEvent(((AUX_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_AUX_WORKSHEETRowDeleted != null)) {
+                    this.WS_AUX_WORKSHEETRowDeleted(this, new WS_AUX_WORKSHEETRowChangeEvent(((WS_AUX_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
@@ -559,14 +644,14 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AUX_WORKSHEETRowDeleting != null)) {
-                    this.AUX_WORKSHEETRowDeleting(this, new AUX_WORKSHEETRowChangeEvent(((AUX_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_AUX_WORKSHEETRowDeleting != null)) {
+                    this.WS_AUX_WORKSHEETRowDeleting(this, new WS_AUX_WORKSHEETRowChangeEvent(((WS_AUX_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveAUX_WORKSHEETRow(AUX_WORKSHEETRow row) {
+            public void RemoveWS_AUX_WORKSHEETRow(WS_AUX_WORKSHEETRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -593,7 +678,7 @@ namespace AutoDocApp {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AUX_WORKSHEETDataTable";
+                attribute2.FixedValue = "WS_AUX_WORKSHEETDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -639,7 +724,7 @@ namespace AutoDocApp {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ENTITY_WORKSHEETDataTable : global::System.Data.TypedTableBase<ENTITY_WORKSHEETRow> {
+        public partial class WS_ENTITY_WORKSHEETDataTable : global::System.Data.TypedTableBase<WS_ENTITY_WORKSHEETRow> {
             
             private global::System.Data.DataColumn columnENTITY_WORKSHEET;
             
@@ -651,10 +736,14 @@ namespace AutoDocApp {
             
             private global::System.Data.DataColumn columnFIELD_DESCRIPTION;
             
+            private global::System.Data.DataColumn columnLOOKUP_LIST;
+            
+            private global::System.Data.DataColumn columnFIELD_CAPTION;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ENTITY_WORKSHEETDataTable() {
-                this.TableName = "ENTITY_WORKSHEET";
+            public WS_ENTITY_WORKSHEETDataTable() {
+                this.TableName = "WS_ENTITY_WORKSHEET";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -662,7 +751,7 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ENTITY_WORKSHEETDataTable(global::System.Data.DataTable table) {
+            internal WS_ENTITY_WORKSHEETDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -679,7 +768,7 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ENTITY_WORKSHEETDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected WS_ENTITY_WORKSHEETDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -726,6 +815,22 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LOOKUP_LISTColumn {
+                get {
+                    return this.columnLOOKUP_LIST;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FIELD_CAPTIONColumn {
+                get {
+                    return this.columnFIELD_CAPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -735,49 +840,60 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ENTITY_WORKSHEETRow this[int index] {
+            public WS_ENTITY_WORKSHEETRow this[int index] {
                 get {
-                    return ((ENTITY_WORKSHEETRow)(this.Rows[index]));
+                    return ((WS_ENTITY_WORKSHEETRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ENTITY_WORKSHEETRowChangeEventHandler ENTITY_WORKSHEETRowChanging;
+            public event WS_ENTITY_WORKSHEETRowChangeEventHandler WS_ENTITY_WORKSHEETRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ENTITY_WORKSHEETRowChangeEventHandler ENTITY_WORKSHEETRowChanged;
+            public event WS_ENTITY_WORKSHEETRowChangeEventHandler WS_ENTITY_WORKSHEETRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ENTITY_WORKSHEETRowChangeEventHandler ENTITY_WORKSHEETRowDeleting;
+            public event WS_ENTITY_WORKSHEETRowChangeEventHandler WS_ENTITY_WORKSHEETRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ENTITY_WORKSHEETRowChangeEventHandler ENTITY_WORKSHEETRowDeleted;
+            public event WS_ENTITY_WORKSHEETRowChangeEventHandler WS_ENTITY_WORKSHEETRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddENTITY_WORKSHEETRow(ENTITY_WORKSHEETRow row) {
+            public void AddWS_ENTITY_WORKSHEETRow(WS_ENTITY_WORKSHEETRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ENTITY_WORKSHEETRow AddENTITY_WORKSHEETRow(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string DRIVER_DB_FIELD, string FIELD_NAME, string FIELD_DESCRIPTION) {
-                ENTITY_WORKSHEETRow rowENTITY_WORKSHEETRow = ((ENTITY_WORKSHEETRow)(this.NewRow()));
+            public WS_ENTITY_WORKSHEETRow AddWS_ENTITY_WORKSHEETRow(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string DRIVER_DB_FIELD, string FIELD_NAME, string FIELD_DESCRIPTION, string LOOKUP_LIST, string FIELD_CAPTION) {
+                WS_ENTITY_WORKSHEETRow rowWS_ENTITY_WORKSHEETRow = ((WS_ENTITY_WORKSHEETRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ENTITY_WORKSHEET,
                         AUX_WORKSHEET,
                         DRIVER_DB_FIELD,
                         FIELD_NAME,
-                        FIELD_DESCRIPTION};
-                rowENTITY_WORKSHEETRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowENTITY_WORKSHEETRow);
-                return rowENTITY_WORKSHEETRow;
+                        FIELD_DESCRIPTION,
+                        LOOKUP_LIST,
+                        FIELD_CAPTION};
+                rowWS_ENTITY_WORKSHEETRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWS_ENTITY_WORKSHEETRow);
+                return rowWS_ENTITY_WORKSHEETRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WS_ENTITY_WORKSHEETRow FindByENTITY_WORKSHEETAUX_WORKSHEETDRIVER_DB_FIELD(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string DRIVER_DB_FIELD) {
+                return ((WS_ENTITY_WORKSHEETRow)(this.Rows.Find(new object[] {
+                            ENTITY_WORKSHEET,
+                            AUX_WORKSHEET,
+                            DRIVER_DB_FIELD})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ENTITY_WORKSHEETDataTable cln = ((ENTITY_WORKSHEETDataTable)(base.Clone()));
+                WS_ENTITY_WORKSHEETDataTable cln = ((WS_ENTITY_WORKSHEETDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -785,7 +901,7 @@ namespace AutoDocApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ENTITY_WORKSHEETDataTable();
+                return new WS_ENTITY_WORKSHEETDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -796,6 +912,8 @@ namespace AutoDocApp {
                 this.columnDRIVER_DB_FIELD = base.Columns["DRIVER_DB_FIELD"];
                 this.columnFIELD_NAME = base.Columns["FIELD_NAME"];
                 this.columnFIELD_DESCRIPTION = base.Columns["FIELD_DESCRIPTION"];
+                this.columnLOOKUP_LIST = base.Columns["LOOKUP_LIST"];
+                this.columnFIELD_CAPTION = base.Columns["FIELD_CAPTION"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -811,6 +929,14 @@ namespace AutoDocApp {
                 base.Columns.Add(this.columnFIELD_NAME);
                 this.columnFIELD_DESCRIPTION = new global::System.Data.DataColumn("FIELD_DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFIELD_DESCRIPTION);
+                this.columnLOOKUP_LIST = new global::System.Data.DataColumn("LOOKUP_LIST", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLOOKUP_LIST);
+                this.columnFIELD_CAPTION = new global::System.Data.DataColumn("FIELD_CAPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIELD_CAPTION);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnENTITY_WORKSHEET,
+                                this.columnAUX_WORKSHEET,
+                                this.columnDRIVER_DB_FIELD}, true));
                 this.columnENTITY_WORKSHEET.AllowDBNull = false;
                 this.columnENTITY_WORKSHEET.MaxLength = 100;
                 this.columnAUX_WORKSHEET.AllowDBNull = false;
@@ -819,32 +945,34 @@ namespace AutoDocApp {
                 this.columnDRIVER_DB_FIELD.MaxLength = 100;
                 this.columnFIELD_NAME.MaxLength = 100;
                 this.columnFIELD_DESCRIPTION.MaxLength = 2147483647;
+                this.columnLOOKUP_LIST.MaxLength = 100;
+                this.columnFIELD_CAPTION.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ENTITY_WORKSHEETRow NewENTITY_WORKSHEETRow() {
-                return ((ENTITY_WORKSHEETRow)(this.NewRow()));
+            public WS_ENTITY_WORKSHEETRow NewWS_ENTITY_WORKSHEETRow() {
+                return ((WS_ENTITY_WORKSHEETRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ENTITY_WORKSHEETRow(builder);
+                return new WS_ENTITY_WORKSHEETRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ENTITY_WORKSHEETRow);
+                return typeof(WS_ENTITY_WORKSHEETRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ENTITY_WORKSHEETRowChanged != null)) {
-                    this.ENTITY_WORKSHEETRowChanged(this, new ENTITY_WORKSHEETRowChangeEvent(((ENTITY_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_ENTITY_WORKSHEETRowChanged != null)) {
+                    this.WS_ENTITY_WORKSHEETRowChanged(this, new WS_ENTITY_WORKSHEETRowChangeEvent(((WS_ENTITY_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
@@ -852,8 +980,8 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ENTITY_WORKSHEETRowChanging != null)) {
-                    this.ENTITY_WORKSHEETRowChanging(this, new ENTITY_WORKSHEETRowChangeEvent(((ENTITY_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_ENTITY_WORKSHEETRowChanging != null)) {
+                    this.WS_ENTITY_WORKSHEETRowChanging(this, new WS_ENTITY_WORKSHEETRowChangeEvent(((WS_ENTITY_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
@@ -861,8 +989,8 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ENTITY_WORKSHEETRowDeleted != null)) {
-                    this.ENTITY_WORKSHEETRowDeleted(this, new ENTITY_WORKSHEETRowChangeEvent(((ENTITY_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_ENTITY_WORKSHEETRowDeleted != null)) {
+                    this.WS_ENTITY_WORKSHEETRowDeleted(this, new WS_ENTITY_WORKSHEETRowChangeEvent(((WS_ENTITY_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
@@ -870,14 +998,14 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ENTITY_WORKSHEETRowDeleting != null)) {
-                    this.ENTITY_WORKSHEETRowDeleting(this, new ENTITY_WORKSHEETRowChangeEvent(((ENTITY_WORKSHEETRow)(e.Row)), e.Action));
+                if ((this.WS_ENTITY_WORKSHEETRowDeleting != null)) {
+                    this.WS_ENTITY_WORKSHEETRowDeleting(this, new WS_ENTITY_WORKSHEETRowChangeEvent(((WS_ENTITY_WORKSHEETRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveENTITY_WORKSHEETRow(ENTITY_WORKSHEETRow row) {
+            public void RemoveWS_ENTITY_WORKSHEETRow(WS_ENTITY_WORKSHEETRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -904,7 +1032,762 @@ namespace AutoDocApp {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ENTITY_WORKSHEETDataTable";
+                attribute2.FixedValue = "WS_ENTITY_WORKSHEETDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AT_DOC_AUTO_TABLE_FIELDSDataTable : global::System.Data.TypedTableBase<AT_DOC_AUTO_TABLE_FIELDSRow> {
+            
+            private global::System.Data.DataColumn columnDATF_TABLE_NAME;
+            
+            private global::System.Data.DataColumn columnDATF_FIELD_NAME;
+            
+            private global::System.Data.DataColumn columnDATF_AUX_WORKSHEET;
+            
+            private global::System.Data.DataColumn columnDATF_ENTITY_WORKSHEET;
+            
+            private global::System.Data.DataColumn columnDATF_FIELD_CAPTION;
+            
+            private global::System.Data.DataColumn columnDATF_FIELD_DESCRIPTION;
+            
+            private global::System.Data.DataColumn columnDATF_FIELD_TYPE;
+            
+            private global::System.Data.DataColumn columnDATF_FIELD_DATA_TYPE;
+            
+            private global::System.Data.DataColumn columnDATF_LOOKUP_LIST;
+            
+            private global::System.Data.DataColumn columnDATF_SOURCE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_AUTO_TABLE_FIELDSDataTable() {
+                this.TableName = "AT_DOC_AUTO_TABLE_FIELDS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AT_DOC_AUTO_TABLE_FIELDSDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected AT_DOC_AUTO_TABLE_FIELDSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_TABLE_NAMEColumn {
+                get {
+                    return this.columnDATF_TABLE_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_FIELD_NAMEColumn {
+                get {
+                    return this.columnDATF_FIELD_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_AUX_WORKSHEETColumn {
+                get {
+                    return this.columnDATF_AUX_WORKSHEET;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_ENTITY_WORKSHEETColumn {
+                get {
+                    return this.columnDATF_ENTITY_WORKSHEET;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_FIELD_CAPTIONColumn {
+                get {
+                    return this.columnDATF_FIELD_CAPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_FIELD_DESCRIPTIONColumn {
+                get {
+                    return this.columnDATF_FIELD_DESCRIPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_FIELD_TYPEColumn {
+                get {
+                    return this.columnDATF_FIELD_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_FIELD_DATA_TYPEColumn {
+                get {
+                    return this.columnDATF_FIELD_DATA_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_LOOKUP_LISTColumn {
+                get {
+                    return this.columnDATF_LOOKUP_LIST;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATF_SOURCEColumn {
+                get {
+                    return this.columnDATF_SOURCE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_AUTO_TABLE_FIELDSRow this[int index] {
+                get {
+                    return ((AT_DOC_AUTO_TABLE_FIELDSRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_AUTO_TABLE_FIELDSRowChangeEventHandler AT_DOC_AUTO_TABLE_FIELDSRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_AUTO_TABLE_FIELDSRowChangeEventHandler AT_DOC_AUTO_TABLE_FIELDSRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_AUTO_TABLE_FIELDSRowChangeEventHandler AT_DOC_AUTO_TABLE_FIELDSRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_AUTO_TABLE_FIELDSRowChangeEventHandler AT_DOC_AUTO_TABLE_FIELDSRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddAT_DOC_AUTO_TABLE_FIELDSRow(AT_DOC_AUTO_TABLE_FIELDSRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_AUTO_TABLE_FIELDSRow AddAT_DOC_AUTO_TABLE_FIELDSRow(string DATF_TABLE_NAME, string DATF_FIELD_NAME, string DATF_AUX_WORKSHEET, string DATF_ENTITY_WORKSHEET, string DATF_FIELD_CAPTION, string DATF_FIELD_DESCRIPTION, string DATF_FIELD_TYPE, string DATF_FIELD_DATA_TYPE, string DATF_LOOKUP_LIST, string DATF_SOURCE) {
+                AT_DOC_AUTO_TABLE_FIELDSRow rowAT_DOC_AUTO_TABLE_FIELDSRow = ((AT_DOC_AUTO_TABLE_FIELDSRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DATF_TABLE_NAME,
+                        DATF_FIELD_NAME,
+                        DATF_AUX_WORKSHEET,
+                        DATF_ENTITY_WORKSHEET,
+                        DATF_FIELD_CAPTION,
+                        DATF_FIELD_DESCRIPTION,
+                        DATF_FIELD_TYPE,
+                        DATF_FIELD_DATA_TYPE,
+                        DATF_LOOKUP_LIST,
+                        DATF_SOURCE};
+                rowAT_DOC_AUTO_TABLE_FIELDSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAT_DOC_AUTO_TABLE_FIELDSRow);
+                return rowAT_DOC_AUTO_TABLE_FIELDSRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_AUTO_TABLE_FIELDSRow FindByDATF_TABLE_NAMEDATF_FIELD_NAMEDATF_AUX_WORKSHEETDATF_ENTITY_WORKSHEET(string DATF_TABLE_NAME, string DATF_FIELD_NAME, string DATF_AUX_WORKSHEET, string DATF_ENTITY_WORKSHEET) {
+                return ((AT_DOC_AUTO_TABLE_FIELDSRow)(this.Rows.Find(new object[] {
+                            DATF_TABLE_NAME,
+                            DATF_FIELD_NAME,
+                            DATF_AUX_WORKSHEET,
+                            DATF_ENTITY_WORKSHEET})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AT_DOC_AUTO_TABLE_FIELDSDataTable cln = ((AT_DOC_AUTO_TABLE_FIELDSDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AT_DOC_AUTO_TABLE_FIELDSDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnDATF_TABLE_NAME = base.Columns["DATF_TABLE_NAME"];
+                this.columnDATF_FIELD_NAME = base.Columns["DATF_FIELD_NAME"];
+                this.columnDATF_AUX_WORKSHEET = base.Columns["DATF_AUX_WORKSHEET"];
+                this.columnDATF_ENTITY_WORKSHEET = base.Columns["DATF_ENTITY_WORKSHEET"];
+                this.columnDATF_FIELD_CAPTION = base.Columns["DATF_FIELD_CAPTION"];
+                this.columnDATF_FIELD_DESCRIPTION = base.Columns["DATF_FIELD_DESCRIPTION"];
+                this.columnDATF_FIELD_TYPE = base.Columns["DATF_FIELD_TYPE"];
+                this.columnDATF_FIELD_DATA_TYPE = base.Columns["DATF_FIELD_DATA_TYPE"];
+                this.columnDATF_LOOKUP_LIST = base.Columns["DATF_LOOKUP_LIST"];
+                this.columnDATF_SOURCE = base.Columns["DATF_SOURCE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnDATF_TABLE_NAME = new global::System.Data.DataColumn("DATF_TABLE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_TABLE_NAME);
+                this.columnDATF_FIELD_NAME = new global::System.Data.DataColumn("DATF_FIELD_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_FIELD_NAME);
+                this.columnDATF_AUX_WORKSHEET = new global::System.Data.DataColumn("DATF_AUX_WORKSHEET", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_AUX_WORKSHEET);
+                this.columnDATF_ENTITY_WORKSHEET = new global::System.Data.DataColumn("DATF_ENTITY_WORKSHEET", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_ENTITY_WORKSHEET);
+                this.columnDATF_FIELD_CAPTION = new global::System.Data.DataColumn("DATF_FIELD_CAPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_FIELD_CAPTION);
+                this.columnDATF_FIELD_DESCRIPTION = new global::System.Data.DataColumn("DATF_FIELD_DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_FIELD_DESCRIPTION);
+                this.columnDATF_FIELD_TYPE = new global::System.Data.DataColumn("DATF_FIELD_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_FIELD_TYPE);
+                this.columnDATF_FIELD_DATA_TYPE = new global::System.Data.DataColumn("DATF_FIELD_DATA_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_FIELD_DATA_TYPE);
+                this.columnDATF_LOOKUP_LIST = new global::System.Data.DataColumn("DATF_LOOKUP_LIST", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_LOOKUP_LIST);
+                this.columnDATF_SOURCE = new global::System.Data.DataColumn("DATF_SOURCE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATF_SOURCE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDATF_TABLE_NAME,
+                                this.columnDATF_FIELD_NAME,
+                                this.columnDATF_AUX_WORKSHEET,
+                                this.columnDATF_ENTITY_WORKSHEET}, true));
+                this.columnDATF_TABLE_NAME.AllowDBNull = false;
+                this.columnDATF_TABLE_NAME.MaxLength = 100;
+                this.columnDATF_FIELD_NAME.AllowDBNull = false;
+                this.columnDATF_FIELD_NAME.MaxLength = 100;
+                this.columnDATF_AUX_WORKSHEET.AllowDBNull = false;
+                this.columnDATF_AUX_WORKSHEET.MaxLength = 100;
+                this.columnDATF_ENTITY_WORKSHEET.AllowDBNull = false;
+                this.columnDATF_ENTITY_WORKSHEET.MaxLength = 100;
+                this.columnDATF_FIELD_CAPTION.MaxLength = 100;
+                this.columnDATF_FIELD_DESCRIPTION.MaxLength = 2147483647;
+                this.columnDATF_FIELD_TYPE.MaxLength = 100;
+                this.columnDATF_FIELD_DATA_TYPE.AllowDBNull = false;
+                this.columnDATF_FIELD_DATA_TYPE.MaxLength = 100;
+                this.columnDATF_LOOKUP_LIST.MaxLength = 100;
+                this.columnDATF_SOURCE.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_AUTO_TABLE_FIELDSRow NewAT_DOC_AUTO_TABLE_FIELDSRow() {
+                return ((AT_DOC_AUTO_TABLE_FIELDSRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AT_DOC_AUTO_TABLE_FIELDSRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AT_DOC_AUTO_TABLE_FIELDSRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AT_DOC_AUTO_TABLE_FIELDSRowChanged != null)) {
+                    this.AT_DOC_AUTO_TABLE_FIELDSRowChanged(this, new AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent(((AT_DOC_AUTO_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AT_DOC_AUTO_TABLE_FIELDSRowChanging != null)) {
+                    this.AT_DOC_AUTO_TABLE_FIELDSRowChanging(this, new AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent(((AT_DOC_AUTO_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AT_DOC_AUTO_TABLE_FIELDSRowDeleted != null)) {
+                    this.AT_DOC_AUTO_TABLE_FIELDSRowDeleted(this, new AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent(((AT_DOC_AUTO_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AT_DOC_AUTO_TABLE_FIELDSRowDeleting != null)) {
+                    this.AT_DOC_AUTO_TABLE_FIELDSRowDeleting(this, new AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent(((AT_DOC_AUTO_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveAT_DOC_AUTO_TABLE_FIELDSRow(AT_DOC_AUTO_TABLE_FIELDSRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                PRD_Documentation ds = new PRD_Documentation();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AT_DOC_AUTO_TABLE_FIELDSDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AT_DOC_MANUAL_TABLE_FIELDSDataTable : global::System.Data.TypedTableBase<AT_DOC_MANUAL_TABLE_FIELDSRow> {
+            
+            private global::System.Data.DataColumn columnDMTF_TABLE_NAME;
+            
+            private global::System.Data.DataColumn columnDMTF_FIELD_NAME;
+            
+            private global::System.Data.DataColumn columnDMTF_FIELD_CAPTION;
+            
+            private global::System.Data.DataColumn columnDMTF_FIELD_DESCRIPTION;
+            
+            private global::System.Data.DataColumn columnDMTF_FIELD_TYPE;
+            
+            private global::System.Data.DataColumn columnDMTF_FIELD_DATA_TYPE;
+            
+            private global::System.Data.DataColumn columnDMTF_LOOKUP_LIST;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_MANUAL_TABLE_FIELDSDataTable() {
+                this.TableName = "AT_DOC_MANUAL_TABLE_FIELDS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AT_DOC_MANUAL_TABLE_FIELDSDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected AT_DOC_MANUAL_TABLE_FIELDSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMTF_TABLE_NAMEColumn {
+                get {
+                    return this.columnDMTF_TABLE_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMTF_FIELD_NAMEColumn {
+                get {
+                    return this.columnDMTF_FIELD_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMTF_FIELD_CAPTIONColumn {
+                get {
+                    return this.columnDMTF_FIELD_CAPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMTF_FIELD_DESCRIPTIONColumn {
+                get {
+                    return this.columnDMTF_FIELD_DESCRIPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMTF_FIELD_TYPEColumn {
+                get {
+                    return this.columnDMTF_FIELD_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMTF_FIELD_DATA_TYPEColumn {
+                get {
+                    return this.columnDMTF_FIELD_DATA_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMTF_LOOKUP_LISTColumn {
+                get {
+                    return this.columnDMTF_LOOKUP_LIST;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_MANUAL_TABLE_FIELDSRow this[int index] {
+                get {
+                    return ((AT_DOC_MANUAL_TABLE_FIELDSRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_MANUAL_TABLE_FIELDSRowChangeEventHandler AT_DOC_MANUAL_TABLE_FIELDSRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_MANUAL_TABLE_FIELDSRowChangeEventHandler AT_DOC_MANUAL_TABLE_FIELDSRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_MANUAL_TABLE_FIELDSRowChangeEventHandler AT_DOC_MANUAL_TABLE_FIELDSRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AT_DOC_MANUAL_TABLE_FIELDSRowChangeEventHandler AT_DOC_MANUAL_TABLE_FIELDSRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddAT_DOC_MANUAL_TABLE_FIELDSRow(AT_DOC_MANUAL_TABLE_FIELDSRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_MANUAL_TABLE_FIELDSRow AddAT_DOC_MANUAL_TABLE_FIELDSRow(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST) {
+                AT_DOC_MANUAL_TABLE_FIELDSRow rowAT_DOC_MANUAL_TABLE_FIELDSRow = ((AT_DOC_MANUAL_TABLE_FIELDSRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DMTF_TABLE_NAME,
+                        DMTF_FIELD_NAME,
+                        DMTF_FIELD_CAPTION,
+                        DMTF_FIELD_DESCRIPTION,
+                        DMTF_FIELD_TYPE,
+                        DMTF_FIELD_DATA_TYPE,
+                        DMTF_LOOKUP_LIST};
+                rowAT_DOC_MANUAL_TABLE_FIELDSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAT_DOC_MANUAL_TABLE_FIELDSRow);
+                return rowAT_DOC_MANUAL_TABLE_FIELDSRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_MANUAL_TABLE_FIELDSRow FindByDMTF_TABLE_NAMEDMTF_FIELD_NAME(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME) {
+                return ((AT_DOC_MANUAL_TABLE_FIELDSRow)(this.Rows.Find(new object[] {
+                            DMTF_TABLE_NAME,
+                            DMTF_FIELD_NAME})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AT_DOC_MANUAL_TABLE_FIELDSDataTable cln = ((AT_DOC_MANUAL_TABLE_FIELDSDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AT_DOC_MANUAL_TABLE_FIELDSDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnDMTF_TABLE_NAME = base.Columns["DMTF_TABLE_NAME"];
+                this.columnDMTF_FIELD_NAME = base.Columns["DMTF_FIELD_NAME"];
+                this.columnDMTF_FIELD_CAPTION = base.Columns["DMTF_FIELD_CAPTION"];
+                this.columnDMTF_FIELD_DESCRIPTION = base.Columns["DMTF_FIELD_DESCRIPTION"];
+                this.columnDMTF_FIELD_TYPE = base.Columns["DMTF_FIELD_TYPE"];
+                this.columnDMTF_FIELD_DATA_TYPE = base.Columns["DMTF_FIELD_DATA_TYPE"];
+                this.columnDMTF_LOOKUP_LIST = base.Columns["DMTF_LOOKUP_LIST"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnDMTF_TABLE_NAME = new global::System.Data.DataColumn("DMTF_TABLE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMTF_TABLE_NAME);
+                this.columnDMTF_FIELD_NAME = new global::System.Data.DataColumn("DMTF_FIELD_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMTF_FIELD_NAME);
+                this.columnDMTF_FIELD_CAPTION = new global::System.Data.DataColumn("DMTF_FIELD_CAPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMTF_FIELD_CAPTION);
+                this.columnDMTF_FIELD_DESCRIPTION = new global::System.Data.DataColumn("DMTF_FIELD_DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMTF_FIELD_DESCRIPTION);
+                this.columnDMTF_FIELD_TYPE = new global::System.Data.DataColumn("DMTF_FIELD_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMTF_FIELD_TYPE);
+                this.columnDMTF_FIELD_DATA_TYPE = new global::System.Data.DataColumn("DMTF_FIELD_DATA_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMTF_FIELD_DATA_TYPE);
+                this.columnDMTF_LOOKUP_LIST = new global::System.Data.DataColumn("DMTF_LOOKUP_LIST", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMTF_LOOKUP_LIST);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDMTF_TABLE_NAME,
+                                this.columnDMTF_FIELD_NAME}, true));
+                this.columnDMTF_TABLE_NAME.AllowDBNull = false;
+                this.columnDMTF_TABLE_NAME.MaxLength = 100;
+                this.columnDMTF_FIELD_NAME.AllowDBNull = false;
+                this.columnDMTF_FIELD_NAME.MaxLength = 100;
+                this.columnDMTF_FIELD_CAPTION.MaxLength = 100;
+                this.columnDMTF_FIELD_DESCRIPTION.MaxLength = 2147483647;
+                this.columnDMTF_FIELD_TYPE.MaxLength = 100;
+                this.columnDMTF_FIELD_DATA_TYPE.AllowDBNull = false;
+                this.columnDMTF_FIELD_DATA_TYPE.MaxLength = 100;
+                this.columnDMTF_LOOKUP_LIST.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_MANUAL_TABLE_FIELDSRow NewAT_DOC_MANUAL_TABLE_FIELDSRow() {
+                return ((AT_DOC_MANUAL_TABLE_FIELDSRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AT_DOC_MANUAL_TABLE_FIELDSRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AT_DOC_MANUAL_TABLE_FIELDSRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AT_DOC_MANUAL_TABLE_FIELDSRowChanged != null)) {
+                    this.AT_DOC_MANUAL_TABLE_FIELDSRowChanged(this, new AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent(((AT_DOC_MANUAL_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AT_DOC_MANUAL_TABLE_FIELDSRowChanging != null)) {
+                    this.AT_DOC_MANUAL_TABLE_FIELDSRowChanging(this, new AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent(((AT_DOC_MANUAL_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AT_DOC_MANUAL_TABLE_FIELDSRowDeleted != null)) {
+                    this.AT_DOC_MANUAL_TABLE_FIELDSRowDeleted(this, new AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent(((AT_DOC_MANUAL_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AT_DOC_MANUAL_TABLE_FIELDSRowDeleting != null)) {
+                    this.AT_DOC_MANUAL_TABLE_FIELDSRowDeleting(this, new AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent(((AT_DOC_MANUAL_TABLE_FIELDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveAT_DOC_MANUAL_TABLE_FIELDSRow(AT_DOC_MANUAL_TABLE_FIELDSRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                PRD_Documentation ds = new PRD_Documentation();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AT_DOC_MANUAL_TABLE_FIELDSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -948,25 +1831,25 @@ namespace AutoDocApp {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AUX_WORKSHEETRow : global::System.Data.DataRow {
+        public partial class WS_AUX_WORKSHEETRow : global::System.Data.DataRow {
             
-            private AUX_WORKSHEETDataTable tableAUX_WORKSHEET;
+            private WS_AUX_WORKSHEETDataTable tableWS_AUX_WORKSHEET;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AUX_WORKSHEETRow(global::System.Data.DataRowBuilder rb) : 
+            internal WS_AUX_WORKSHEETRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAUX_WORKSHEET = ((AUX_WORKSHEETDataTable)(this.Table));
+                this.tableWS_AUX_WORKSHEET = ((WS_AUX_WORKSHEETDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string ENTITY_WORKSHEET {
                 get {
-                    return ((string)(this[this.tableAUX_WORKSHEET.ENTITY_WORKSHEETColumn]));
+                    return ((string)(this[this.tableWS_AUX_WORKSHEET.ENTITY_WORKSHEETColumn]));
                 }
                 set {
-                    this[this.tableAUX_WORKSHEET.ENTITY_WORKSHEETColumn] = value;
+                    this[this.tableWS_AUX_WORKSHEET.ENTITY_WORKSHEETColumn] = value;
                 }
             }
             
@@ -974,10 +1857,10 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AUX_WORKSHEET {
                 get {
-                    return ((string)(this[this.tableAUX_WORKSHEET.AUX_WORKSHEETColumn]));
+                    return ((string)(this[this.tableWS_AUX_WORKSHEET.AUX_WORKSHEETColumn]));
                 }
                 set {
-                    this[this.tableAUX_WORKSHEET.AUX_WORKSHEETColumn] = value;
+                    this[this.tableWS_AUX_WORKSHEET.AUX_WORKSHEETColumn] = value;
                 }
             }
             
@@ -985,10 +1868,10 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string TABLE_NAME {
                 get {
-                    return ((string)(this[this.tableAUX_WORKSHEET.TABLE_NAMEColumn]));
+                    return ((string)(this[this.tableWS_AUX_WORKSHEET.TABLE_NAMEColumn]));
                 }
                 set {
-                    this[this.tableAUX_WORKSHEET.TABLE_NAMEColumn] = value;
+                    this[this.tableWS_AUX_WORKSHEET.TABLE_NAMEColumn] = value;
                 }
             }
             
@@ -996,10 +1879,10 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string FIELD_NAME {
                 get {
-                    return ((string)(this[this.tableAUX_WORKSHEET.FIELD_NAMEColumn]));
+                    return ((string)(this[this.tableWS_AUX_WORKSHEET.FIELD_NAMEColumn]));
                 }
                 set {
-                    this[this.tableAUX_WORKSHEET.FIELD_NAMEColumn] = value;
+                    this[this.tableWS_AUX_WORKSHEET.FIELD_NAMEColumn] = value;
                 }
             }
             
@@ -1008,14 +1891,14 @@ namespace AutoDocApp {
             public string FIELD_TYPE {
                 get {
                     try {
-                        return ((string)(this[this.tableAUX_WORKSHEET.FIELD_TYPEColumn]));
+                        return ((string)(this[this.tableWS_AUX_WORKSHEET.FIELD_TYPEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FIELD_TYPE\' in table \'AUX_WORKSHEET\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FIELD_TYPE\' in table \'WS_AUX_WORKSHEET\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAUX_WORKSHEET.FIELD_TYPEColumn] = value;
+                    this[this.tableWS_AUX_WORKSHEET.FIELD_TYPEColumn] = value;
                 }
             }
             
@@ -1024,64 +1907,64 @@ namespace AutoDocApp {
             public string RESERVED_FOR {
                 get {
                     try {
-                        return ((string)(this[this.tableAUX_WORKSHEET.RESERVED_FORColumn]));
+                        return ((string)(this[this.tableWS_AUX_WORKSHEET.RESERVED_FORColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RESERVED_FOR\' in table \'AUX_WORKSHEET\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RESERVED_FOR\' in table \'WS_AUX_WORKSHEET\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAUX_WORKSHEET.RESERVED_FORColumn] = value;
+                    this[this.tableWS_AUX_WORKSHEET.RESERVED_FORColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFIELD_TYPENull() {
-                return this.IsNull(this.tableAUX_WORKSHEET.FIELD_TYPEColumn);
+                return this.IsNull(this.tableWS_AUX_WORKSHEET.FIELD_TYPEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFIELD_TYPENull() {
-                this[this.tableAUX_WORKSHEET.FIELD_TYPEColumn] = global::System.Convert.DBNull;
+                this[this.tableWS_AUX_WORKSHEET.FIELD_TYPEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsRESERVED_FORNull() {
-                return this.IsNull(this.tableAUX_WORKSHEET.RESERVED_FORColumn);
+                return this.IsNull(this.tableWS_AUX_WORKSHEET.RESERVED_FORColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetRESERVED_FORNull() {
-                this[this.tableAUX_WORKSHEET.RESERVED_FORColumn] = global::System.Convert.DBNull;
+                this[this.tableWS_AUX_WORKSHEET.RESERVED_FORColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ENTITY_WORKSHEETRow : global::System.Data.DataRow {
+        public partial class WS_ENTITY_WORKSHEETRow : global::System.Data.DataRow {
             
-            private ENTITY_WORKSHEETDataTable tableENTITY_WORKSHEET;
+            private WS_ENTITY_WORKSHEETDataTable tableWS_ENTITY_WORKSHEET;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ENTITY_WORKSHEETRow(global::System.Data.DataRowBuilder rb) : 
+            internal WS_ENTITY_WORKSHEETRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableENTITY_WORKSHEET = ((ENTITY_WORKSHEETDataTable)(this.Table));
+                this.tableWS_ENTITY_WORKSHEET = ((WS_ENTITY_WORKSHEETDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string ENTITY_WORKSHEET {
                 get {
-                    return ((string)(this[this.tableENTITY_WORKSHEET.ENTITY_WORKSHEETColumn]));
+                    return ((string)(this[this.tableWS_ENTITY_WORKSHEET.ENTITY_WORKSHEETColumn]));
                 }
                 set {
-                    this[this.tableENTITY_WORKSHEET.ENTITY_WORKSHEETColumn] = value;
+                    this[this.tableWS_ENTITY_WORKSHEET.ENTITY_WORKSHEETColumn] = value;
                 }
             }
             
@@ -1089,10 +1972,10 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AUX_WORKSHEET {
                 get {
-                    return ((string)(this[this.tableENTITY_WORKSHEET.AUX_WORKSHEETColumn]));
+                    return ((string)(this[this.tableWS_ENTITY_WORKSHEET.AUX_WORKSHEETColumn]));
                 }
                 set {
-                    this[this.tableENTITY_WORKSHEET.AUX_WORKSHEETColumn] = value;
+                    this[this.tableWS_ENTITY_WORKSHEET.AUX_WORKSHEETColumn] = value;
                 }
             }
             
@@ -1100,10 +1983,10 @@ namespace AutoDocApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DRIVER_DB_FIELD {
                 get {
-                    return ((string)(this[this.tableENTITY_WORKSHEET.DRIVER_DB_FIELDColumn]));
+                    return ((string)(this[this.tableWS_ENTITY_WORKSHEET.DRIVER_DB_FIELDColumn]));
                 }
                 set {
-                    this[this.tableENTITY_WORKSHEET.DRIVER_DB_FIELDColumn] = value;
+                    this[this.tableWS_ENTITY_WORKSHEET.DRIVER_DB_FIELDColumn] = value;
                 }
             }
             
@@ -1112,14 +1995,14 @@ namespace AutoDocApp {
             public string FIELD_NAME {
                 get {
                     try {
-                        return ((string)(this[this.tableENTITY_WORKSHEET.FIELD_NAMEColumn]));
+                        return ((string)(this[this.tableWS_ENTITY_WORKSHEET.FIELD_NAMEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FIELD_NAME\' in table \'ENTITY_WORKSHEET\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FIELD_NAME\' in table \'WS_ENTITY_WORKSHEET\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableENTITY_WORKSHEET.FIELD_NAMEColumn] = value;
+                    this[this.tableWS_ENTITY_WORKSHEET.FIELD_NAMEColumn] = value;
                 }
             }
             
@@ -1128,39 +2011,475 @@ namespace AutoDocApp {
             public string FIELD_DESCRIPTION {
                 get {
                     try {
-                        return ((string)(this[this.tableENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn]));
+                        return ((string)(this[this.tableWS_ENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FIELD_DESCRIPTION\' in table \'ENTITY_WORKSHEET\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FIELD_DESCRIPTION\' in table \'WS_ENTITY_WORKSHEET\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn] = value;
+                    this[this.tableWS_ENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string LOOKUP_LIST {
+                get {
+                    try {
+                        return ((string)(this[this.tableWS_ENTITY_WORKSHEET.LOOKUP_LISTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LOOKUP_LIST\' in table \'WS_ENTITY_WORKSHEET\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWS_ENTITY_WORKSHEET.LOOKUP_LISTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FIELD_CAPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tableWS_ENTITY_WORKSHEET.FIELD_CAPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FIELD_CAPTION\' in table \'WS_ENTITY_WORKSHEET\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWS_ENTITY_WORKSHEET.FIELD_CAPTIONColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFIELD_NAMENull() {
-                return this.IsNull(this.tableENTITY_WORKSHEET.FIELD_NAMEColumn);
+                return this.IsNull(this.tableWS_ENTITY_WORKSHEET.FIELD_NAMEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFIELD_NAMENull() {
-                this[this.tableENTITY_WORKSHEET.FIELD_NAMEColumn] = global::System.Convert.DBNull;
+                this[this.tableWS_ENTITY_WORKSHEET.FIELD_NAMEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFIELD_DESCRIPTIONNull() {
-                return this.IsNull(this.tableENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn);
+                return this.IsNull(this.tableWS_ENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFIELD_DESCRIPTIONNull() {
-                this[this.tableENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn] = global::System.Convert.DBNull;
+                this[this.tableWS_ENTITY_WORKSHEET.FIELD_DESCRIPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLOOKUP_LISTNull() {
+                return this.IsNull(this.tableWS_ENTITY_WORKSHEET.LOOKUP_LISTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLOOKUP_LISTNull() {
+                this[this.tableWS_ENTITY_WORKSHEET.LOOKUP_LISTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFIELD_CAPTIONNull() {
+                return this.IsNull(this.tableWS_ENTITY_WORKSHEET.FIELD_CAPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFIELD_CAPTIONNull() {
+                this[this.tableWS_ENTITY_WORKSHEET.FIELD_CAPTIONColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AT_DOC_AUTO_TABLE_FIELDSRow : global::System.Data.DataRow {
+            
+            private AT_DOC_AUTO_TABLE_FIELDSDataTable tableAT_DOC_AUTO_TABLE_FIELDS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AT_DOC_AUTO_TABLE_FIELDSRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAT_DOC_AUTO_TABLE_FIELDS = ((AT_DOC_AUTO_TABLE_FIELDSDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_TABLE_NAME {
+                get {
+                    return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_TABLE_NAMEColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_TABLE_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_FIELD_NAME {
+                get {
+                    return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_NAMEColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_AUX_WORKSHEET {
+                get {
+                    return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_AUX_WORKSHEETColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_AUX_WORKSHEETColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_ENTITY_WORKSHEET {
+                get {
+                    return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_ENTITY_WORKSHEETColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_ENTITY_WORKSHEETColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_FIELD_CAPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_CAPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATF_FIELD_CAPTION\' in table \'AT_DOC_AUTO_TABLE_FIELDS\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_CAPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_FIELD_DESCRIPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_DESCRIPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATF_FIELD_DESCRIPTION\' in table \'AT_DOC_AUTO_TABLE_FIELDS\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_DESCRIPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_FIELD_TYPE {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_TYPEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATF_FIELD_TYPE\' in table \'AT_DOC_AUTO_TABLE_FIELDS\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_FIELD_DATA_TYPE {
+                get {
+                    return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_DATA_TYPEColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_DATA_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_LOOKUP_LIST {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_LOOKUP_LISTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATF_LOOKUP_LIST\' in table \'AT_DOC_AUTO_TABLE_FIELDS\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_LOOKUP_LISTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATF_SOURCE {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_SOURCEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATF_SOURCE\' in table \'AT_DOC_AUTO_TABLE_FIELDS\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_SOURCEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDATF_FIELD_CAPTIONNull() {
+                return this.IsNull(this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_CAPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDATF_FIELD_CAPTIONNull() {
+                this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_CAPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDATF_FIELD_DESCRIPTIONNull() {
+                return this.IsNull(this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_DESCRIPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDATF_FIELD_DESCRIPTIONNull() {
+                this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_DESCRIPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDATF_FIELD_TYPENull() {
+                return this.IsNull(this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_TYPEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDATF_FIELD_TYPENull() {
+                this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_FIELD_TYPEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDATF_LOOKUP_LISTNull() {
+                return this.IsNull(this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_LOOKUP_LISTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDATF_LOOKUP_LISTNull() {
+                this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_LOOKUP_LISTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDATF_SOURCENull() {
+                return this.IsNull(this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_SOURCEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDATF_SOURCENull() {
+                this[this.tableAT_DOC_AUTO_TABLE_FIELDS.DATF_SOURCEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AT_DOC_MANUAL_TABLE_FIELDSRow : global::System.Data.DataRow {
+            
+            private AT_DOC_MANUAL_TABLE_FIELDSDataTable tableAT_DOC_MANUAL_TABLE_FIELDS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AT_DOC_MANUAL_TABLE_FIELDSRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAT_DOC_MANUAL_TABLE_FIELDS = ((AT_DOC_MANUAL_TABLE_FIELDSDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DMTF_TABLE_NAME {
+                get {
+                    return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_TABLE_NAMEColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_TABLE_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DMTF_FIELD_NAME {
+                get {
+                    return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_NAMEColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DMTF_FIELD_CAPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_CAPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DMTF_FIELD_CAPTION\' in table \'AT_DOC_MANUAL_TABLE_FIELDS\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_CAPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DMTF_FIELD_DESCRIPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DESCRIPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DMTF_FIELD_DESCRIPTION\' in table \'AT_DOC_MANUAL_TABLE_FIELD" +
+                                "S\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DESCRIPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DMTF_FIELD_TYPE {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_TYPEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DMTF_FIELD_TYPE\' in table \'AT_DOC_MANUAL_TABLE_FIELDS\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DMTF_FIELD_DATA_TYPE {
+                get {
+                    return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DATA_TYPEColumn]));
+                }
+                set {
+                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DATA_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DMTF_LOOKUP_LIST {
+                get {
+                    try {
+                        return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_LOOKUP_LISTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DMTF_LOOKUP_LIST\' in table \'AT_DOC_MANUAL_TABLE_FIELDS\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_LOOKUP_LISTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDMTF_FIELD_CAPTIONNull() {
+                return this.IsNull(this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_CAPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDMTF_FIELD_CAPTIONNull() {
+                this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_CAPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDMTF_FIELD_DESCRIPTIONNull() {
+                return this.IsNull(this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DESCRIPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDMTF_FIELD_DESCRIPTIONNull() {
+                this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DESCRIPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDMTF_FIELD_TYPENull() {
+                return this.IsNull(this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_TYPEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDMTF_FIELD_TYPENull() {
+                this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_TYPEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDMTF_LOOKUP_LISTNull() {
+                return this.IsNull(this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_LOOKUP_LISTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDMTF_LOOKUP_LISTNull() {
+                this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_LOOKUP_LISTColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1168,22 +2487,22 @@ namespace AutoDocApp {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class AUX_WORKSHEETRowChangeEvent : global::System.EventArgs {
+        public class WS_AUX_WORKSHEETRowChangeEvent : global::System.EventArgs {
             
-            private AUX_WORKSHEETRow eventRow;
+            private WS_AUX_WORKSHEETRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AUX_WORKSHEETRowChangeEvent(AUX_WORKSHEETRow row, global::System.Data.DataRowAction action) {
+            public WS_AUX_WORKSHEETRowChangeEvent(WS_AUX_WORKSHEETRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AUX_WORKSHEETRow Row {
+            public WS_AUX_WORKSHEETRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1202,22 +2521,90 @@ namespace AutoDocApp {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ENTITY_WORKSHEETRowChangeEvent : global::System.EventArgs {
+        public class WS_ENTITY_WORKSHEETRowChangeEvent : global::System.EventArgs {
             
-            private ENTITY_WORKSHEETRow eventRow;
+            private WS_ENTITY_WORKSHEETRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ENTITY_WORKSHEETRowChangeEvent(ENTITY_WORKSHEETRow row, global::System.Data.DataRowAction action) {
+            public WS_ENTITY_WORKSHEETRowChangeEvent(WS_ENTITY_WORKSHEETRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ENTITY_WORKSHEETRow Row {
+            public WS_ENTITY_WORKSHEETRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent : global::System.EventArgs {
+            
+            private AT_DOC_AUTO_TABLE_FIELDSRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent(AT_DOC_AUTO_TABLE_FIELDSRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_AUTO_TABLE_FIELDSRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent : global::System.EventArgs {
+            
+            private AT_DOC_MANUAL_TABLE_FIELDSRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent(AT_DOC_MANUAL_TABLE_FIELDSRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AT_DOC_MANUAL_TABLE_FIELDSRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1245,7 +2632,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AUX_WORKSHEETTableAdapter : global::System.ComponentModel.Component {
+    public partial class WS_AUX_WORKSHEETTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1259,7 +2646,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AUX_WORKSHEETTableAdapter() {
+        public WS_AUX_WORKSHEETTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1356,7 +2743,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AUX_WORKSHEET";
+            tableMapping.DataSetTable = "WS_AUX_WORKSHEET";
             tableMapping.ColumnMappings.Add("ENTITY_WORKSHEET", "ENTITY_WORKSHEET");
             tableMapping.ColumnMappings.Add("AUX_WORKSHEET", "AUX_WORKSHEET");
             tableMapping.ColumnMappings.Add("TABLE_NAME", "TABLE_NAME");
@@ -1364,11 +2751,23 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
             tableMapping.ColumnMappings.Add("FIELD_TYPE", "FIELD_TYPE");
             tableMapping.ColumnMappings.Add("RESERVED_FOR", "RESERVED_FOR");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [WS_AUX_WORKSHEET] WHERE (([ENTITY_WORKSHEET] = @Original_ENTITY_WORKSHEET) AND ([AUX_WORKSHEET] = @Original_AUX_WORKSHEET) AND ([TABLE_NAME] = @Original_TABLE_NAME) AND ([FIELD_NAME] = @Original_FIELD_NAME) AND ((@IsNull_FIELD_TYPE = 1 AND [FIELD_TYPE] IS NULL) OR ([FIELD_TYPE] = @Original_FIELD_TYPE)) AND ((@IsNull_RESERVED_FOR = 1 AND [RESERVED_FOR] IS NULL) OR ([RESERVED_FOR] = @Original_RESERVED_FOR)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RESERVED_FOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RESERVED_FOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RESERVED_FOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RESERVED_FOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [AUX_WORKSHEET] ([ENTITY_WORKSHEET], [AUX_WORKSHEET], [TABLE_NAME], [" +
-                "FIELD_NAME], [FIELD_TYPE], [RESERVED_FOR]) VALUES (@ENTITY_WORKSHEET, @AUX_WORKS" +
-                "HEET, @TABLE_NAME, @FIELD_NAME, @FIELD_TYPE, @RESERVED_FOR)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [WS_AUX_WORKSHEET] ([ENTITY_WORKSHEET], [AUX_WORKSHEET], [TABLE_NAME]" +
+                ", [FIELD_NAME], [FIELD_TYPE], [RESERVED_FOR]) VALUES (@ENTITY_WORKSHEET, @AUX_WO" +
+                "RKSHEET, @TABLE_NAME, @FIELD_NAME, @FIELD_TYPE, @RESERVED_FOR)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1376,6 +2775,24 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RESERVED_FOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RESERVED_FOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [WS_AUX_WORKSHEET] SET [ENTITY_WORKSHEET] = @ENTITY_WORKSHEET, [AUX_WORKSHEET] = @AUX_WORKSHEET, [TABLE_NAME] = @TABLE_NAME, [FIELD_NAME] = @FIELD_NAME, [FIELD_TYPE] = @FIELD_TYPE, [RESERVED_FOR] = @RESERVED_FOR WHERE (([ENTITY_WORKSHEET] = @Original_ENTITY_WORKSHEET) AND ([AUX_WORKSHEET] = @Original_AUX_WORKSHEET) AND ([TABLE_NAME] = @Original_TABLE_NAME) AND ([FIELD_NAME] = @Original_FIELD_NAME) AND ((@IsNull_FIELD_TYPE = 1 AND [FIELD_TYPE] IS NULL) OR ([FIELD_TYPE] = @Original_FIELD_TYPE)) AND ((@IsNull_RESERVED_FOR = 1 AND [RESERVED_FOR] IS NULL) OR ([RESERVED_FOR] = @Original_RESERVED_FOR)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RESERVED_FOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RESERVED_FOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RESERVED_FOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RESERVED_FOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RESERVED_FOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RESERVED_FOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1388,28 +2805,32 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        AUX_WORKSHEET.*\r\nFROM            AUX_WORKSHEET";
+            this._commandCollection[0].CommandText = "SELECT        WS_AUX_WORKSHEET.*\r\nFROM            WS_AUX_WORKSHEET";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        COUNT(1)\r\nFROM            AUX_WORKSHEET\r\nWHERE        (ENTITY_WORKS" +
-                "HEET = @entity_worksheet) AND (AUX_WORKSHEET = @aux_worksheet) AND (TABLE_NAME =" +
-                " @table_name) AND (FIELD_NAME = @field_name)";
+            this._commandCollection[1].CommandText = "DELETE FROM [WS_AUX_WORKSHEET]";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entity_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aux_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@table_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@field_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        COUNT(1)\r\nFROM            WS_AUX_WORKSHEET\r\nWHERE        (ENTITY_WO" +
+                "RKSHEET = @entity_worksheet) AND (AUX_WORKSHEET = @aux_worksheet) AND (TABLE_NAM" +
+                "E = @table_name) AND (FIELD_NAME = @field_name)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entity_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aux_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@table_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@field_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PRD_Documentation.AUX_WORKSHEETDataTable dataTable) {
+        public virtual int Fill(PRD_Documentation.WS_AUX_WORKSHEETDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1422,9 +2843,9 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PRD_Documentation.AUX_WORKSHEETDataTable GetData() {
+        public virtual PRD_Documentation.WS_AUX_WORKSHEETDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PRD_Documentation.AUX_WORKSHEETDataTable dataTable = new PRD_Documentation.AUX_WORKSHEETDataTable();
+            PRD_Documentation.WS_AUX_WORKSHEETDataTable dataTable = new PRD_Documentation.WS_AUX_WORKSHEETDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1432,7 +2853,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PRD_Documentation.AUX_WORKSHEETDataTable dataTable) {
+        public virtual int Update(PRD_Documentation.WS_AUX_WORKSHEETDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1440,7 +2861,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(PRD_Documentation dataSet) {
-            return this.Adapter.Update(dataSet, "AUX_WORKSHEET");
+            return this.Adapter.Update(dataSet, "WS_AUX_WORKSHEET");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1456,6 +2877,67 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_ENTITY_WORKSHEET, string Original_AUX_WORKSHEET, string Original_TABLE_NAME, string Original_FIELD_NAME, string Original_FIELD_TYPE, string Original_RESERVED_FOR) {
+            if ((Original_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_ENTITY_WORKSHEET));
+            }
+            if ((Original_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_AUX_WORKSHEET));
+            }
+            if ((Original_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_TABLE_NAME");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TABLE_NAME));
+            }
+            if ((Original_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_FIELD_NAME");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_FIELD_NAME));
+            }
+            if ((Original_FIELD_TYPE == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_FIELD_TYPE));
+            }
+            if ((Original_RESERVED_FOR == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_RESERVED_FOR));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1518,8 +3000,136 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object FieldExists(string entity_worksheet, string aux_worksheet, string table_name, string field_name) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string TABLE_NAME, string FIELD_NAME, string FIELD_TYPE, string RESERVED_FOR, string Original_ENTITY_WORKSHEET, string Original_AUX_WORKSHEET, string Original_TABLE_NAME, string Original_FIELD_NAME, string Original_FIELD_TYPE, string Original_RESERVED_FOR) {
+            if ((ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ENTITY_WORKSHEET));
+            }
+            if ((AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(AUX_WORKSHEET));
+            }
+            if ((TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("TABLE_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(TABLE_NAME));
+            }
+            if ((FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("FIELD_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FIELD_NAME));
+            }
+            if ((FIELD_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FIELD_TYPE));
+            }
+            if ((RESERVED_FOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(RESERVED_FOR));
+            }
+            if ((Original_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_ENTITY_WORKSHEET));
+            }
+            if ((Original_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_AUX_WORKSHEET));
+            }
+            if ((Original_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_TABLE_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_TABLE_NAME));
+            }
+            if ((Original_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_FIELD_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_FIELD_NAME));
+            }
+            if ((Original_FIELD_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_FIELD_TYPE));
+            }
+            if ((Original_RESERVED_FOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_RESERVED_FOR));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string FIELD_TYPE, string RESERVED_FOR, string Original_ENTITY_WORKSHEET, string Original_AUX_WORKSHEET, string Original_TABLE_NAME, string Original_FIELD_NAME, string Original_FIELD_TYPE, string Original_RESERVED_FOR) {
+            return this.Update(Original_ENTITY_WORKSHEET, Original_AUX_WORKSHEET, Original_TABLE_NAME, Original_FIELD_NAME, FIELD_TYPE, RESERVED_FOR, Original_ENTITY_WORKSHEET, Original_AUX_WORKSHEET, Original_TABLE_NAME, Original_FIELD_NAME, Original_FIELD_TYPE, Original_RESERVED_FOR);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteAllRowsQuery() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object FieldExists(string entity_worksheet, string aux_worksheet, string table_name, string field_name) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((entity_worksheet == null)) {
                 throw new global::System.ArgumentNullException("entity_worksheet");
             }
@@ -1577,7 +3187,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ENTITY_WORKSHEETTableAdapter : global::System.ComponentModel.Component {
+    public partial class WS_ENTITY_WORKSHEETTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1591,7 +3201,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ENTITY_WORKSHEETTableAdapter() {
+        public WS_ENTITY_WORKSHEETTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1688,24 +3298,56 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ENTITY_WORKSHEET";
+            tableMapping.DataSetTable = "WS_ENTITY_WORKSHEET";
             tableMapping.ColumnMappings.Add("ENTITY_WORKSHEET", "ENTITY_WORKSHEET");
             tableMapping.ColumnMappings.Add("AUX_WORKSHEET", "AUX_WORKSHEET");
             tableMapping.ColumnMappings.Add("DRIVER_DB_FIELD", "DRIVER_DB_FIELD");
             tableMapping.ColumnMappings.Add("FIELD_NAME", "FIELD_NAME");
             tableMapping.ColumnMappings.Add("FIELD_DESCRIPTION", "FIELD_DESCRIPTION");
+            tableMapping.ColumnMappings.Add("LOOKUP_LIST", "LOOKUP_LIST");
+            tableMapping.ColumnMappings.Add("FIELD_CAPTION", "FIELD_CAPTION");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [WS_ENTITY_WORKSHEET] WHERE (([ENTITY_WORKSHEET] = @Original_ENTITY_WORKSHEET) AND ([AUX_WORKSHEET] = @Original_AUX_WORKSHEET) AND ([DRIVER_DB_FIELD] = @Original_DRIVER_DB_FIELD) AND ((@IsNull_FIELD_CAPTION = 1 AND [FIELD_CAPTION] IS NULL) OR ([FIELD_CAPTION] = @Original_FIELD_CAPTION)) AND ((@IsNull_LOOKUP_LIST = 1 AND [LOOKUP_LIST] IS NULL) OR ([LOOKUP_LIST] = @Original_LOOKUP_LIST)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DRIVER_DB_FIELD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DRIVER_DB_FIELD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FIELD_CAPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_CAPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [ENTITY_WORKSHEET] ([ENTITY_WORKSHEET], [AUX_WORKSHEET], [DRIVER_DB_F" +
-                "IELD], [FIELD_NAME], [FIELD_DESCRIPTION]) VALUES (@ENTITY_WORKSHEET, @AUX_WORKSH" +
-                "EET, @DRIVER_DB_FIELD, @FIELD_NAME, @FIELD_DESCRIPTION)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [WS_ENTITY_WORKSHEET] ([ENTITY_WORKSHEET], [AUX_WORKSHEET], [DRIVER_D" +
+                "B_FIELD], [FIELD_CAPTION], [FIELD_DESCRIPTION], [LOOKUP_LIST]) VALUES (@ENTITY_W" +
+                "ORKSHEET, @AUX_WORKSHEET, @DRIVER_DB_FIELD, @FIELD_CAPTION, @FIELD_DESCRIPTION, " +
+                "@LOOKUP_LIST)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DRIVER_DB_FIELD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DRIVER_DB_FIELD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [WS_ENTITY_WORKSHEET] SET [ENTITY_WORKSHEET] = @ENTITY_WORKSHEET, [AUX_WORKSHEET] = @AUX_WORKSHEET, [DRIVER_DB_FIELD] = @DRIVER_DB_FIELD, [FIELD_CAPTION] = @FIELD_CAPTION, [FIELD_DESCRIPTION] = @FIELD_DESCRIPTION, [LOOKUP_LIST] = @LOOKUP_LIST WHERE (([ENTITY_WORKSHEET] = @Original_ENTITY_WORKSHEET) AND ([AUX_WORKSHEET] = @Original_AUX_WORKSHEET) AND ([DRIVER_DB_FIELD] = @Original_DRIVER_DB_FIELD) AND ((@IsNull_FIELD_CAPTION = 1 AND [FIELD_CAPTION] IS NULL) OR ([FIELD_CAPTION] = @Original_FIELD_CAPTION)) AND ((@IsNull_LOOKUP_LIST = 1 AND [LOOKUP_LIST] IS NULL) OR ([LOOKUP_LIST] = @Original_LOOKUP_LIST)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DRIVER_DB_FIELD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DRIVER_DB_FIELD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DRIVER_DB_FIELD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DRIVER_DB_FIELD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FIELD_CAPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_CAPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1718,27 +3360,31 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ENTITY_WORKSHEET.*\r\nFROM            ENTITY_WORKSHEET";
+            this._commandCollection[0].CommandText = "SELECT        WS_ENTITY_WORKSHEET.*\r\nFROM            WS_ENTITY_WORKSHEET";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        COUNT(1)\r\nFROM            ENTITY_WORKSHEET\r\nWHERE        (ENTITY_WO" +
-                "RKSHEET = @entity_worksheet) AND (AUX_WORKSHEET = @aux_worksheet) AND (DRIVER_DB" +
-                "_FIELD = @driver_db_field)";
+            this._commandCollection[1].CommandText = "DELETE FROM [WS_ENTITY_WORKSHEET] ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entity_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aux_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@driver_db_field", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "DRIVER_DB_FIELD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        COUNT(1)\r\nFROM            WS_ENTITY_WORKSHEET\r\nWHERE        (ENTITY" +
+                "_WORKSHEET = @entity_worksheet) AND (AUX_WORKSHEET = @aux_worksheet) AND (DRIVER" +
+                "_DB_FIELD = @driver_db_field)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entity_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aux_worksheet", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@driver_db_field", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "DRIVER_DB_FIELD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PRD_Documentation.ENTITY_WORKSHEETDataTable dataTable) {
+        public virtual int Fill(PRD_Documentation.WS_ENTITY_WORKSHEETDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1751,9 +3397,9 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PRD_Documentation.ENTITY_WORKSHEETDataTable GetData() {
+        public virtual PRD_Documentation.WS_ENTITY_WORKSHEETDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PRD_Documentation.ENTITY_WORKSHEETDataTable dataTable = new PRD_Documentation.ENTITY_WORKSHEETDataTable();
+            PRD_Documentation.WS_ENTITY_WORKSHEETDataTable dataTable = new PRD_Documentation.WS_ENTITY_WORKSHEETDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1761,7 +3407,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PRD_Documentation.ENTITY_WORKSHEETDataTable dataTable) {
+        public virtual int Update(PRD_Documentation.WS_ENTITY_WORKSHEETDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1769,7 +3415,7 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(PRD_Documentation dataSet) {
-            return this.Adapter.Update(dataSet, "ENTITY_WORKSHEET");
+            return this.Adapter.Update(dataSet, "WS_ENTITY_WORKSHEET");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1790,8 +3436,63 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_ENTITY_WORKSHEET, string Original_AUX_WORKSHEET, string Original_DRIVER_DB_FIELD, string Original_FIELD_CAPTION, string Original_LOOKUP_LIST) {
+            if ((Original_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_ENTITY_WORKSHEET));
+            }
+            if ((Original_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_AUX_WORKSHEET));
+            }
+            if ((Original_DRIVER_DB_FIELD == null)) {
+                throw new global::System.ArgumentNullException("Original_DRIVER_DB_FIELD");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_DRIVER_DB_FIELD));
+            }
+            if ((Original_FIELD_CAPTION == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_FIELD_CAPTION));
+            }
+            if ((Original_LOOKUP_LIST == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_LOOKUP_LIST));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string DRIVER_DB_FIELD, string FIELD_NAME, string FIELD_DESCRIPTION) {
+        public virtual int Insert(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string DRIVER_DB_FIELD, string FIELD_CAPTION, string FIELD_DESCRIPTION, string LOOKUP_LIST) {
             if ((ENTITY_WORKSHEET == null)) {
                 throw new global::System.ArgumentNullException("ENTITY_WORKSHEET");
             }
@@ -1810,17 +3511,23 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DRIVER_DB_FIELD));
             }
-            if ((FIELD_NAME == null)) {
+            if ((FIELD_CAPTION == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FIELD_NAME));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FIELD_CAPTION));
             }
             if ((FIELD_DESCRIPTION == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FIELD_DESCRIPTION));
+            }
+            if ((LOOKUP_LIST == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(LOOKUP_LIST));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1841,8 +3548,130 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object FieldExists(string entity_worksheet, string aux_worksheet, string driver_db_field) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string ENTITY_WORKSHEET, string AUX_WORKSHEET, string DRIVER_DB_FIELD, string FIELD_CAPTION, string FIELD_DESCRIPTION, string LOOKUP_LIST, string Original_ENTITY_WORKSHEET, string Original_AUX_WORKSHEET, string Original_DRIVER_DB_FIELD, string Original_FIELD_CAPTION, string Original_LOOKUP_LIST) {
+            if ((ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ENTITY_WORKSHEET));
+            }
+            if ((AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(AUX_WORKSHEET));
+            }
+            if ((DRIVER_DB_FIELD == null)) {
+                throw new global::System.ArgumentNullException("DRIVER_DB_FIELD");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DRIVER_DB_FIELD));
+            }
+            if ((FIELD_CAPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FIELD_CAPTION));
+            }
+            if ((FIELD_DESCRIPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FIELD_DESCRIPTION));
+            }
+            if ((LOOKUP_LIST == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(LOOKUP_LIST));
+            }
+            if ((Original_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_ENTITY_WORKSHEET));
+            }
+            if ((Original_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_AUX_WORKSHEET));
+            }
+            if ((Original_DRIVER_DB_FIELD == null)) {
+                throw new global::System.ArgumentNullException("Original_DRIVER_DB_FIELD");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_DRIVER_DB_FIELD));
+            }
+            if ((Original_FIELD_CAPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_FIELD_CAPTION));
+            }
+            if ((Original_LOOKUP_LIST == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_LOOKUP_LIST));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string FIELD_CAPTION, string FIELD_DESCRIPTION, string LOOKUP_LIST, string Original_ENTITY_WORKSHEET, string Original_AUX_WORKSHEET, string Original_DRIVER_DB_FIELD, string Original_FIELD_CAPTION, string Original_LOOKUP_LIST) {
+            return this.Update(Original_ENTITY_WORKSHEET, Original_AUX_WORKSHEET, Original_DRIVER_DB_FIELD, FIELD_CAPTION, FIELD_DESCRIPTION, LOOKUP_LIST, Original_ENTITY_WORKSHEET, Original_AUX_WORKSHEET, Original_DRIVER_DB_FIELD, Original_FIELD_CAPTION, Original_LOOKUP_LIST);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteAllRowsQuery() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object FieldExists(string entity_worksheet, string aux_worksheet, string driver_db_field) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((entity_worksheet == null)) {
                 throw new global::System.ArgumentNullException("entity_worksheet");
             }
@@ -1886,6 +3715,1250 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AT_DOC_AUTO_TABLE_FIELDSTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public AT_DOC_AUTO_TABLE_FIELDSTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AT_DOC_AUTO_TABLE_FIELDS";
+            tableMapping.ColumnMappings.Add("DATF_TABLE_NAME", "DATF_TABLE_NAME");
+            tableMapping.ColumnMappings.Add("DATF_FIELD_NAME", "DATF_FIELD_NAME");
+            tableMapping.ColumnMappings.Add("DATF_AUX_WORKSHEET", "DATF_AUX_WORKSHEET");
+            tableMapping.ColumnMappings.Add("DATF_ENTITY_WORKSHEET", "DATF_ENTITY_WORKSHEET");
+            tableMapping.ColumnMappings.Add("DATF_FIELD_CAPTION", "DATF_FIELD_CAPTION");
+            tableMapping.ColumnMappings.Add("DATF_FIELD_DESCRIPTION", "DATF_FIELD_DESCRIPTION");
+            tableMapping.ColumnMappings.Add("DATF_FIELD_TYPE", "DATF_FIELD_TYPE");
+            tableMapping.ColumnMappings.Add("DATF_FIELD_DATA_TYPE", "DATF_FIELD_DATA_TYPE");
+            tableMapping.ColumnMappings.Add("DATF_LOOKUP_LIST", "DATF_LOOKUP_LIST");
+            tableMapping.ColumnMappings.Add("DATF_SOURCE", "DATF_SOURCE");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [AT_DOC_AUTO_TABLE_FIELDS] WHERE (([DATF_TABLE_NAME] = @Original_DATF_TABLE_NAME) AND ([DATF_FIELD_NAME] = @Original_DATF_FIELD_NAME) AND ([DATF_AUX_WORKSHEET] = @Original_DATF_AUX_WORKSHEET) AND ([DATF_ENTITY_WORKSHEET] = @Original_DATF_ENTITY_WORKSHEET) AND ((@IsNull_DATF_FIELD_CAPTION = 1 AND [DATF_FIELD_CAPTION] IS NULL) OR ([DATF_FIELD_CAPTION] = @Original_DATF_FIELD_CAPTION)) AND ((@IsNull_DATF_FIELD_TYPE = 1 AND [DATF_FIELD_TYPE] IS NULL) OR ([DATF_FIELD_TYPE] = @Original_DATF_FIELD_TYPE)) AND ([DATF_FIELD_DATA_TYPE] = @Original_DATF_FIELD_DATA_TYPE) AND ((@IsNull_DATF_LOOKUP_LIST = 1 AND [DATF_LOOKUP_LIST] IS NULL) OR ([DATF_LOOKUP_LIST] = @Original_DATF_LOOKUP_LIST)) AND ((@IsNull_DATF_SOURCE = 1 AND [DATF_SOURCE] IS NULL) OR ([DATF_SOURCE] = @Original_DATF_SOURCE)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_AUX_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_FIELD_CAPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_SOURCE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_SOURCE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_SOURCE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_SOURCE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [AT_DOC_AUTO_TABLE_FIELDS] ([DATF_TABLE_NAME], [DATF_FIELD_NAME], [DATF_AUX_WORKSHEET], [DATF_ENTITY_WORKSHEET], [DATF_FIELD_CAPTION], [DATF_FIELD_DESCRIPTION], [DATF_FIELD_TYPE], [DATF_FIELD_DATA_TYPE], [DATF_LOOKUP_LIST], [DATF_SOURCE]) VALUES (@DATF_TABLE_NAME, @DATF_FIELD_NAME, @DATF_AUX_WORKSHEET, @DATF_ENTITY_WORKSHEET, @DATF_FIELD_CAPTION, @DATF_FIELD_DESCRIPTION, @DATF_FIELD_TYPE, @DATF_FIELD_DATA_TYPE, @DATF_LOOKUP_LIST, @DATF_SOURCE);
+SELECT DATF_TABLE_NAME, DATF_FIELD_NAME, DATF_AUX_WORKSHEET, DATF_ENTITY_WORKSHEET, DATF_FIELD_CAPTION, DATF_FIELD_DESCRIPTION, DATF_FIELD_TYPE, DATF_FIELD_DATA_TYPE, DATF_LOOKUP_LIST, DATF_SOURCE FROM AT_DOC_AUTO_TABLE_FIELDS WHERE (DATF_AUX_WORKSHEET = @DATF_AUX_WORKSHEET) AND (DATF_ENTITY_WORKSHEET = @DATF_ENTITY_WORKSHEET) AND (DATF_FIELD_NAME = @DATF_FIELD_NAME) AND (DATF_TABLE_NAME = @DATF_TABLE_NAME)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_SOURCE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_SOURCE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [AT_DOC_AUTO_TABLE_FIELDS] SET [DATF_TABLE_NAME] = @DATF_TABLE_NAME, [DATF" +
+                "_FIELD_NAME] = @DATF_FIELD_NAME, [DATF_AUX_WORKSHEET] = @DATF_AUX_WORKSHEET, [DA" +
+                "TF_ENTITY_WORKSHEET] = @DATF_ENTITY_WORKSHEET, [DATF_FIELD_CAPTION] = @DATF_FIEL" +
+                "D_CAPTION, [DATF_FIELD_DESCRIPTION] = @DATF_FIELD_DESCRIPTION, [DATF_FIELD_TYPE]" +
+                " = @DATF_FIELD_TYPE, [DATF_FIELD_DATA_TYPE] = @DATF_FIELD_DATA_TYPE, [DATF_LOOKU" +
+                "P_LIST] = @DATF_LOOKUP_LIST, [DATF_SOURCE] = @DATF_SOURCE WHERE (([DATF_TABLE_NA" +
+                "ME] = @Original_DATF_TABLE_NAME) AND ([DATF_FIELD_NAME] = @Original_DATF_FIELD_N" +
+                "AME) AND ([DATF_AUX_WORKSHEET] = @Original_DATF_AUX_WORKSHEET) AND ([DATF_ENTITY" +
+                "_WORKSHEET] = @Original_DATF_ENTITY_WORKSHEET) AND ((@IsNull_DATF_FIELD_CAPTION " +
+                "= 1 AND [DATF_FIELD_CAPTION] IS NULL) OR ([DATF_FIELD_CAPTION] = @Original_DATF_" +
+                "FIELD_CAPTION)) AND ((@IsNull_DATF_FIELD_TYPE = 1 AND [DATF_FIELD_TYPE] IS NULL)" +
+                " OR ([DATF_FIELD_TYPE] = @Original_DATF_FIELD_TYPE)) AND ([DATF_FIELD_DATA_TYPE]" +
+                " = @Original_DATF_FIELD_DATA_TYPE) AND ((@IsNull_DATF_LOOKUP_LIST = 1 AND [DATF_" +
+                "LOOKUP_LIST] IS NULL) OR ([DATF_LOOKUP_LIST] = @Original_DATF_LOOKUP_LIST)) AND " +
+                "((@IsNull_DATF_SOURCE = 1 AND [DATF_SOURCE] IS NULL) OR ([DATF_SOURCE] = @Origin" +
+                "al_DATF_SOURCE)));\r\nSELECT DATF_TABLE_NAME, DATF_FIELD_NAME, DATF_AUX_WORKSHEET," +
+                " DATF_ENTITY_WORKSHEET, DATF_FIELD_CAPTION, DATF_FIELD_DESCRIPTION, DATF_FIELD_T" +
+                "YPE, DATF_FIELD_DATA_TYPE, DATF_LOOKUP_LIST, DATF_SOURCE FROM AT_DOC_AUTO_TABLE_" +
+                "FIELDS WHERE (DATF_AUX_WORKSHEET = @DATF_AUX_WORKSHEET) AND (DATF_ENTITY_WORKSHE" +
+                "ET = @DATF_ENTITY_WORKSHEET) AND (DATF_FIELD_NAME = @DATF_FIELD_NAME) AND (DATF_" +
+                "TABLE_NAME = @DATF_TABLE_NAME)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_AUX_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATF_SOURCE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_SOURCE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_AUX_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_AUX_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_ENTITY_WORKSHEET", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_ENTITY_WORKSHEET", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_FIELD_CAPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATF_SOURCE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_SOURCE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATF_SOURCE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATF_SOURCE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AutoDocApp.Properties.Settings.Default.PRD_DocumentationConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        AT_DOC_AUTO_TABLE_FIELDS.*\r\nFROM            AT_DOC_AUTO_TABLE_FIELD" +
+                "S";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "USE [QBCOLLECTION_PLUS_23_1]\r\n\r\n-- DELETE ALL ROWS INSERTED FROM WORKSHEETS OR AU" +
+                "TOMATICALLY\r\nDELETE FROM PRD_DOCUMENTATION.DBO.AT_DOC_AUTO_TABLE_FIELDS WHERE DA" +
+                "TF_SOURCE=\'REPO\';\r\n\r\nINSERT INTO PRD_DOCUMENTATION.DBO.AT_DOC_AUTO_TABLE_FIELDS\r" +
+                "\nSELECT OBJECT_NAME(COL.OBJECT_ID) AS DATF_TABLE_NAME,\r\n\tCOL.[NAME] AS DATF_FIEL" +
+                "D_NAME, \r\n\tISNULL(AUX.AUX_WORKSHEET,\'N/A\') AS DATF_AUX_WORKSHEET,\r\n\tISNULL(ENTIT" +
+                "Y.ENTITY_WORKSHEET,\'N/A\') AS DATF_ENTITY_WORKSHEET,\r\n\tISNULL(ENTITY.FIELD_CAPTIO" +
+                "N, AUX.RESERVED_FOR) AS DATF_FIELD_CAPTION,\r\n\tISNULL(ENTITY.FIELD_DESCRIPTION, I" +
+                "SNULL(ENTITY.FIELD_CAPTION,AUX.RESERVED_FOR)) AS DATF_FIELD_DESCRIPTION,\r\n\tAUX.F" +
+                "IELD_TYPE AS DATF_FIELD_TYPE,\r\n\tCASE \r\n\t\tWHEN T.NAME=\'NVARCHAR\' THEN T.NAME + \'(" +
+                "\' + CONVERT(NVARCHAR,COL.MAX_LENGTH) + \')\'\r\n\t\tWHEN T.NAME=\'DECIMAL\' THEN T.NAME " +
+                "+ \'(\' + CONVERT(NVARCHAR,COL.PRECISION) + \',\' + CONVERT(NVARCHAR,COL.SCALE) +\')\'" +
+                "\r\n\t\tELSE T.NAME\r\n\tEND AS DATF_FIELD_DATATYPE,\r\n\tCASE WHEN FKC.REFERENCED_COLUMN_" +
+                "ID IS NULL THEN ENTITY.LOOKUP_LIST ELSE \'FK\' END AS DATF_LOOKUP_LIST,\r\n\t\'REPO\' A" +
+                "S DATF_SOURCE\t\r\n\tFROM QBCOLLECTION_PLUS_23_1.SYS.COLUMNS COL WITH(NOLOCK)\r\n\tINNE" +
+                "R JOIN QBCOLLECTION_PLUS_23_1.SYS.TABLES ST WITH(NOLOCK) ON ST.OBJECT_ID=COL.OBJ" +
+                "ECT_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.SYS.TYPES T ON COL.USER_TYPE_ID = T.U" +
+                "SER_TYPE_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.DBO.TABLES TAB WITH(NOLOCK) ON T" +
+                "AB.TAB_NAME=OBJECT_NAME(COL.OBJECT_ID) AND TAB.TAB_VISIBLE=1\r\n\tLEFT JOIN QBCOLLE" +
+                "CTION_PLUS_23_1.SYS.FOREIGN_KEY_COLUMNS FKC WITH(NOLOCK) ON FKC.PARENT_COLUMN_ID" +
+                "=COL.COLUMN_ID AND FKC.PARENT_OBJECT_ID=ST.OBJECT_ID\r\n\t\r\n\t-- INCLUDE ALL FIELD F" +
+                "ROM WORKSHEETS\r\n\tINNER JOIN PRD_DOCUMENTATION.DBO.WS_AUX_WORKSHEET AUX WITH(NOLO" +
+                "CK) ON AUX.TABLE_NAME=ST.NAME AND AUX.FIELD_NAME=COL.NAME\r\n\tLEFT JOIN PRD_DOCUME" +
+                "NTATION.DBO.WS_ENTITY_WORKSHEET ENTITY WITH(NOLOCK) ON ENTITY.ENTITY_WORKSHEET=A" +
+                "UX.ENTITY_WORKSHEET AND ENTITY.AUX_WORKSHEET=AUX.AUX_WORKSHEET AND ENTITY.DRIVER" +
+                "_DB_FIELD=COL.NAME";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(PRD_Documentation.AT_DOC_AUTO_TABLE_FIELDSDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PRD_Documentation.AT_DOC_AUTO_TABLE_FIELDSDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            PRD_Documentation.AT_DOC_AUTO_TABLE_FIELDSDataTable dataTable = new PRD_Documentation.AT_DOC_AUTO_TABLE_FIELDSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PRD_Documentation.AT_DOC_AUTO_TABLE_FIELDSDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PRD_Documentation dataSet) {
+            return this.Adapter.Update(dataSet, "AT_DOC_AUTO_TABLE_FIELDS");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_DATF_TABLE_NAME, string Original_DATF_FIELD_NAME, string Original_DATF_AUX_WORKSHEET, string Original_DATF_ENTITY_WORKSHEET, string Original_DATF_FIELD_CAPTION, string Original_DATF_FIELD_TYPE, string Original_DATF_FIELD_DATA_TYPE, string Original_DATF_LOOKUP_LIST, string Original_DATF_SOURCE) {
+            if ((Original_DATF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_DATF_TABLE_NAME));
+            }
+            if ((Original_DATF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_DATF_FIELD_NAME));
+            }
+            if ((Original_DATF_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_DATF_AUX_WORKSHEET));
+            }
+            if ((Original_DATF_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DATF_ENTITY_WORKSHEET));
+            }
+            if ((Original_DATF_FIELD_CAPTION == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DATF_FIELD_CAPTION));
+            }
+            if ((Original_DATF_FIELD_TYPE == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_DATF_FIELD_TYPE));
+            }
+            if ((Original_DATF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_DATF_FIELD_DATA_TYPE));
+            }
+            if ((Original_DATF_LOOKUP_LIST == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_DATF_LOOKUP_LIST));
+            }
+            if ((Original_DATF_SOURCE == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_DATF_SOURCE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string DATF_TABLE_NAME, string DATF_FIELD_NAME, string DATF_AUX_WORKSHEET, string DATF_ENTITY_WORKSHEET, string DATF_FIELD_CAPTION, string DATF_FIELD_DESCRIPTION, string DATF_FIELD_TYPE, string DATF_FIELD_DATA_TYPE, string DATF_LOOKUP_LIST, string DATF_SOURCE) {
+            if ((DATF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("DATF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(DATF_TABLE_NAME));
+            }
+            if ((DATF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("DATF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(DATF_FIELD_NAME));
+            }
+            if ((DATF_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("DATF_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DATF_AUX_WORKSHEET));
+            }
+            if ((DATF_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("DATF_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DATF_ENTITY_WORKSHEET));
+            }
+            if ((DATF_FIELD_CAPTION == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DATF_FIELD_CAPTION));
+            }
+            if ((DATF_FIELD_DESCRIPTION == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DATF_FIELD_DESCRIPTION));
+            }
+            if ((DATF_FIELD_TYPE == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(DATF_FIELD_TYPE));
+            }
+            if ((DATF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("DATF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(DATF_FIELD_DATA_TYPE));
+            }
+            if ((DATF_LOOKUP_LIST == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(DATF_LOOKUP_LIST));
+            }
+            if ((DATF_SOURCE == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(DATF_SOURCE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string DATF_TABLE_NAME, 
+                    string DATF_FIELD_NAME, 
+                    string DATF_AUX_WORKSHEET, 
+                    string DATF_ENTITY_WORKSHEET, 
+                    string DATF_FIELD_CAPTION, 
+                    string DATF_FIELD_DESCRIPTION, 
+                    string DATF_FIELD_TYPE, 
+                    string DATF_FIELD_DATA_TYPE, 
+                    string DATF_LOOKUP_LIST, 
+                    string DATF_SOURCE, 
+                    string Original_DATF_TABLE_NAME, 
+                    string Original_DATF_FIELD_NAME, 
+                    string Original_DATF_AUX_WORKSHEET, 
+                    string Original_DATF_ENTITY_WORKSHEET, 
+                    string Original_DATF_FIELD_CAPTION, 
+                    string Original_DATF_FIELD_TYPE, 
+                    string Original_DATF_FIELD_DATA_TYPE, 
+                    string Original_DATF_LOOKUP_LIST, 
+                    string Original_DATF_SOURCE) {
+            if ((DATF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("DATF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(DATF_TABLE_NAME));
+            }
+            if ((DATF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("DATF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(DATF_FIELD_NAME));
+            }
+            if ((DATF_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("DATF_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DATF_AUX_WORKSHEET));
+            }
+            if ((DATF_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("DATF_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DATF_ENTITY_WORKSHEET));
+            }
+            if ((DATF_FIELD_CAPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DATF_FIELD_CAPTION));
+            }
+            if ((DATF_FIELD_DESCRIPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DATF_FIELD_DESCRIPTION));
+            }
+            if ((DATF_FIELD_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(DATF_FIELD_TYPE));
+            }
+            if ((DATF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("DATF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(DATF_FIELD_DATA_TYPE));
+            }
+            if ((DATF_LOOKUP_LIST == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(DATF_LOOKUP_LIST));
+            }
+            if ((DATF_SOURCE == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(DATF_SOURCE));
+            }
+            if ((Original_DATF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_DATF_TABLE_NAME));
+            }
+            if ((Original_DATF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DATF_FIELD_NAME));
+            }
+            if ((Original_DATF_AUX_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_AUX_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_DATF_AUX_WORKSHEET));
+            }
+            if ((Original_DATF_ENTITY_WORKSHEET == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_ENTITY_WORKSHEET");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_DATF_ENTITY_WORKSHEET));
+            }
+            if ((Original_DATF_FIELD_CAPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_DATF_FIELD_CAPTION));
+            }
+            if ((Original_DATF_FIELD_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_DATF_FIELD_TYPE));
+            }
+            if ((Original_DATF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("Original_DATF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_DATF_FIELD_DATA_TYPE));
+            }
+            if ((Original_DATF_LOOKUP_LIST == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_DATF_LOOKUP_LIST));
+            }
+            if ((Original_DATF_SOURCE == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_DATF_SOURCE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string DATF_FIELD_CAPTION, string DATF_FIELD_DESCRIPTION, string DATF_FIELD_TYPE, string DATF_FIELD_DATA_TYPE, string DATF_LOOKUP_LIST, string DATF_SOURCE, string Original_DATF_TABLE_NAME, string Original_DATF_FIELD_NAME, string Original_DATF_AUX_WORKSHEET, string Original_DATF_ENTITY_WORKSHEET, string Original_DATF_FIELD_CAPTION, string Original_DATF_FIELD_TYPE, string Original_DATF_FIELD_DATA_TYPE, string Original_DATF_LOOKUP_LIST, string Original_DATF_SOURCE) {
+            return this.Update(Original_DATF_TABLE_NAME, Original_DATF_FIELD_NAME, Original_DATF_AUX_WORKSHEET, Original_DATF_ENTITY_WORKSHEET, DATF_FIELD_CAPTION, DATF_FIELD_DESCRIPTION, DATF_FIELD_TYPE, DATF_FIELD_DATA_TYPE, DATF_LOOKUP_LIST, DATF_SOURCE, Original_DATF_TABLE_NAME, Original_DATF_FIELD_NAME, Original_DATF_AUX_WORKSHEET, Original_DATF_ENTITY_WORKSHEET, Original_DATF_FIELD_CAPTION, Original_DATF_FIELD_TYPE, Original_DATF_FIELD_DATA_TYPE, Original_DATF_LOOKUP_LIST, Original_DATF_SOURCE);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertFieldsFromExcelRepository() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AT_DOC_MANUAL_TABLE_FIELDSTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public AT_DOC_MANUAL_TABLE_FIELDSTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AT_DOC_MANUAL_TABLE_FIELDS";
+            tableMapping.ColumnMappings.Add("DMTF_TABLE_NAME", "DMTF_TABLE_NAME");
+            tableMapping.ColumnMappings.Add("DMTF_FIELD_NAME", "DMTF_FIELD_NAME");
+            tableMapping.ColumnMappings.Add("DMTF_FIELD_CAPTION", "DMTF_FIELD_CAPTION");
+            tableMapping.ColumnMappings.Add("DMTF_FIELD_DESCRIPTION", "DMTF_FIELD_DESCRIPTION");
+            tableMapping.ColumnMappings.Add("DMTF_FIELD_TYPE", "DMTF_FIELD_TYPE");
+            tableMapping.ColumnMappings.Add("DMTF_FIELD_DATA_TYPE", "DMTF_FIELD_DATA_TYPE");
+            tableMapping.ColumnMappings.Add("DMTF_LOOKUP_LIST", "DMTF_LOOKUP_LIST");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [AT_DOC_MANUAL_TABLE_FIELDS] WHERE (([DMTF_TABLE_NAME] = @Original_DMTF_TABLE_NAME) AND ([DMTF_FIELD_NAME] = @Original_DMTF_FIELD_NAME) AND ((@IsNull_DMTF_FIELD_CAPTION = 1 AND [DMTF_FIELD_CAPTION] IS NULL) OR ([DMTF_FIELD_CAPTION] = @Original_DMTF_FIELD_CAPTION)) AND ((@IsNull_DMTF_FIELD_TYPE = 1 AND [DMTF_FIELD_TYPE] IS NULL) OR ([DMTF_FIELD_TYPE] = @Original_DMTF_FIELD_TYPE)) AND ([DMTF_FIELD_DATA_TYPE] = @Original_DMTF_FIELD_DATA_TYPE) AND ((@IsNull_DMTF_LOOKUP_LIST = 1 AND [DMTF_LOOKUP_LIST] IS NULL) OR ([DMTF_LOOKUP_LIST] = @Original_DMTF_LOOKUP_LIST)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [AT_DOC_MANUAL_TABLE_FIELDS] ([DMTF_TABLE_NAME], [DMTF_FIELD_NAME], [DMTF_FIELD_CAPTION], [DMTF_FIELD_DESCRIPTION], [DMTF_FIELD_TYPE], [DMTF_FIELD_DATA_TYPE], [DMTF_LOOKUP_LIST]) VALUES (@DMTF_TABLE_NAME, @DMTF_FIELD_NAME, @DMTF_FIELD_CAPTION, @DMTF_FIELD_DESCRIPTION, @DMTF_FIELD_TYPE, @DMTF_FIELD_DATA_TYPE, @DMTF_LOOKUP_LIST);
+SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_FIELD_DATA_TYPE, DMTF_LOOKUP_LIST FROM AT_DOC_MANUAL_TABLE_FIELDS WHERE (DMTF_FIELD_NAME = @DMTF_FIELD_NAME) AND (DMTF_TABLE_NAME = @DMTF_TABLE_NAME)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [AT_DOC_MANUAL_TABLE_FIELDS] SET [DMTF_TABLE_NAME] = @DMTF_TABLE_NAME, [DMTF_FIELD_NAME] = @DMTF_FIELD_NAME, [DMTF_FIELD_CAPTION] = @DMTF_FIELD_CAPTION, [DMTF_FIELD_DESCRIPTION] = @DMTF_FIELD_DESCRIPTION, [DMTF_FIELD_TYPE] = @DMTF_FIELD_TYPE, [DMTF_FIELD_DATA_TYPE] = @DMTF_FIELD_DATA_TYPE, [DMTF_LOOKUP_LIST] = @DMTF_LOOKUP_LIST WHERE (([DMTF_TABLE_NAME] = @Original_DMTF_TABLE_NAME) AND ([DMTF_FIELD_NAME] = @Original_DMTF_FIELD_NAME) AND ((@IsNull_DMTF_FIELD_CAPTION = 1 AND [DMTF_FIELD_CAPTION] IS NULL) OR ([DMTF_FIELD_CAPTION] = @Original_DMTF_FIELD_CAPTION)) AND ((@IsNull_DMTF_FIELD_TYPE = 1 AND [DMTF_FIELD_TYPE] IS NULL) OR ([DMTF_FIELD_TYPE] = @Original_DMTF_FIELD_TYPE)) AND ([DMTF_FIELD_DATA_TYPE] = @Original_DMTF_FIELD_DATA_TYPE) AND ((@IsNull_DMTF_LOOKUP_LIST = 1 AND [DMTF_LOOKUP_LIST] IS NULL) OR ([DMTF_LOOKUP_LIST] = @Original_DMTF_LOOKUP_LIST)));
+SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_FIELD_DATA_TYPE, DMTF_LOOKUP_LIST FROM AT_DOC_MANUAL_TABLE_FIELDS WHERE (DMTF_FIELD_NAME = @DMTF_FIELD_NAME) AND (DMTF_TABLE_NAME = @DMTF_TABLE_NAME)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AutoDocApp.Properties.Settings.Default.PRD_DocumentationConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        AT_DOC_MANUAL_TABLE_FIELDS.*\r\nFROM            AT_DOC_MANUAL_TABLE_F" +
+                "IELDS";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"USE [QBCollection_Plus_23_1]
+
+SELECT 
+	DMTF.DMTF_TABLE_NAME,
+	TAB.TAB_PREFIX,
+	DMTF.DMTF_FIELD_NAME,
+	CASE WHEN ISNULL(DMTF.DMTF_FIELD_CAPTION,'')<>'' THEN DMTF.DMTF_FIELD_CAPTION ELSE DATF.DATF_FIELD_CAPTION END  AS ALIAS_FIELD_CAPTION,
+
+	CASE WHEN ISNULL(DMTF.DMTF_FIELD_DESCRIPTION,'')<>'' THEN DMTF.DMTF_FIELD_DESCRIPTION ELSE DATF.DATF_FIELD_DESCRIPTION END  AS ALIAS_FIELD_DESCRIPTION,
+	DMTF.DMTF_FIELD_DATA_TYPE,
+	CASE WHEN ISNULL(DMTF.DMTF_FIELD_TYPE,'')<>'' THEN DMTF.DMTF_FIELD_TYPE ELSE DATF.DATF_FIELD_TYPE END  AS ALIAS_FIELD_TYPE,
+
+	CASE WHEN ISNULL(DMTF.DMTF_LOOKUP_LIST,'')<>'' THEN DMTF.DMTF_LOOKUP_LIST ELSE DATF.DATF_LOOKUP_LIST END  AS ALIAS_LOOKUP_LIST
+
+FROM  PRD_Documentation.dbo.AT_DOC_MANUAL_TABLE_FIELDS DMTF WITH(NOLOCK)
+INNER JOIN QBCollection_Plus_23_1.dbo.Tables TAB WITH(NOLOCK) ON TAB.tab_visible=1 AND TAB.tab_name=DMTF.DMTF_TABLE_NAME
+INNER JOIN QBCollection_Plus_23_1.sys.columns col WITH(NOLOCK) ON col.[name]=DMTF.DMTF_FIELD_NAME AND DMTF.DMTF_TABLE_NAME = OBJECT_NAME(COL.OBJECT_ID)
+LEFT JOIN PRD_Documentation.dbo.AT_DOC_AUTO_TABLE_FIELDS DATF WITH(NOLOCK) ON DMTF.DMTF_TABLE_NAME=DATF.DATF_TABLE_NAME AND DMTF.DMTF_FIELD_NAME=DATF.DATF_FIELD_NAME
+ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "USE [QBCOLLECTION_PLUS_23_1]\r\n\r\nINSERT INTO PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_T" +
+                "ABLE_FIELDS\r\nSELECT OBJECT_NAME(COL.OBJECT_ID) AS DMTF_TABLE_NAME,\r\n\tCOL.[NAME] " +
+                "AS DMTF_FIELD_NAME, \r\n\t\'\' AS DMTF_FIELD_CAPTION,\r\n\t\'\' AS DMTF_FIELD_DESCRIPTION," +
+                "\r\n\t\'\' AS DMTF_FIELD_TYPE,\r\n\tCASE \r\n\t\tWHEN T.NAME=\'NVARCHAR\' THEN T.NAME + \'(\' + " +
+                "CONVERT(NVARCHAR,COL.MAX_LENGTH) + \')\'\r\n\t\tWHEN T.NAME=\'DECIMAL\' THEN T.NAME + \'(" +
+                "\' + CONVERT(NVARCHAR,COL.PRECISION) + \',\' + CONVERT(NVARCHAR,COL.SCALE) +\')\'\r\n\t\t" +
+                "ELSE T.NAME\r\n\tEND AS DMTF_FIELD_DATATYPE,\r\n\tCASE WHEN FKC.REFERENCED_COLUMN_ID I" +
+                "S NULL THEN \'\' ELSE \'FK\' END AS DMTF_LOOKUP_LIST\t\r\n\tFROM QBCOLLECTION_PLUS_23_1." +
+                "SYS.COLUMNS COL WITH(NOLOCK)\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.SYS.TABLES ST W" +
+                "ITH(NOLOCK) ON ST.OBJECT_ID=COL.OBJECT_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.SY" +
+                "S.TYPES T ON COL.USER_TYPE_ID = T.USER_TYPE_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23" +
+                "_1.DBO.TABLES TAB WITH(NOLOCK) ON TAB.TAB_NAME=OBJECT_NAME(COL.OBJECT_ID) AND TA" +
+                "B.TAB_VISIBLE=1\r\n\tLEFT JOIN QBCOLLECTION_PLUS_23_1.SYS.FOREIGN_KEY_COLUMNS FKC W" +
+                "ITH(NOLOCK) ON FKC.PARENT_COLUMN_ID=COL.COLUMN_ID AND FKC.PARENT_OBJECT_ID=ST.OB" +
+                "JECT_ID\r\n\t\r\n\t\r\n\r\nWHERE ST.NAME IN (\r\n\t\t \'AT_CASE_AGGREGATIONS\'\r\n\t\t,\'AT_CASE_BILL" +
+                "ING\'\r\n\t\t,\'AT_CASE_CORE\'\r\n\t\t,\'AT_CASE_EXTRA\'\r\n\t\t,\'AT_CASE_EXTRA_CUSTOMERS\'\r\n\t\t,\'A" +
+                "T_CASE_PROPERTIES\'\r\n\t\t,\'AT_CASE_SCORING\'\r\n\t\t,\'AT_CASE_STATISTICS\'\r\n\t\t,\'AT_CASES\'" +
+                "\r\n\t\t,\'AT_CUSTOMER_ADDRESSES\'\r\n\t\t,\'AT_CUSTOMER_CONTACTS\'\r\n\t\t,\'AT_CUSTOMER_CORE\'\r\n" +
+                "\t\t,\'AT_CUSTOMER_EXTRA\'\r\n\t\t,\'AT_CUSTOMER_INTERNET_IDS\'\r\n\t\t,\'AT_CUSTOMER_MEMOS\'\r\n\t" +
+                "\t,\'AT_CUSTOMER_PHONES\'\r\n\t\t,\'AT_CUSTOMER_SCORING\'\r\n\t\t,\'AT_CUSTOMER_STATISTICS\'\r\n\t" +
+                "\t,\'AT_CUSTOMER_STATISTICS_BU\'\r\n\t\t,\'AT_CUSTOMERS\'\r\n\t\t,\'AT_CUSTOMERS_EXTENSION\'\r\n\t" +
+                "\t,\'AT_DEBT_ELEMENTS\'\r\n\t\t,\'AT_DEBT_ELEMENTS_GROUPING\'\r\n\t\t,\'AT_DEBT_ELEMENTS_GROUP" +
+                "ING_MEMBERS\'\r\n\t\t,\'AT_DEBT_ITEM_MEMOS\'\r\n\t\t,\'AT_DEBT_ITEMS\'\r\n\t\t,\'AT_DEBT_ITEMS_EXT" +
+                "ENSION\'\r\n\t\t,\'AT_DEBTS\'\r\n\t\t,\'AT_DEBTS_EXTENSION\'\r\n\t\t,\'AT_DEBTS_STATISTICS\'\r\n\t\t,\'A" +
+                "T_MOVED_CASES_APPLICATION\'\r\n\t\t,\'AT_MOVED_CASES_EXTRA\'\r\n\t\t,\'AT_MOVED_CASES_HOST\'\r" +
+                "\n\t\t,\'AT_MOVED_CASES_RESTORE_HISTORY\'\r\n\t\t,\'AT_MOVED_CASES_STATISTIC\')\t\t\r\n\r\nEXCEPT" +
+                "\r\nSELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABLE_FIELDS\r\n";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable dataTable = new PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable GetTableFields() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable dataTable = new PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PRD_Documentation dataSet) {
+            return this.Adapter.Update(dataSet, "AT_DOC_MANUAL_TABLE_FIELDS");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_FIELD_DATA_TYPE, string Original_DMTF_LOOKUP_LIST) {
+            if ((Original_DMTF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DMTF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_DMTF_TABLE_NAME));
+            }
+            if ((Original_DMTF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DMTF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_DMTF_FIELD_NAME));
+            }
+            if ((Original_DMTF_FIELD_CAPTION == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DMTF_FIELD_CAPTION));
+            }
+            if ((Original_DMTF_FIELD_TYPE == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DMTF_FIELD_TYPE));
+            }
+            if ((Original_DMTF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("Original_DMTF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_DMTF_FIELD_DATA_TYPE));
+            }
+            if ((Original_DMTF_LOOKUP_LIST == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_DMTF_LOOKUP_LIST));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST) {
+            if ((DMTF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("DMTF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(DMTF_TABLE_NAME));
+            }
+            if ((DMTF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("DMTF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(DMTF_FIELD_NAME));
+            }
+            if ((DMTF_FIELD_CAPTION == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DMTF_FIELD_CAPTION));
+            }
+            if ((DMTF_FIELD_DESCRIPTION == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DMTF_FIELD_DESCRIPTION));
+            }
+            if ((DMTF_FIELD_TYPE == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DMTF_FIELD_TYPE));
+            }
+            if ((DMTF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("DMTF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DMTF_FIELD_DATA_TYPE));
+            }
+            if ((DMTF_LOOKUP_LIST == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(DMTF_LOOKUP_LIST));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST, string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_FIELD_DATA_TYPE, string Original_DMTF_LOOKUP_LIST) {
+            if ((DMTF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("DMTF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(DMTF_TABLE_NAME));
+            }
+            if ((DMTF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("DMTF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(DMTF_FIELD_NAME));
+            }
+            if ((DMTF_FIELD_CAPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DMTF_FIELD_CAPTION));
+            }
+            if ((DMTF_FIELD_DESCRIPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DMTF_FIELD_DESCRIPTION));
+            }
+            if ((DMTF_FIELD_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DMTF_FIELD_TYPE));
+            }
+            if ((DMTF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("DMTF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DMTF_FIELD_DATA_TYPE));
+            }
+            if ((DMTF_LOOKUP_LIST == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(DMTF_LOOKUP_LIST));
+            }
+            if ((Original_DMTF_TABLE_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DMTF_TABLE_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DMTF_TABLE_NAME));
+            }
+            if ((Original_DMTF_FIELD_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_DMTF_FIELD_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_DMTF_FIELD_NAME));
+            }
+            if ((Original_DMTF_FIELD_CAPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_DMTF_FIELD_CAPTION));
+            }
+            if ((Original_DMTF_FIELD_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_DMTF_FIELD_TYPE));
+            }
+            if ((Original_DMTF_FIELD_DATA_TYPE == null)) {
+                throw new global::System.ArgumentNullException("Original_DMTF_FIELD_DATA_TYPE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_DMTF_FIELD_DATA_TYPE));
+            }
+            if ((Original_DMTF_LOOKUP_LIST == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_DMTF_LOOKUP_LIST));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST, string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_FIELD_DATA_TYPE, string Original_DMTF_LOOKUP_LIST) {
+            return this.Update(Original_DMTF_TABLE_NAME, Original_DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_FIELD_DATA_TYPE, DMTF_LOOKUP_LIST, Original_DMTF_TABLE_NAME, Original_DMTF_FIELD_NAME, Original_DMTF_FIELD_CAPTION, Original_DMTF_FIELD_TYPE, Original_DMTF_FIELD_DATA_TYPE, Original_DMTF_LOOKUP_LIST);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertFieldsFromDatabase() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1897,9 +4970,13 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private AUX_WORKSHEETTableAdapter _aUX_WORKSHEETTableAdapter;
+        private WS_AUX_WORKSHEETTableAdapter _wS_AUX_WORKSHEETTableAdapter;
         
-        private ENTITY_WORKSHEETTableAdapter _eNTITY_WORKSHEETTableAdapter;
+        private WS_ENTITY_WORKSHEETTableAdapter _wS_ENTITY_WORKSHEETTableAdapter;
+        
+        private AT_DOC_AUTO_TABLE_FIELDSTableAdapter _aT_DOC_AUTO_TABLE_FIELDSTableAdapter;
+        
+        private AT_DOC_MANUAL_TABLE_FIELDSTableAdapter _aT_DOC_MANUAL_TABLE_FIELDSTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1921,12 +4998,12 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public AUX_WORKSHEETTableAdapter AUX_WORKSHEETTableAdapter {
+        public WS_AUX_WORKSHEETTableAdapter WS_AUX_WORKSHEETTableAdapter {
             get {
-                return this._aUX_WORKSHEETTableAdapter;
+                return this._wS_AUX_WORKSHEETTableAdapter;
             }
             set {
-                this._aUX_WORKSHEETTableAdapter = value;
+                this._wS_AUX_WORKSHEETTableAdapter = value;
             }
         }
         
@@ -1935,12 +5012,40 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ENTITY_WORKSHEETTableAdapter ENTITY_WORKSHEETTableAdapter {
+        public WS_ENTITY_WORKSHEETTableAdapter WS_ENTITY_WORKSHEETTableAdapter {
             get {
-                return this._eNTITY_WORKSHEETTableAdapter;
+                return this._wS_ENTITY_WORKSHEETTableAdapter;
             }
             set {
-                this._eNTITY_WORKSHEETTableAdapter = value;
+                this._wS_ENTITY_WORKSHEETTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AT_DOC_AUTO_TABLE_FIELDSTableAdapter AT_DOC_AUTO_TABLE_FIELDSTableAdapter {
+            get {
+                return this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter;
+            }
+            set {
+                this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AT_DOC_MANUAL_TABLE_FIELDSTableAdapter AT_DOC_MANUAL_TABLE_FIELDSTableAdapter {
+            get {
+                return this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter;
+            }
+            set {
+                this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter = value;
             }
         }
         
@@ -1963,13 +5068,21 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._aUX_WORKSHEETTableAdapter != null) 
-                            && (this._aUX_WORKSHEETTableAdapter.Connection != null))) {
-                    return this._aUX_WORKSHEETTableAdapter.Connection;
+                if (((this._wS_AUX_WORKSHEETTableAdapter != null) 
+                            && (this._wS_AUX_WORKSHEETTableAdapter.Connection != null))) {
+                    return this._wS_AUX_WORKSHEETTableAdapter.Connection;
                 }
-                if (((this._eNTITY_WORKSHEETTableAdapter != null) 
-                            && (this._eNTITY_WORKSHEETTableAdapter.Connection != null))) {
-                    return this._eNTITY_WORKSHEETTableAdapter.Connection;
+                if (((this._wS_ENTITY_WORKSHEETTableAdapter != null) 
+                            && (this._wS_ENTITY_WORKSHEETTableAdapter.Connection != null))) {
+                    return this._wS_ENTITY_WORKSHEETTableAdapter.Connection;
+                }
+                if (((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null) 
+                            && (this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Connection != null))) {
+                    return this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Connection;
+                }
+                if (((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null) 
+                            && (this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Connection != null))) {
+                    return this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1984,10 +5097,16 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._aUX_WORKSHEETTableAdapter != null)) {
+                if ((this._wS_AUX_WORKSHEETTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._eNTITY_WORKSHEETTableAdapter != null)) {
+                if ((this._wS_ENTITY_WORKSHEETTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2001,21 +5120,39 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(PRD_Documentation dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._aUX_WORKSHEETTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AUX_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._wS_AUX_WORKSHEETTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.WS_AUX_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._aUX_WORKSHEETTableAdapter.Update(updatedRows));
+                    result = (result + this._wS_AUX_WORKSHEETTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eNTITY_WORKSHEETTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ENTITY_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._wS_ENTITY_WORKSHEETTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.WS_ENTITY_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eNTITY_WORKSHEETTableAdapter.Update(updatedRows));
+                    result = (result + this._wS_ENTITY_WORKSHEETTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AT_DOC_AUTO_TABLE_FIELDS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AT_DOC_MANUAL_TABLE_FIELDS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2029,19 +5166,35 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(PRD_Documentation dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._aUX_WORKSHEETTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AUX_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._wS_AUX_WORKSHEETTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.WS_AUX_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._aUX_WORKSHEETTableAdapter.Update(addedRows));
+                    result = (result + this._wS_AUX_WORKSHEETTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eNTITY_WORKSHEETTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ENTITY_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._wS_ENTITY_WORKSHEETTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.WS_ENTITY_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eNTITY_WORKSHEETTableAdapter.Update(addedRows));
+                    result = (result + this._wS_ENTITY_WORKSHEETTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AT_DOC_AUTO_TABLE_FIELDS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AT_DOC_MANUAL_TABLE_FIELDS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2055,19 +5208,35 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(PRD_Documentation dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._eNTITY_WORKSHEETTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ENTITY_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AT_DOC_MANUAL_TABLE_FIELDS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._eNTITY_WORKSHEETTableAdapter.Update(deletedRows));
+                    result = (result + this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._aUX_WORKSHEETTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AUX_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AT_DOC_AUTO_TABLE_FIELDS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._aUX_WORKSHEETTableAdapter.Update(deletedRows));
+                    result = (result + this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._wS_ENTITY_WORKSHEETTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.WS_ENTITY_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._wS_ENTITY_WORKSHEETTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._wS_AUX_WORKSHEETTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.WS_AUX_WORKSHEET.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._wS_AUX_WORKSHEETTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2110,13 +5279,23 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._aUX_WORKSHEETTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._aUX_WORKSHEETTableAdapter.Connection) == false))) {
+            if (((this._wS_AUX_WORKSHEETTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._wS_AUX_WORKSHEETTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._eNTITY_WORKSHEETTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._eNTITY_WORKSHEETTableAdapter.Connection) == false))) {
+            if (((this._wS_ENTITY_WORKSHEETTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._wS_ENTITY_WORKSHEETTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -2152,22 +5331,40 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._aUX_WORKSHEETTableAdapter != null)) {
-                    revertConnections.Add(this._aUX_WORKSHEETTableAdapter, this._aUX_WORKSHEETTableAdapter.Connection);
-                    this._aUX_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._aUX_WORKSHEETTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._aUX_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._aUX_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._aUX_WORKSHEETTableAdapter.Adapter);
+                if ((this._wS_AUX_WORKSHEETTableAdapter != null)) {
+                    revertConnections.Add(this._wS_AUX_WORKSHEETTableAdapter, this._wS_AUX_WORKSHEETTableAdapter.Connection);
+                    this._wS_AUX_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._wS_AUX_WORKSHEETTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._wS_AUX_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._wS_AUX_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._wS_AUX_WORKSHEETTableAdapter.Adapter);
                     }
                 }
-                if ((this._eNTITY_WORKSHEETTableAdapter != null)) {
-                    revertConnections.Add(this._eNTITY_WORKSHEETTableAdapter, this._eNTITY_WORKSHEETTableAdapter.Connection);
-                    this._eNTITY_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._eNTITY_WORKSHEETTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._eNTITY_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._eNTITY_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._eNTITY_WORKSHEETTableAdapter.Adapter);
+                if ((this._wS_ENTITY_WORKSHEETTableAdapter != null)) {
+                    revertConnections.Add(this._wS_ENTITY_WORKSHEETTableAdapter, this._wS_ENTITY_WORKSHEETTableAdapter.Connection);
+                    this._wS_ENTITY_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._wS_ENTITY_WORKSHEETTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._wS_ENTITY_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._wS_ENTITY_WORKSHEETTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._wS_ENTITY_WORKSHEETTableAdapter.Adapter);
+                    }
+                }
+                if ((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null)) {
+                    revertConnections.Add(this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter, this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Connection);
+                    this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Adapter);
+                    }
+                }
+                if ((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null)) {
+                    revertConnections.Add(this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter, this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Connection);
+                    this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2228,13 +5425,21 @@ namespace AutoDocApp.PRD_DocumentationTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._aUX_WORKSHEETTableAdapter != null)) {
-                    this._aUX_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aUX_WORKSHEETTableAdapter]));
-                    this._aUX_WORKSHEETTableAdapter.Transaction = null;
+                if ((this._wS_AUX_WORKSHEETTableAdapter != null)) {
+                    this._wS_AUX_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._wS_AUX_WORKSHEETTableAdapter]));
+                    this._wS_AUX_WORKSHEETTableAdapter.Transaction = null;
                 }
-                if ((this._eNTITY_WORKSHEETTableAdapter != null)) {
-                    this._eNTITY_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eNTITY_WORKSHEETTableAdapter]));
-                    this._eNTITY_WORKSHEETTableAdapter.Transaction = null;
+                if ((this._wS_ENTITY_WORKSHEETTableAdapter != null)) {
+                    this._wS_ENTITY_WORKSHEETTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._wS_ENTITY_WORKSHEETTableAdapter]));
+                    this._wS_ENTITY_WORKSHEETTableAdapter.Transaction = null;
+                }
+                if ((this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter != null)) {
+                    this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter]));
+                    this._aT_DOC_AUTO_TABLE_FIELDSTableAdapter.Transaction = null;
+                }
+                if ((this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter != null)) {
+                    this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter]));
+                    this._aT_DOC_MANUAL_TABLE_FIELDSTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

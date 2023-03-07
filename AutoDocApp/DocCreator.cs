@@ -18,7 +18,7 @@ namespace AutoDocApp
 
       }
 
-      public bool CreateExcelOfTableFields(RepoExcelReader excelReader, string docGroup, string exportFilename)
+      public bool CreateExcelOfTableFields(string docGroup, string exportFilename)
       {
          bool retVal = true;
 
@@ -44,7 +44,7 @@ namespace AutoDocApp
             WriteHeader(worksheet);
 
             //write fields rows
-            WriteFieldsRows(worksheet, tableFields, excelReader);
+            WriteFieldsRows(worksheet, tableFields);
 
             // apply style
             StyleWorksheet(worksheet, tableFields.Count);
@@ -115,19 +115,19 @@ namespace AutoDocApp
          worksheet.Cells[index, 6].Value = "Lookup";
       }
 
-      private void WriteFieldsRows(Worksheet worksheet, List<DataRow> tableFields, RepoExcelReader excelReader)
+      private void WriteFieldsRows(Worksheet worksheet, List<DataRow> tableFields)
       {
          //write fields info
          int index = 1;
          foreach (var tableField in tableFields)
          {
-            worksheet.Cells[index, 0].Value = tableField.Field<string>("TABLE_NAME");
-            worksheet.Cells[index, 1].Value = tableField.Field<string>("FIELD_NAME");
-            worksheet.Cells[index, 2].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), false, "FIELD_CAPTION");
-            worksheet.Cells[index, 3].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), false, "DESCRIPTION");
-            worksheet.Cells[index, 4].Value = tableField.Field<string>("FIELD_DATATYPE");
-            worksheet.Cells[index, 5].Value = excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), true, "FIELD_TYPE");
-            worksheet.Cells[index, 6].Value = string.IsNullOrEmpty(tableField.Field<string>("IS_FOREIGN_KEY")) ? excelReader.GetColumn(tableField.Field<string>("TABLE_NAME"), tableField.Field<string>("FIELD_NAME"), false, "LOOKUP_LIST"): tableField.Field<string>("IS_FOREIGN_KEY");
+            worksheet.Cells[index, 0].Value = tableField.Field<string>("DMTF_TABLE_NAME");
+            worksheet.Cells[index, 1].Value = tableField.Field<string>("DMTF_FIELD_NAME");
+            worksheet.Cells[index, 2].Value = tableField.Field<string>("ALIAS_FIELD_CAPTION");
+            worksheet.Cells[index, 3].Value = tableField.Field<string>("ALIAS_FIELD_DESCRIPTION"); 
+            worksheet.Cells[index, 4].Value = tableField.Field<string>("DMTF_FIELD_DATA_TYPE");
+            worksheet.Cells[index, 5].Value = tableField.Field<string>("ALIAS_FIELD_TYPE");
+            worksheet.Cells[index, 6].Value = tableField.Field<string>("ALIAS_LOOKUP_LIST");
 
             index++;
          }

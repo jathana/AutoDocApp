@@ -31,13 +31,17 @@ namespace AutoDocApp
       {
          this.components = new System.ComponentModel.Container();
          this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-         this.btnRun = new DevExpress.XtraEditors.SimpleButton();
+         this.btnGetFieldsFromDatabase = new DevExpress.XtraEditors.SimpleButton();
+         this.btnGetFromExcelRepository = new DevExpress.XtraEditors.SimpleButton();
          this.bteProductRepoExcel = new DevExpress.XtraEditors.ButtonEdit();
          this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
          this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
          this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
          this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+         this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
          this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+         this.btnCreateDbFieldsExcel = new DevExpress.XtraEditors.SimpleButton();
+         this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
          ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
          this.layoutControl1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.bteProductRepoExcel.Properties)).BeginInit();
@@ -45,11 +49,15 @@ namespace AutoDocApp
          ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
          this.SuspendLayout();
          // 
          // layoutControl1
          // 
-         this.layoutControl1.Controls.Add(this.btnRun);
+         this.layoutControl1.Controls.Add(this.btnCreateDbFieldsExcel);
+         this.layoutControl1.Controls.Add(this.btnGetFieldsFromDatabase);
+         this.layoutControl1.Controls.Add(this.btnGetFromExcelRepository);
          this.layoutControl1.Controls.Add(this.bteProductRepoExcel);
          this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
          this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -59,15 +67,25 @@ namespace AutoDocApp
          this.layoutControl1.TabIndex = 0;
          this.layoutControl1.Text = "layoutControl1";
          // 
-         // btnRun
+         // btnGetFieldsFromDatabase
          // 
-         this.btnRun.Location = new System.Drawing.Point(12, 389);
-         this.btnRun.Name = "btnRun";
-         this.btnRun.Size = new System.Drawing.Size(608, 22);
-         this.btnRun.StyleController = this.layoutControl1;
-         this.btnRun.TabIndex = 4;
-         this.btnRun.Text = "Run";
-         this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+         this.btnGetFieldsFromDatabase.Location = new System.Drawing.Point(12, 363);
+         this.btnGetFieldsFromDatabase.Name = "btnGetFieldsFromDatabase";
+         this.btnGetFieldsFromDatabase.Size = new System.Drawing.Size(608, 22);
+         this.btnGetFieldsFromDatabase.StyleController = this.layoutControl1;
+         this.btnGetFieldsFromDatabase.TabIndex = 5;
+         this.btnGetFieldsFromDatabase.Text = "Get Fields From Database";
+         this.btnGetFieldsFromDatabase.Click += new System.EventHandler(this.btnGetFieldsFromDatabase_Click);
+         // 
+         // btnGetFromExcelRepository
+         // 
+         this.btnGetFromExcelRepository.Location = new System.Drawing.Point(12, 337);
+         this.btnGetFromExcelRepository.Name = "btnGetFromExcelRepository";
+         this.btnGetFromExcelRepository.Size = new System.Drawing.Size(608, 22);
+         this.btnGetFromExcelRepository.StyleController = this.layoutControl1;
+         this.btnGetFromExcelRepository.TabIndex = 4;
+         this.btnGetFromExcelRepository.Text = "Get From Excel Repository";
+         this.btnGetFromExcelRepository.Click += new System.EventHandler(this.btnGetFromExcelRepository_Click);
          // 
          // bteProductRepoExcel
          // 
@@ -89,6 +107,8 @@ namespace AutoDocApp
          this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.emptySpaceItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
             this.layoutControlItem2});
          this.Root.Name = "Root";
          this.Root.Size = new System.Drawing.Size(632, 423);
@@ -108,21 +128,49 @@ namespace AutoDocApp
          this.emptySpaceItem1.AllowHotTrack = false;
          this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
          this.emptySpaceItem1.Name = "emptySpaceItem1";
-         this.emptySpaceItem1.Size = new System.Drawing.Size(612, 353);
+         this.emptySpaceItem1.Size = new System.Drawing.Size(612, 301);
          this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
          // 
          // layoutControlItem2
          // 
-         this.layoutControlItem2.Control = this.btnRun;
-         this.layoutControlItem2.Location = new System.Drawing.Point(0, 377);
+         this.layoutControlItem2.Control = this.btnGetFromExcelRepository;
+         this.layoutControlItem2.Location = new System.Drawing.Point(0, 325);
          this.layoutControlItem2.Name = "layoutControlItem2";
          this.layoutControlItem2.Size = new System.Drawing.Size(612, 26);
          this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
          this.layoutControlItem2.TextVisible = false;
          // 
+         // layoutControlItem3
+         // 
+         this.layoutControlItem3.Control = this.btnGetFieldsFromDatabase;
+         this.layoutControlItem3.Location = new System.Drawing.Point(0, 351);
+         this.layoutControlItem3.Name = "layoutControlItem3";
+         this.layoutControlItem3.Size = new System.Drawing.Size(612, 26);
+         this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+         this.layoutControlItem3.TextVisible = false;
+         // 
          // xtraOpenFileDialog1
          // 
          this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
+         // 
+         // btnCreateDbFieldsExcel
+         // 
+         this.btnCreateDbFieldsExcel.Location = new System.Drawing.Point(12, 389);
+         this.btnCreateDbFieldsExcel.Name = "btnCreateDbFieldsExcel";
+         this.btnCreateDbFieldsExcel.Size = new System.Drawing.Size(608, 22);
+         this.btnCreateDbFieldsExcel.StyleController = this.layoutControl1;
+         this.btnCreateDbFieldsExcel.TabIndex = 6;
+         this.btnCreateDbFieldsExcel.Text = "Create Db Fields Excel";
+         this.btnCreateDbFieldsExcel.Click += new System.EventHandler(this.btnCreateDbFieldsExcel_Click);
+         // 
+         // layoutControlItem4
+         // 
+         this.layoutControlItem4.Control = this.btnCreateDbFieldsExcel;
+         this.layoutControlItem4.Location = new System.Drawing.Point(0, 377);
+         this.layoutControlItem4.Name = "layoutControlItem4";
+         this.layoutControlItem4.Size = new System.Drawing.Size(612, 26);
+         this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+         this.layoutControlItem4.TextVisible = false;
          // 
          // Form1
          // 
@@ -139,6 +187,8 @@ namespace AutoDocApp
          ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -151,8 +201,12 @@ namespace AutoDocApp
       private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
       private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
       private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
-      private DevExpress.XtraEditors.SimpleButton btnRun;
+      private DevExpress.XtraEditors.SimpleButton btnGetFromExcelRepository;
       private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+      private DevExpress.XtraEditors.SimpleButton btnGetFieldsFromDatabase;
+      private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+      private DevExpress.XtraEditors.SimpleButton btnCreateDbFieldsExcel;
+      private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
    }
 }
 

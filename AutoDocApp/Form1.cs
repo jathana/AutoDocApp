@@ -27,14 +27,22 @@ namespace AutoDocApp
          }
       }
 
-      private void btnRun_Click(object sender, EventArgs e)
+      private void btnGetFromExcelRepository_Click(object sender, EventArgs e)
       {
          RepoExcelReader reader = new RepoExcelReader();
          reader.LoadData(bteProductRepoExcel.Text);
+      }
 
+      private void btnGetFieldsFromDatabase_Click(object sender, EventArgs e)
+      {
+         PRD_DocumentationTableAdapters.AT_DOC_MANUAL_TABLE_FIELDSTableAdapter adapter = new PRD_DocumentationTableAdapters.AT_DOC_MANUAL_TABLE_FIELDSTableAdapter();
+         adapter.InsertFieldsFromDatabase();
+      }
+
+      private void btnCreateDbFieldsExcel_Click(object sender, EventArgs e)
+      {
          DocCreator creator = new DocCreator();
-         creator.CreateExcelOfTableFields(reader, Consts.CUST_CASE_DEBT_GROUP,$"{Consts.CUST_CASE_DEBT_GROUP}.xlsx");
-
+         creator.CreateExcelOfTableFields(Consts.CUST_CASE_DEBT_GROUP, $"{Consts.CUST_CASE_DEBT_GROUP}.xlsx");
       }
    }
 }
