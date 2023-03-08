@@ -4626,8 +4626,9 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
                 "ING_MEMBERS\'\r\n\t\t,\'AT_DEBT_ITEM_MEMOS\'\r\n\t\t,\'AT_DEBT_ITEMS\'\r\n\t\t,\'AT_DEBT_ITEMS_EXT" +
                 "ENSION\'\r\n\t\t,\'AT_DEBTS\'\r\n\t\t,\'AT_DEBTS_EXTENSION\'\r\n\t\t,\'AT_DEBTS_STATISTICS\'\r\n\t\t,\'A" +
                 "T_MOVED_CASES_APPLICATION\'\r\n\t\t,\'AT_MOVED_CASES_EXTRA\'\r\n\t\t,\'AT_MOVED_CASES_HOST\'\r" +
-                "\n\t\t,\'AT_MOVED_CASES_RESTORE_HISTORY\'\r\n\t\t,\'AT_MOVED_CASES_STATISTIC\')\t\t\r\n\r\nEXCEPT" +
-                "\r\nSELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABLE_FIELDS\r\n";
+                "\n\t\t,\'AT_MOVED_CASES_RESTORE_HISTORY\'\r\n\t\t,\'AT_MOVED_CASES_STATISTIC\'\r\n\t\t,\'EOD_CAS" +
+                "ES_CONTROL\')\t\t\r\n\r\nEXCEPT\r\nSELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABL" +
+                "E_FIELDS\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         

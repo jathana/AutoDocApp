@@ -27,18 +27,20 @@ namespace AutoDocApp
          DataTable table = dataset.Tables[0];
          
          //  get tables names list in doc group
-         var tables = table.AsEnumerable().GroupBy(x => x.Field<string>("tab_prefix")).Select(x => x.Key).OrderBy(x=>x).ToList();
+         var tablesList = table.AsEnumerable().GroupBy(x => x.Field<string>("DMTF_TABLE_NAME")).Select(x => x.Key).OrderBy(x=>x).ToList();
 
          // Create Workbook object
          Workbook workbook = new Workbook(); 
          WorksheetCollection worksheets = workbook.Worksheets;
-         foreach (var tablePrefix in tables)
+         foreach (var tableName in tablesList)
          {
-            // create worksheet with table prefix
-            Worksheet worksheet = worksheets.Add(tablePrefix);
-
             // add table fields in worksheet
-            var tableFields = table.AsEnumerable().Where(t => t.Field<string>("tab_prefix") == tablePrefix).ToList();
+            var tableFields = table.AsEnumerable().Where(t => t.Field<string>("DMTF_TABLE_NAME") == tableName).ToList();
+            
+            string worksheetName = GetWorksheetName(tableName);
+            
+            // create worksheet with table prefix
+            Worksheet worksheet = worksheets.Add(worksheetName);
 
             // write header
             WriteHeader(worksheet);
@@ -55,6 +57,22 @@ namespace AutoDocApp
          return retVal;
       }
 
+      /// <summary>
+      /// returns a 31 chars name to be used for excel worksheet name. Contains table name (up to 23 chars) along with table prefix in the form 'table_name'_(table_prefix)
+      /// </summary>
+      /// <param name="row"></param>
+      /// <returns></returns>
+      private string GetWorksheetName(string tableName)
+      {
+         int substringLength = 31;
+         string ellipsis = string.Empty;
+         if(tableName.Length > 31)
+         {
+            ellipsis = "...";
+            substringLength = 28;
+         }
+         return $"{tableName.Substring(0, Math.Min(tableName.Length, substringLength))}{ellipsis}";
+      }
       private void StyleWorksheet(Worksheet worksheet, int rowsCount)
       {
          // format as table

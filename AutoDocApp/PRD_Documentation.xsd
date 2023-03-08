@@ -490,7 +490,8 @@ WHERE ST.NAME IN (
 		,'AT_MOVED_CASES_EXTRA'
 		,'AT_MOVED_CASES_HOST'
 		,'AT_MOVED_CASES_RESTORE_HISTORY'
-		,'AT_MOVED_CASES_STATISTIC')		
+		,'AT_MOVED_CASES_STATISTIC'
+		,'EOD_CASES_CONTROL')		
 
 EXCEPT
 SELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABLE_FIELDS
@@ -509,7 +510,7 @@ SELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABLE_FIELDS
   <xs:element name="PRD_Documentation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PRD_Documentation" msprop:Generator_UserDSName="PRD_Documentation">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="WS_AUX_WORKSHEET" msprop:Generator_TableClassName="WS_AUX_WORKSHEETDataTable" msprop:Generator_TableVarName="tableWS_AUX_WORKSHEET" msprop:Generator_RowChangedName="WS_AUX_WORKSHEETRowChanged" msprop:Generator_TablePropName="WS_AUX_WORKSHEET" msprop:Generator_RowDeletingName="WS_AUX_WORKSHEETRowDeleting" msprop:Generator_RowChangingName="WS_AUX_WORKSHEETRowChanging" msprop:Generator_RowEvHandlerName="WS_AUX_WORKSHEETRowChangeEventHandler" msprop:Generator_RowDeletedName="WS_AUX_WORKSHEETRowDeleted" msprop:Generator_RowClassName="WS_AUX_WORKSHEETRow" msprop:Generator_UserTableName="WS_AUX_WORKSHEET" msprop:Generator_RowEvArgName="WS_AUX_WORKSHEETRowChangeEvent">
+        <xs:element name="WS_AUX_WORKSHEET" msprop:Generator_TableClassName="WS_AUX_WORKSHEETDataTable" msprop:Generator_TableVarName="tableWS_AUX_WORKSHEET" msprop:Generator_TablePropName="WS_AUX_WORKSHEET" msprop:Generator_RowDeletingName="WS_AUX_WORKSHEETRowDeleting" msprop:Generator_RowChangingName="WS_AUX_WORKSHEETRowChanging" msprop:Generator_RowEvHandlerName="WS_AUX_WORKSHEETRowChangeEventHandler" msprop:Generator_RowDeletedName="WS_AUX_WORKSHEETRowDeleted" msprop:Generator_UserTableName="WS_AUX_WORKSHEET" msprop:Generator_RowChangedName="WS_AUX_WORKSHEETRowChanged" msprop:Generator_RowEvArgName="WS_AUX_WORKSHEETRowChangeEvent" msprop:Generator_RowClassName="WS_AUX_WORKSHEETRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ENTITY_WORKSHEET" msprop:Generator_ColumnVarNameInTable="columnENTITY_WORKSHEET" msprop:Generator_ColumnPropNameInRow="ENTITY_WORKSHEET" msprop:Generator_ColumnPropNameInTable="ENTITY_WORKSHEETColumn" msprop:Generator_UserColumnName="ENTITY_WORKSHEET">
@@ -557,7 +558,7 @@ SELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABLE_FIELDS
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WS_ENTITY_WORKSHEET" msprop:Generator_TableClassName="WS_ENTITY_WORKSHEETDataTable" msprop:Generator_TableVarName="tableWS_ENTITY_WORKSHEET" msprop:Generator_RowChangedName="WS_ENTITY_WORKSHEETRowChanged" msprop:Generator_TablePropName="WS_ENTITY_WORKSHEET" msprop:Generator_RowDeletingName="WS_ENTITY_WORKSHEETRowDeleting" msprop:Generator_RowChangingName="WS_ENTITY_WORKSHEETRowChanging" msprop:Generator_RowEvHandlerName="WS_ENTITY_WORKSHEETRowChangeEventHandler" msprop:Generator_RowDeletedName="WS_ENTITY_WORKSHEETRowDeleted" msprop:Generator_RowClassName="WS_ENTITY_WORKSHEETRow" msprop:Generator_UserTableName="WS_ENTITY_WORKSHEET" msprop:Generator_RowEvArgName="WS_ENTITY_WORKSHEETRowChangeEvent">
+        <xs:element name="WS_ENTITY_WORKSHEET" msprop:Generator_TableClassName="WS_ENTITY_WORKSHEETDataTable" msprop:Generator_TableVarName="tableWS_ENTITY_WORKSHEET" msprop:Generator_TablePropName="WS_ENTITY_WORKSHEET" msprop:Generator_RowDeletingName="WS_ENTITY_WORKSHEETRowDeleting" msprop:Generator_RowChangingName="WS_ENTITY_WORKSHEETRowChanging" msprop:Generator_RowEvHandlerName="WS_ENTITY_WORKSHEETRowChangeEventHandler" msprop:Generator_RowDeletedName="WS_ENTITY_WORKSHEETRowDeleted" msprop:Generator_UserTableName="WS_ENTITY_WORKSHEET" msprop:Generator_RowChangedName="WS_ENTITY_WORKSHEETRowChanged" msprop:Generator_RowEvArgName="WS_ENTITY_WORKSHEETRowChangeEvent" msprop:Generator_RowClassName="WS_ENTITY_WORKSHEETRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ENTITY_WORKSHEET" msprop:Generator_ColumnVarNameInTable="columnENTITY_WORKSHEET" msprop:Generator_ColumnPropNameInRow="ENTITY_WORKSHEET" msprop:Generator_ColumnPropNameInTable="ENTITY_WORKSHEETColumn" msprop:Generator_UserColumnName="ENTITY_WORKSHEET">
@@ -612,7 +613,7 @@ SELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABLE_FIELDS
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_TableClassName="AT_DOC_AUTO_TABLE_FIELDSDataTable" msprop:Generator_TableVarName="tableAT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_TablePropName="AT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_RowDeletingName="AT_DOC_AUTO_TABLE_FIELDSRowDeleting" msprop:Generator_RowChangingName="AT_DOC_AUTO_TABLE_FIELDSRowChanging" msprop:Generator_RowEvHandlerName="AT_DOC_AUTO_TABLE_FIELDSRowChangeEventHandler" msprop:Generator_RowDeletedName="AT_DOC_AUTO_TABLE_FIELDSRowDeleted" msprop:Generator_UserTableName="AT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_RowChangedName="AT_DOC_AUTO_TABLE_FIELDSRowChanged" msprop:Generator_RowEvArgName="AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent" msprop:Generator_RowClassName="AT_DOC_AUTO_TABLE_FIELDSRow">
+        <xs:element name="AT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_TableClassName="AT_DOC_AUTO_TABLE_FIELDSDataTable" msprop:Generator_TableVarName="tableAT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_RowChangedName="AT_DOC_AUTO_TABLE_FIELDSRowChanged" msprop:Generator_TablePropName="AT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_RowDeletingName="AT_DOC_AUTO_TABLE_FIELDSRowDeleting" msprop:Generator_RowChangingName="AT_DOC_AUTO_TABLE_FIELDSRowChanging" msprop:Generator_RowEvHandlerName="AT_DOC_AUTO_TABLE_FIELDSRowChangeEventHandler" msprop:Generator_RowDeletedName="AT_DOC_AUTO_TABLE_FIELDSRowDeleted" msprop:Generator_RowClassName="AT_DOC_AUTO_TABLE_FIELDSRow" msprop:Generator_UserTableName="AT_DOC_AUTO_TABLE_FIELDS" msprop:Generator_RowEvArgName="AT_DOC_AUTO_TABLE_FIELDSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DATF_TABLE_NAME" msprop:Generator_ColumnVarNameInTable="columnDATF_TABLE_NAME" msprop:Generator_ColumnPropNameInRow="DATF_TABLE_NAME" msprop:Generator_ColumnPropNameInTable="DATF_TABLE_NAMEColumn" msprop:Generator_UserColumnName="DATF_TABLE_NAME">
@@ -688,7 +689,7 @@ SELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABLE_FIELDS
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_TableClassName="AT_DOC_MANUAL_TABLE_FIELDSDataTable" msprop:Generator_TableVarName="tableAT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_TablePropName="AT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_RowDeletingName="AT_DOC_MANUAL_TABLE_FIELDSRowDeleting" msprop:Generator_RowChangingName="AT_DOC_MANUAL_TABLE_FIELDSRowChanging" msprop:Generator_RowEvHandlerName="AT_DOC_MANUAL_TABLE_FIELDSRowChangeEventHandler" msprop:Generator_RowDeletedName="AT_DOC_MANUAL_TABLE_FIELDSRowDeleted" msprop:Generator_UserTableName="AT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_RowChangedName="AT_DOC_MANUAL_TABLE_FIELDSRowChanged" msprop:Generator_RowEvArgName="AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent" msprop:Generator_RowClassName="AT_DOC_MANUAL_TABLE_FIELDSRow">
+        <xs:element name="AT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_TableClassName="AT_DOC_MANUAL_TABLE_FIELDSDataTable" msprop:Generator_TableVarName="tableAT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_RowChangedName="AT_DOC_MANUAL_TABLE_FIELDSRowChanged" msprop:Generator_TablePropName="AT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_RowDeletingName="AT_DOC_MANUAL_TABLE_FIELDSRowDeleting" msprop:Generator_RowChangingName="AT_DOC_MANUAL_TABLE_FIELDSRowChanging" msprop:Generator_RowEvHandlerName="AT_DOC_MANUAL_TABLE_FIELDSRowChangeEventHandler" msprop:Generator_RowDeletedName="AT_DOC_MANUAL_TABLE_FIELDSRowDeleted" msprop:Generator_RowClassName="AT_DOC_MANUAL_TABLE_FIELDSRow" msprop:Generator_UserTableName="AT_DOC_MANUAL_TABLE_FIELDS" msprop:Generator_RowEvArgName="AT_DOC_MANUAL_TABLE_FIELDSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DMTF_TABLE_NAME" msprop:Generator_ColumnVarNameInTable="columnDMTF_TABLE_NAME" msprop:Generator_ColumnPropNameInRow="DMTF_TABLE_NAME" msprop:Generator_ColumnPropNameInTable="DMTF_TABLE_NAMEColumn" msprop:Generator_UserColumnName="DMTF_TABLE_NAME">
