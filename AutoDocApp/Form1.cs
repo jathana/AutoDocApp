@@ -29,8 +29,22 @@ namespace AutoDocApp
 
       private void btnGetFromExcelRepository_Click(object sender, EventArgs e)
       {
-         RepoExcelReader reader = new RepoExcelReader();
-         reader.LoadData(bteProductRepoExcel.Text);
+         try
+         {
+            bteProductRepoExcel.Enabled = false;
+            RepoExcelReader reader = new RepoExcelReader();
+            reader.LoadData(bteProductRepoExcel.Text);
+         }
+         catch(Exception ex)
+         {
+
+         }
+         finally
+         {
+            bteProductRepoExcel.Enabled = true;
+         }
+
+
       }
 
       private void btnGetFieldsFromDatabase_Click(object sender, EventArgs e)

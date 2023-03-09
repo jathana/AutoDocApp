@@ -3945,32 +3945,9 @@ SELECT DATF_TABLE_NAME, DATF_FIELD_NAME, DATF_AUX_WORKSHEET, DATF_ENTITY_WORKSHE
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "USE [QBCOLLECTION_PLUS_23_1]\r\n\r\n-- DELETE ALL ROWS INSERTED FROM WORKSHEETS OR AU" +
-                "TOMATICALLY\r\nDELETE FROM PRD_DOCUMENTATION.DBO.AT_DOC_AUTO_TABLE_FIELDS WHERE DA" +
-                "TF_SOURCE=\'REPO\';\r\n\r\nINSERT INTO PRD_DOCUMENTATION.DBO.AT_DOC_AUTO_TABLE_FIELDS\r" +
-                "\nSELECT OBJECT_NAME(COL.OBJECT_ID) AS DATF_TABLE_NAME,\r\n\tCOL.[NAME] AS DATF_FIEL" +
-                "D_NAME, \r\n\tISNULL(AUX.AUX_WORKSHEET,\'N/A\') AS DATF_AUX_WORKSHEET,\r\n\tISNULL(ENTIT" +
-                "Y.ENTITY_WORKSHEET,\'N/A\') AS DATF_ENTITY_WORKSHEET,\r\n\tISNULL(ENTITY.FIELD_CAPTIO" +
-                "N, AUX.RESERVED_FOR) AS DATF_FIELD_CAPTION,\r\n\tISNULL(ENTITY.FIELD_DESCRIPTION, I" +
-                "SNULL(ENTITY.FIELD_CAPTION,AUX.RESERVED_FOR)) AS DATF_FIELD_DESCRIPTION,\r\n\tAUX.F" +
-                "IELD_TYPE AS DATF_FIELD_TYPE,\r\n\tCASE \r\n\t\tWHEN T.NAME=\'NVARCHAR\' THEN T.NAME + \'(" +
-                "\' + CONVERT(NVARCHAR,COL.MAX_LENGTH) + \')\'\r\n\t\tWHEN T.NAME=\'DECIMAL\' THEN T.NAME " +
-                "+ \'(\' + CONVERT(NVARCHAR,COL.PRECISION) + \',\' + CONVERT(NVARCHAR,COL.SCALE) +\')\'" +
-                "\r\n\t\tELSE T.NAME\r\n\tEND AS DATF_FIELD_DATATYPE,\r\n\tCASE WHEN FKC.REFERENCED_COLUMN_" +
-                "ID IS NULL THEN ENTITY.LOOKUP_LIST ELSE \'FK\' END AS DATF_LOOKUP_LIST,\r\n\t\'REPO\' A" +
-                "S DATF_SOURCE\t\r\n\tFROM QBCOLLECTION_PLUS_23_1.SYS.COLUMNS COL WITH(NOLOCK)\r\n\tINNE" +
-                "R JOIN QBCOLLECTION_PLUS_23_1.SYS.TABLES ST WITH(NOLOCK) ON ST.OBJECT_ID=COL.OBJ" +
-                "ECT_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.SYS.TYPES T ON COL.USER_TYPE_ID = T.U" +
-                "SER_TYPE_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.DBO.TABLES TAB WITH(NOLOCK) ON T" +
-                "AB.TAB_NAME=OBJECT_NAME(COL.OBJECT_ID) AND TAB.TAB_VISIBLE=1\r\n\tLEFT JOIN QBCOLLE" +
-                "CTION_PLUS_23_1.SYS.FOREIGN_KEY_COLUMNS FKC WITH(NOLOCK) ON FKC.PARENT_COLUMN_ID" +
-                "=COL.COLUMN_ID AND FKC.PARENT_OBJECT_ID=ST.OBJECT_ID\r\n\t\r\n\t-- INCLUDE ALL FIELD F" +
-                "ROM WORKSHEETS\r\n\tINNER JOIN PRD_DOCUMENTATION.DBO.WS_AUX_WORKSHEET AUX WITH(NOLO" +
-                "CK) ON AUX.TABLE_NAME=ST.NAME AND AUX.FIELD_NAME=COL.NAME\r\n\tLEFT JOIN PRD_DOCUME" +
-                "NTATION.DBO.WS_ENTITY_WORKSHEET ENTITY WITH(NOLOCK) ON ENTITY.ENTITY_WORKSHEET=A" +
-                "UX.ENTITY_WORKSHEET AND ENTITY.AUX_WORKSHEET=AUX.AUX_WORKSHEET AND ENTITY.DRIVER" +
-                "_DB_FIELD=COL.NAME";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].CommandText = "dbo.App_InsertFieldsFromExcelRepository";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4601,35 +4578,9 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "USE [QBCOLLECTION_PLUS_23_1]\r\n\r\nINSERT INTO PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_T" +
-                "ABLE_FIELDS\r\nSELECT OBJECT_NAME(COL.OBJECT_ID) AS DMTF_TABLE_NAME,\r\n\tCOL.[NAME] " +
-                "AS DMTF_FIELD_NAME, \r\n\t\'\' AS DMTF_FIELD_CAPTION,\r\n\t\'\' AS DMTF_FIELD_DESCRIPTION," +
-                "\r\n\t\'\' AS DMTF_FIELD_TYPE,\r\n\tCASE \r\n\t\tWHEN T.NAME=\'NVARCHAR\' THEN T.NAME + \'(\' + " +
-                "CONVERT(NVARCHAR,COL.MAX_LENGTH) + \')\'\r\n\t\tWHEN T.NAME=\'DECIMAL\' THEN T.NAME + \'(" +
-                "\' + CONVERT(NVARCHAR,COL.PRECISION) + \',\' + CONVERT(NVARCHAR,COL.SCALE) +\')\'\r\n\t\t" +
-                "ELSE T.NAME\r\n\tEND AS DMTF_FIELD_DATATYPE,\r\n\tCASE WHEN FKC.REFERENCED_COLUMN_ID I" +
-                "S NULL THEN \'\' ELSE \'FK\' END AS DMTF_LOOKUP_LIST\t\r\n\tFROM QBCOLLECTION_PLUS_23_1." +
-                "SYS.COLUMNS COL WITH(NOLOCK)\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.SYS.TABLES ST W" +
-                "ITH(NOLOCK) ON ST.OBJECT_ID=COL.OBJECT_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23_1.SY" +
-                "S.TYPES T ON COL.USER_TYPE_ID = T.USER_TYPE_ID\r\n\tINNER JOIN QBCOLLECTION_PLUS_23" +
-                "_1.DBO.TABLES TAB WITH(NOLOCK) ON TAB.TAB_NAME=OBJECT_NAME(COL.OBJECT_ID) AND TA" +
-                "B.TAB_VISIBLE=1\r\n\tLEFT JOIN QBCOLLECTION_PLUS_23_1.SYS.FOREIGN_KEY_COLUMNS FKC W" +
-                "ITH(NOLOCK) ON FKC.PARENT_COLUMN_ID=COL.COLUMN_ID AND FKC.PARENT_OBJECT_ID=ST.OB" +
-                "JECT_ID\r\n\t\r\n\t\r\n\r\nWHERE ST.NAME IN (\r\n\t\t \'AT_CASE_AGGREGATIONS\'\r\n\t\t,\'AT_CASE_BILL" +
-                "ING\'\r\n\t\t,\'AT_CASE_CORE\'\r\n\t\t,\'AT_CASE_EXTRA\'\r\n\t\t,\'AT_CASE_EXTRA_CUSTOMERS\'\r\n\t\t,\'A" +
-                "T_CASE_PROPERTIES\'\r\n\t\t,\'AT_CASE_SCORING\'\r\n\t\t,\'AT_CASE_STATISTICS\'\r\n\t\t,\'AT_CASES\'" +
-                "\r\n\t\t,\'AT_CUSTOMER_ADDRESSES\'\r\n\t\t,\'AT_CUSTOMER_CONTACTS\'\r\n\t\t,\'AT_CUSTOMER_CORE\'\r\n" +
-                "\t\t,\'AT_CUSTOMER_EXTRA\'\r\n\t\t,\'AT_CUSTOMER_INTERNET_IDS\'\r\n\t\t,\'AT_CUSTOMER_MEMOS\'\r\n\t" +
-                "\t,\'AT_CUSTOMER_PHONES\'\r\n\t\t,\'AT_CUSTOMER_SCORING\'\r\n\t\t,\'AT_CUSTOMER_STATISTICS\'\r\n\t" +
-                "\t,\'AT_CUSTOMER_STATISTICS_BU\'\r\n\t\t,\'AT_CUSTOMERS\'\r\n\t\t,\'AT_CUSTOMERS_EXTENSION\'\r\n\t" +
-                "\t,\'AT_DEBT_ELEMENTS\'\r\n\t\t,\'AT_DEBT_ELEMENTS_GROUPING\'\r\n\t\t,\'AT_DEBT_ELEMENTS_GROUP" +
-                "ING_MEMBERS\'\r\n\t\t,\'AT_DEBT_ITEM_MEMOS\'\r\n\t\t,\'AT_DEBT_ITEMS\'\r\n\t\t,\'AT_DEBT_ITEMS_EXT" +
-                "ENSION\'\r\n\t\t,\'AT_DEBTS\'\r\n\t\t,\'AT_DEBTS_EXTENSION\'\r\n\t\t,\'AT_DEBTS_STATISTICS\'\r\n\t\t,\'A" +
-                "T_MOVED_CASES_APPLICATION\'\r\n\t\t,\'AT_MOVED_CASES_EXTRA\'\r\n\t\t,\'AT_MOVED_CASES_HOST\'\r" +
-                "\n\t\t,\'AT_MOVED_CASES_RESTORE_HISTORY\'\r\n\t\t,\'AT_MOVED_CASES_STATISTIC\'\r\n\t\t,\'EOD_CAS" +
-                "ES_CONTROL\')\t\t\r\n\r\nEXCEPT\r\nSELECT * FROM PRD_DOCUMENTATION.DBO.AT_DOC_MANUAL_TABL" +
-                "E_FIELDS\r\n";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].CommandText = "dbo.App_InsertFieldsFromDatabase";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

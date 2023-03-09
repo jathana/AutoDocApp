@@ -25,20 +25,24 @@ namespace AutoDocApp
          // get table fields
          DataSet dataset = GetTableFieldsFromDatabase(docGroup);
          DataTable table = dataset.Tables[0];
-         
+
          //  get tables names list in doc group
-         var tablesList = table.AsEnumerable().GroupBy(x => x.Field<string>("DMTF_TABLE_NAME")).Select(x => x.Key).OrderBy(x=>x).ToList();
+         var tablesList = table.AsEnumerable().GroupBy(x => x.Field<string>("DMTF_TABLE_NAME")).Select(x => x.Key).OrderBy(x => x).ToList();
 
          // Create Workbook object
-         Workbook workbook = new Workbook(); 
+         Workbook workbook = new Workbook();
          WorksheetCollection worksheets = workbook.Worksheets;
+
+         // create Index worksheet
+         CreateIndexWorksheet(workbook, tablesList);
+
          foreach (var tableName in tablesList)
          {
             // add table fields in worksheet
             var tableFields = table.AsEnumerable().Where(t => t.Field<string>("DMTF_TABLE_NAME") == tableName).ToList();
-            
+
             string worksheetName = GetWorksheetName(tableName);
-            
+
             // create worksheet with table prefix
             Worksheet worksheet = worksheets.Add(worksheetName);
 
@@ -49,10 +53,10 @@ namespace AutoDocApp
             WriteFieldsRows(worksheet, tableFields);
 
             // apply style
-            StyleWorksheet(worksheet, tableFields.Count);
+            StyleFieldsWorksheet(worksheet, 0, 0, tableFields.Count + 1, 7);
          }
          // save created excel file
-         workbook.Save(exportFilename, SaveFormat.Xlsx); 
+         workbook.Save(exportFilename, SaveFormat.Xlsx);
 
          return retVal;
       }
@@ -64,26 +68,47 @@ namespace AutoDocApp
       /// <returns></returns>
       private string GetWorksheetName(string tableName)
       {
-         int substringLength = 31;
-         string ellipsis = string.Empty;
-         if(tableName.Length > 31)
+         string retVal = tableName;
+
+         if (tableName.Length > 31)
          {
-            ellipsis = "...";
-            substringLength = 28;
+            retVal = $"{tableName.Substring(0, 22)}..{tableName.Substring(tableName.Length - 7, 7)}";
          }
-         return $"{tableName.Substring(0, Math.Min(tableName.Length, substringLength))}{ellipsis}";
+         return retVal;
       }
-      private void StyleWorksheet(Worksheet worksheet, int rowsCount)
+
+      private void CreateIndexWorksheet(Workbook workbook, List<string> tablesList)
+      {
+
+         Worksheet indexWorkSheet = workbook.Worksheets["Sheet1"];
+         // rename worksheet Sheet1 to Index Of Tables
+         indexWorkSheet.Name = "Index Of Tables";
+
+         // write index
+         indexWorkSheet.Cells[0, 0].Value = "Table Name";
+         for (int i = 0; i < tablesList.Count; i++)
+         {
+            string tableName = tablesList[i];
+            indexWorkSheet.Cells[i + 1, 0].Value = tablesList[i];
+            indexWorkSheet.Hyperlinks.Add($"A{i + 2}", $"A{i + 2}", $"{GetWorksheetName(tableName)}!A1",tableName,tableName);
+
+         }
+
+         // apply style
+         StyleIndexWorksheet(indexWorkSheet, 0, 0, tablesList.Count + 1, 1);
+      }
+
+      private Style FormatAsTable(Worksheet worksheet, int startRow, int startColumn, int totalRows, int totalColumns)
       {
          // format as table
          // Adding a new List Object to the worksheet
-         Aspose.Cells.Tables.ListObject listObject = worksheet.ListObjects[worksheet.ListObjects.Add("A1", $"G{rowsCount+1}", true)];
+         Aspose.Cells.Tables.ListObject listObject = worksheet.ListObjects[worksheet.ListObjects.Add(startRow, startColumn, totalRows-1, totalColumns-1, true)];
 
          // Adding Style to the listobject
          listObject.TableStyleType = Aspose.Cells.Tables.TableStyleType.TableStyleMedium6;
 
          // We get the Percent style and create a style object.
-         Range range = worksheet.Cells.CreateRange(0, 0, rowsCount+1, 10);
+         Range range = worksheet.Cells.CreateRange(startRow, startColumn, totalRows, totalColumns);
 
          Cell cell = worksheet.Cells["A2"];
          Style style = cell.GetStyle();
@@ -98,6 +123,13 @@ namespace AutoDocApp
 
          // Auto fit
          worksheet.AutoFitColumns();
+         return style;
+      }
+
+      private void StyleFieldsWorksheet(Worksheet worksheet, int startRow, int startColumn, int totalRows, int totalColumns)
+      {
+         // format as table
+         Style style=FormatAsTable(worksheet, startRow, startColumn, totalRows, totalColumns);
 
          // set description column width
          worksheet.Cells.Columns[3].Width = 90;
@@ -115,10 +147,24 @@ namespace AutoDocApp
 
          // Autofit rows in the sheet(including the merged cells)
          worksheet.AutoFitRows(options);
-
-         
-
       }
+
+      private void StyleIndexWorksheet(Worksheet worksheet, int startRow, int startColumn, int totalRows, int totalColumns)
+      {
+         // format as table
+         Style style = FormatAsTable(worksheet, startRow, startColumn, totalRows, totalColumns);
+
+         // Create an object for AutoFitterOptions
+         AutoFitterOptions options = new AutoFitterOptions();
+
+         // Set auto-fit for merged cells
+         options.AutoFitWrappedTextType = AutoFitWrappedTextType.Paragraph;
+         options.AutoFitMergedCellsType = AutoFitMergedCellsType.EachLine;
+
+         // Autofit rows in the sheet(including the merged cells)
+         worksheet.AutoFitRows(options);
+      }
+
 
       private void WriteHeader(Worksheet worksheet)
       {
@@ -142,7 +188,7 @@ namespace AutoDocApp
             worksheet.Cells[index, 0].Value = tableField.Field<string>("DMTF_TABLE_NAME");
             worksheet.Cells[index, 1].Value = tableField.Field<string>("DMTF_FIELD_NAME");
             worksheet.Cells[index, 2].Value = tableField.Field<string>("ALIAS_FIELD_CAPTION");
-            worksheet.Cells[index, 3].Value = tableField.Field<string>("ALIAS_FIELD_DESCRIPTION"); 
+            worksheet.Cells[index, 3].Value = tableField.Field<string>("ALIAS_FIELD_DESCRIPTION");
             worksheet.Cells[index, 4].Value = tableField.Field<string>("DMTF_FIELD_DATA_TYPE");
             worksheet.Cells[index, 5].Value = tableField.Field<string>("ALIAS_FIELD_TYPE");
             worksheet.Cells[index, 6].Value = tableField.Field<string>("ALIAS_LOOKUP_LIST");
@@ -155,13 +201,13 @@ namespace AutoDocApp
       private DataSet GetTableFieldsFromDatabase(string docGroup)
       {
          DataSet dataset = new DataSet();
-         string sqlFile=RepoExcelSettings.GetDocGroup(docGroup).Sql;
+         string sqlFile = RepoExcelSettings.GetDocGroup(docGroup).Sql;
          string sql = File.ReadAllText(sqlFile);
          string connectionString = ConfigurationManager.ConnectionStrings["AutoDocApp.Properties.Settings.PRD_DocumentationConnectionString"].ConnectionString;
          using (SqlConnection connection = new SqlConnection(
                connectionString))
          {
-            
+
             SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
             adapter.Fill(dataset);
             connection.Close();
