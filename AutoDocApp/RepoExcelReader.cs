@@ -12,6 +12,7 @@ namespace AutoDocApp
 {
    public class RepoExcelReader
    {
+
       public DataSet Data { get; internal set; }
       public void LoadData(string excelFilename)
       {
@@ -28,7 +29,7 @@ namespace AutoDocApp
          // load aux worksheets
          LoadAuxWorksheets(workbook, Data);
 
-         // insert all worksheets rows to AT_DOC_TABLE_FIELDS
+         // insert all worksheets rows to AT_DOC_AUTO_TABLE_FIELDS
          InserAllWorksheetRows();
       }
 
@@ -124,6 +125,7 @@ namespace AutoDocApp
                dataset.Tables["ENTITY_WORKSHEET"].Rows.Add(row);
 
                InsertEntityToDB(row);
+               Debug.WriteLine($"Entity worksheet {entityWorksheetName} loaded");
             }
          }
          dataset.AcceptChanges();
@@ -160,6 +162,7 @@ namespace AutoDocApp
                row["RESERVED_FOR"] = excelRow.GetCellOrNull(reserverdForColIndex)?.Value;
                dataset.Tables["AUX_WORKSHEET"].Rows.Add(row);
                InsertAuxToDB(row);
+               Debug.WriteLine($"Aux worksheet {auxWorksheetName} loaded");
             }
          }
          dataset.AcceptChanges();
@@ -219,7 +222,7 @@ namespace AutoDocApp
                            auxRow.Field<string>("FIELD_NAME"));
             if (Convert.ToBoolean(fieldExists))
             {
-               auxAdapter.Update(auxRow);
+               //auxAdapter.Update(auxRow);
             }
             else
             {
@@ -257,7 +260,7 @@ namespace AutoDocApp
                   entityRow.Field<string>("DRIVER_DB_FIELD"));
             if (Convert.ToBoolean(fieldExists))
             {
-               entityAdapter.Update(entityRow);
+               //entityAdapter.Update(entityRow);
             }
             else
             {

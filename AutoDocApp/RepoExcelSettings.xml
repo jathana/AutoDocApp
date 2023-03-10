@@ -6,37 +6,99 @@
 	
 	<entity_worksheets data_start="2" column_driver_dbfield="D" column_field_caption="E" column_description="F" column_lookup_list="H">
 		<entity_worksheet entity_worksheet="Cases" aux_worksheet="Aux_CaseFields" />
-		
+		<entity_worksheet entity_worksheet="StrategyAssignments" aux_worksheet="Aux_StrategyAssignmentsFields" />
 		<entity_worksheet entity_worksheet="Debts" aux_worksheet="Aux_DebtFields" />
 		<entity_worksheet entity_worksheet="DebtItems" aux_worksheet="Aux_DebtItemFields" />
 		<entity_worksheet entity_worksheet="DebtItemMemos" aux_worksheet="Aux_DebtItemMemosFields" />
-
+		<entity_worksheet entity_worksheet="DebtItemInterests" aux_worksheet="Aux_DebtItemInterestsFields" />
+		<entity_worksheet entity_worksheet="DebtItemCommissions" aux_worksheet="Aux_DebtItemCommissionsFields" />
 		<entity_worksheet entity_worksheet="MovedCases" aux_worksheet="Aux_MovedCasesFields" />
-
 		<entity_worksheet entity_worksheet="Customers" aux_worksheet="Aux_Customer Fields" />
 		<entity_worksheet entity_worksheet="Addresses" aux_worksheet="Aux_AddressesFields" />
-		<entity_worksheet entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
 		<entity_worksheet entity_worksheet="Phones" aux_worksheet="Aux_PhonesFields" />
 		<entity_worksheet entity_worksheet="Mails" aux_worksheet="Aux_MailsFields" />
 		<entity_worksheet entity_worksheet="Contacts" aux_worksheet="Aux_ContactsFields" />
-		
+		<entity_worksheet entity_worksheet="Clients" aux_worksheet="Aux_ClientFields" />
+		<entity_worksheet entity_worksheet="CaseClientLabels" aux_worksheet="Aux_CaseClientLabelsFields" />
+		<entity_worksheet entity_worksheet="Portfolios" aux_worksheet="Aux_PortfolioFields" />
+		<entity_worksheet entity_worksheet="Placement" aux_worksheet="Aux_PlacementFields" />
+		<entity_worksheet entity_worksheet="Assignments" aux_worksheet="Aux_AssignmentsFields" />
+		<entity_worksheet entity_worksheet="ExternalAgencies" aux_worksheet="Aux_ExternalAgenciesFields" />
+		<entity_worksheet entity_worksheet="BucketAnalysis" aux_worksheet="Aux_BucketAnalysisFields" />
+		<entity_worksheet entity_worksheet="Application" aux_worksheet="Aux_ApplicationFields" />
+		<entity_worksheet entity_worksheet="Collaterals" aux_worksheet="Aux_CollateralsFields" />
+		<entity_worksheet entity_worksheet="RealProperties" aux_worksheet="Aux_RealPropertiesFields" />
+		<entity_worksheet entity_worksheet="CollateralsLegacy" aux_worksheet="Aux_CollateralLegacyFields" />
+		<entity_worksheet entity_worksheet="PropertiesLegacy" aux_worksheet="Aux_PropertiesLegacyFields" />
+		<entity_worksheet entity_worksheet="Arrangements" aux_worksheet="Aux_ArrangementsFields" />
+		<entity_worksheet entity_worksheet="Activities" aux_worksheet="Aux_ActivitiesFields" />
+		<entity_worksheet entity_worksheet="Promises" aux_worksheet="Aux_PromisesFields" />
+		<entity_worksheet entity_worksheet="Transactions" aux_worksheet="Aux_TransactionsFields" />
+		<entity_worksheet entity_worksheet="Payments" aux_worksheet="Aux_PaymentsFields" />
+		<entity_worksheet entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
+		<entity_worksheet entity_worksheet="Attachments" aux_worksheet="Aux_AttachmentsFields" />
+		<entity_worksheet entity_worksheet="OtherProducts" aux_worksheet="Aux_OtherProductsFields" />
+		<entity_worksheet entity_worksheet="ExtraCustomerCases" aux_worksheet="Aux_ExtraCustomerCasesFields" />
+		<entity_worksheet entity_worksheet="FinancialAssessment" aux_worksheet="Aux_FinancialAssessmentFields" />
+		<entity_worksheet entity_worksheet="CustomerSolutions" aux_worksheet="Aux_CustromerSolutionsFields" />
+		<entity_worksheet entity_worksheet="Charges" aux_worksheet="Aux_ChargesFields" />
+		<entity_worksheet entity_worksheet="Requests" aux_worksheet="Aux_RequestsFields" />
+		<entity_worksheet entity_worksheet="Queries" aux_worksheet="Aux_QueriesFields" />
+		<entity_worksheet entity_worksheet="BillingHeader" aux_worksheet="Aux_BillingHeaderFields" />
+		<entity_worksheet entity_worksheet="BillingDetails" aux_worksheet="Aux_BillingDetailsFields" />
+		<entity_worksheet entity_worksheet="ControlArea" aux_worksheet="Aux_ControlAreaFields" />
+		<entity_worksheet entity_worksheet="ProcessInstances" aux_worksheet="Aux_ProcessInstancesFields" />
+		<entity_worksheet entity_worksheet="ProcessOutsourcing" aux_worksheet="Aux_ProcessOutsourcingFields" />
+		<entity_worksheet entity_worksheet="LegalExpenses" aux_worksheet="Aux_LegalExpensesFields" />
+		<entity_worksheet entity_worksheet="Instructions" aux_worksheet="Aux_InstructionsFields" />		
 	</entity_worksheets>
 
 	<aux_worksheets data_start="2" column_table="A" column_field="B" column_field_type="F"  column_reserved_for="G">
-		<aux_worksheet  entity_worksheet="Cases" aux_worksheet="Aux_CaseFields" />
-		
+		<aux_worksheet entity_worksheet="Cases" aux_worksheet="Aux_CaseFields" />
+		<aux_worksheet entity_worksheet="StrategyAssignments" aux_worksheet="Aux_StrategyAssignmentsFields" />
 		<aux_worksheet entity_worksheet="Debts" aux_worksheet="Aux_DebtFields" />
 		<aux_worksheet entity_worksheet="DebtItems" aux_worksheet="Aux_DebtItemFields" />
 		<aux_worksheet entity_worksheet="DebtItemMemos" aux_worksheet="Aux_DebtItemMemosFields" />
-
+		<aux_worksheet entity_worksheet="DebtItemInterests" aux_worksheet="Aux_DebtItemInterestsFields" />
+		<aux_worksheet entity_worksheet="DebtItemCommissions" aux_worksheet="Aux_DebtItemCommissionsFields" />
 		<aux_worksheet entity_worksheet="MovedCases" aux_worksheet="Aux_MovedCasesFields" />
-
 		<aux_worksheet entity_worksheet="Customers" aux_worksheet="Aux_Customer Fields" />
 		<aux_worksheet entity_worksheet="Addresses" aux_worksheet="Aux_AddressesFields" />
-		<aux_worksheet entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
 		<aux_worksheet entity_worksheet="Phones" aux_worksheet="Aux_PhonesFields" />
 		<aux_worksheet entity_worksheet="Mails" aux_worksheet="Aux_MailsFields" />
 		<aux_worksheet entity_worksheet="Contacts" aux_worksheet="Aux_ContactsFields" />
-
+		<aux_worksheet entity_worksheet="Clients" aux_worksheet="Aux_ClientFields" />
+		<aux_worksheet entity_worksheet="CaseClientLabels" aux_worksheet="Aux_CaseClientLabelsFields" />
+		<aux_worksheet entity_worksheet="Portfolios" aux_worksheet="Aux_PortfolioFields" />
+		<aux_worksheet entity_worksheet="Placement" aux_worksheet="Aux_PlacementFields" />
+		<aux_worksheet entity_worksheet="Assignments" aux_worksheet="Aux_AssignmentsFields" />
+		<aux_worksheet entity_worksheet="ExternalAgencies" aux_worksheet="Aux_ExternalAgenciesFields" />
+		<aux_worksheet entity_worksheet="BucketAnalysis" aux_worksheet="Aux_BucketAnalysisFields" />
+		<aux_worksheet entity_worksheet="Application" aux_worksheet="Aux_ApplicationFields" />
+		<aux_worksheet entity_worksheet="Collaterals" aux_worksheet="Aux_CollateralsFields" />
+		<aux_worksheet entity_worksheet="RealProperties" aux_worksheet="Aux_RealPropertiesFields" />
+		<aux_worksheet entity_worksheet="CollateralsLegacy" aux_worksheet="Aux_CollateralLegacyFields" />
+		<aux_worksheet entity_worksheet="PropertiesLegacy" aux_worksheet="Aux_PropertiesLegacyFields" />
+		<aux_worksheet entity_worksheet="Arrangements" aux_worksheet="Aux_ArrangementsFields" />
+		<aux_worksheet entity_worksheet="Activities" aux_worksheet="Aux_ActivitiesFields" />
+		<aux_worksheet entity_worksheet="Promises" aux_worksheet="Aux_PromisesFields" />
+		<aux_worksheet entity_worksheet="Transactions" aux_worksheet="Aux_TransactionsFields" />
+		<aux_worksheet entity_worksheet="Payments" aux_worksheet="Aux_PaymentsFields" />
+		<aux_worksheet entity_worksheet="Memos" aux_worksheet="Aux_MemosFields" />
+		<aux_worksheet entity_worksheet="Attachments" aux_worksheet="Aux_AttachmentsFields" />
+		<aux_worksheet entity_worksheet="OtherProducts" aux_worksheet="Aux_OtherProductsFields" />
+		<aux_worksheet entity_worksheet="ExtraCustomerCases" aux_worksheet="Aux_ExtraCustomerCasesFields" />
+		<aux_worksheet entity_worksheet="FinancialAssessment" aux_worksheet="Aux_FinancialAssessmentFields" />
+		<aux_worksheet entity_worksheet="CustomerSolutions" aux_worksheet="Aux_CustromerSolutionsFields" />
+		<aux_worksheet entity_worksheet="Charges" aux_worksheet="Aux_ChargesFields" />
+		<aux_worksheet entity_worksheet="Requests" aux_worksheet="Aux_RequestsFields" />
+		<aux_worksheet entity_worksheet="Queries" aux_worksheet="Aux_QueriesFields" />
+		<aux_worksheet entity_worksheet="BillingHeader" aux_worksheet="Aux_BillingHeaderFields" />
+		<aux_worksheet entity_worksheet="BillingDetails" aux_worksheet="Aux_BillingDetailsFields" />
+		<aux_worksheet entity_worksheet="ControlArea" aux_worksheet="Aux_ControlAreaFields" />
+		<aux_worksheet entity_worksheet="ProcessInstances" aux_worksheet="Aux_ProcessInstancesFields" />
+		<aux_worksheet entity_worksheet="ProcessOutsourcing" aux_worksheet="Aux_ProcessOutsourcingFields" />
+		<aux_worksheet entity_worksheet="LegalExpenses" aux_worksheet="Aux_LegalExpensesFields" />
+		<aux_worksheet entity_worksheet="Instructions" aux_worksheet="Aux_InstructionsFields" />
 	</aux_worksheets>
 </root>

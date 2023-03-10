@@ -177,6 +177,9 @@ namespace AutoDocApp
          worksheet.Cells[index, 4].Value = "Data Type";
          worksheet.Cells[index, 5].Value = "Type";
          worksheet.Cells[index, 6].Value = "Lookup";
+
+         // write back to index navigation
+         worksheet.Hyperlinks.Add($"H1", $"H1", $"'Index Of Tables'!A1", "Back To Index", "Back To Index");
       }
 
       private void WriteFieldsRows(Worksheet worksheet, List<DataRow> tableFields)

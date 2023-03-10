@@ -30,12 +30,12 @@ namespace AutoDocApp
       private void InitializeComponent()
       {
          this.components = new System.ComponentModel.Container();
-         DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-         DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-         DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-         DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-         DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-         DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+         DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
+         DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
+         DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
+         DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+         DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
+         DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
          this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
          this.btnCreateDbFieldsExcel = new DevExpress.XtraEditors.SimpleButton();
          this.btnGetFieldsFromDatabase = new DevExpress.XtraEditors.SimpleButton();
@@ -48,6 +48,9 @@ namespace AutoDocApp
          this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
          this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
          this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+         this.workerFieldsFromDatabase = new System.ComponentModel.BackgroundWorker();
+         this.workerFieldsFromExcelRepo = new System.ComponentModel.BackgroundWorker();
+         this.workerExcelCreator = new System.ComponentModel.BackgroundWorker();
          ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
          this.layoutControl1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.bteProductRepoExcel.Properties)).BeginInit();
@@ -79,10 +82,10 @@ namespace AutoDocApp
          this.btnCreateDbFieldsExcel.Name = "btnCreateDbFieldsExcel";
          this.btnCreateDbFieldsExcel.Size = new System.Drawing.Size(608, 22);
          this.btnCreateDbFieldsExcel.StyleController = this.layoutControl1;
-         toolTipTitleItem1.Text = "Produces database fields definitions excel file. At each execution the old excel " +
+         toolTipTitleItem10.Text = "Produces database fields definitions excel file. At each execution the old excel " +
     "file is overwritten.";
-         superToolTip1.Items.Add(toolTipTitleItem1);
-         this.btnCreateDbFieldsExcel.SuperTip = superToolTip1;
+         superToolTip10.Items.Add(toolTipTitleItem10);
+         this.btnCreateDbFieldsExcel.SuperTip = superToolTip10;
          this.btnCreateDbFieldsExcel.TabIndex = 6;
          this.btnCreateDbFieldsExcel.Text = "Create Db Fields Excel";
          this.btnCreateDbFieldsExcel.Click += new System.EventHandler(this.btnCreateDbFieldsExcel_Click);
@@ -93,11 +96,11 @@ namespace AutoDocApp
          this.btnGetFieldsFromDatabase.Name = "btnGetFieldsFromDatabase";
          this.btnGetFieldsFromDatabase.Size = new System.Drawing.Size(608, 22);
          this.btnGetFieldsFromDatabase.StyleController = this.layoutControl1;
-         toolTipTitleItem2.Text = "Inserts new fields definitions from database schema. Existing definitions remain " +
+         toolTipTitleItem11.Text = "Inserts new fields definitions from database schema. Existing definitions remain " +
     "unmodified. Select this option to include database fields added upon new impleme" +
     "ntations.";
-         superToolTip2.Items.Add(toolTipTitleItem2);
-         this.btnGetFieldsFromDatabase.SuperTip = superToolTip2;
+         superToolTip11.Items.Add(toolTipTitleItem11);
+         this.btnGetFieldsFromDatabase.SuperTip = superToolTip11;
          this.btnGetFieldsFromDatabase.TabIndex = 5;
          this.btnGetFieldsFromDatabase.Text = "Get Fields From Database";
          this.btnGetFieldsFromDatabase.Click += new System.EventHandler(this.btnGetFieldsFromDatabase_Click);
@@ -108,11 +111,11 @@ namespace AutoDocApp
          this.btnGetFromExcelRepository.Name = "btnGetFromExcelRepository";
          this.btnGetFromExcelRepository.Size = new System.Drawing.Size(608, 22);
          this.btnGetFromExcelRepository.StyleController = this.layoutControl1;
-         toolTipTitleItem3.Text = "Reloads fields information from excel repository. Replaces all old field defintio" +
+         toolTipTitleItem12.Text = "Reloads fields information from excel repository. Replaces all old field defintio" +
     "ns with the new ones. Select this option when a newer excel repository exists to" +
     " get all definitions updated.";
-         superToolTip3.Items.Add(toolTipTitleItem3);
-         this.btnGetFromExcelRepository.SuperTip = superToolTip3;
+         superToolTip12.Items.Add(toolTipTitleItem12);
+         this.btnGetFromExcelRepository.SuperTip = superToolTip12;
          this.btnGetFromExcelRepository.TabIndex = 4;
          this.btnGetFromExcelRepository.Text = "Get From Excel Repository";
          this.btnGetFromExcelRepository.Click += new System.EventHandler(this.btnGetFromExcelRepository_Click);
@@ -192,6 +195,14 @@ namespace AutoDocApp
          // 
          this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
          // 
+         // workerFieldsFromDatabase
+         // 
+         this.workerFieldsFromDatabase.WorkerReportsProgress = true;
+         this.workerFieldsFromDatabase.WorkerSupportsCancellation = true;
+         this.workerFieldsFromDatabase.DoWork += new System.ComponentModel.DoWorkEventHandler(this.workerFieldsFromDatabase_DoWork);
+         this.workerFieldsFromDatabase.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.workerFieldsFromDatabase_ProgressChanged);
+         this.workerFieldsFromDatabase.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.workerFieldsFromDatabase_RunWorkerCompleted);
+         // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +211,7 @@ namespace AutoDocApp
          this.Controls.Add(this.layoutControl1);
          this.Name = "Form1";
          this.Text = "AutoDocApp";
+         this.Load += new System.EventHandler(this.Form1_Load);
          ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
          this.layoutControl1.ResumeLayout(false);
          ((System.ComponentModel.ISupportInitialize)(this.bteProductRepoExcel.Properties)).EndInit();
@@ -227,6 +239,9 @@ namespace AutoDocApp
       private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
       private DevExpress.XtraEditors.SimpleButton btnCreateDbFieldsExcel;
       private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+      private System.ComponentModel.BackgroundWorker workerFieldsFromDatabase;
+      private System.ComponentModel.BackgroundWorker workerFieldsFromExcelRepo;
+      private System.ComponentModel.BackgroundWorker workerExcelCreator;
    }
 }
 

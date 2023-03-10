@@ -58,5 +58,26 @@ namespace AutoDocApp
          DocCreator creator = new DocCreator();
          creator.CreateExcelOfTableFields(Consts.CUST_CASE_DEBT_GROUP, $"{Consts.CUST_CASE_DEBT_GROUP}.xlsx");
       }
+
+      private void workerFieldsFromDatabase_DoWork(object sender, DoWorkEventArgs e)
+      {
+
+      }
+
+      private void workerFieldsFromDatabase_ProgressChanged(object sender, ProgressChangedEventArgs e)
+      {
+
+      }
+
+      private void workerFieldsFromDatabase_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+      {
+
+      }
+
+      private void Form1_Load(object sender, EventArgs e)
+      {
+         RepoExcelInformation info = new RepoExcelInformation();
+         info.CreateRepoExcelSettings(bteProductRepoExcel.Text, "excelinfo.txt");
+      }
    }
 }
