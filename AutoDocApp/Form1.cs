@@ -11,6 +11,7 @@ namespace AutoDocApp
 {
    public partial class Form1 : DevExpress.XtraEditors.XtraForm
    {
+
       public Form1()
       {
          InitializeComponent();
@@ -57,6 +58,7 @@ namespace AutoDocApp
       {
          DocCreator creator = new DocCreator();
          creator.CreateExcelOfTableFields(Consts.CUST_CASE_DEBT_GROUP, $"{Consts.CUST_CASE_DEBT_GROUP}.xlsx");
+         creator.CreateExcelOfTableFields(Consts.AGENCY_ASSIGNMENTS_GROUP, $"{Consts.AGENCY_ASSIGNMENTS_GROUP}.xlsx");
       }
 
       private void workerFieldsFromDatabase_DoWork(object sender, DoWorkEventArgs e)

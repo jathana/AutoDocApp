@@ -2,6 +2,7 @@
 <root>
 	<doc_groups>
 		<doc_group name="CustCaseDebt" sql_file="SQL\CaseCustDebt_TableFields.sql"/>
+		<doc_group name="Agency Assignments" sql_file="SQL\Agency Assignments_TableFields.sql"/>
 	</doc_groups>
 	
 	<entity_worksheets data_start="2" column_driver_dbfield="D" column_field_caption="E" column_description="F" column_lookup_list="H">

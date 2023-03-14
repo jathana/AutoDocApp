@@ -1493,8 +1493,6 @@ namespace AutoDocApp {
             
             private global::System.Data.DataColumn columnDMTF_FIELD_TYPE;
             
-            private global::System.Data.DataColumn columnDMTF_FIELD_DATA_TYPE;
-            
             private global::System.Data.DataColumn columnDMTF_LOOKUP_LIST;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1572,14 +1570,6 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DMTF_FIELD_DATA_TYPEColumn {
-                get {
-                    return this.columnDMTF_FIELD_DATA_TYPE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn DMTF_LOOKUP_LISTColumn {
                 get {
                     return this.columnDMTF_LOOKUP_LIST;
@@ -1623,7 +1613,7 @@ namespace AutoDocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AT_DOC_MANUAL_TABLE_FIELDSRow AddAT_DOC_MANUAL_TABLE_FIELDSRow(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST) {
+            public AT_DOC_MANUAL_TABLE_FIELDSRow AddAT_DOC_MANUAL_TABLE_FIELDSRow(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_LOOKUP_LIST) {
                 AT_DOC_MANUAL_TABLE_FIELDSRow rowAT_DOC_MANUAL_TABLE_FIELDSRow = ((AT_DOC_MANUAL_TABLE_FIELDSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DMTF_TABLE_NAME,
@@ -1631,7 +1621,6 @@ namespace AutoDocApp {
                         DMTF_FIELD_CAPTION,
                         DMTF_FIELD_DESCRIPTION,
                         DMTF_FIELD_TYPE,
-                        DMTF_FIELD_DATA_TYPE,
                         DMTF_LOOKUP_LIST};
                 rowAT_DOC_MANUAL_TABLE_FIELDSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAT_DOC_MANUAL_TABLE_FIELDSRow);
@@ -1668,7 +1657,6 @@ namespace AutoDocApp {
                 this.columnDMTF_FIELD_CAPTION = base.Columns["DMTF_FIELD_CAPTION"];
                 this.columnDMTF_FIELD_DESCRIPTION = base.Columns["DMTF_FIELD_DESCRIPTION"];
                 this.columnDMTF_FIELD_TYPE = base.Columns["DMTF_FIELD_TYPE"];
-                this.columnDMTF_FIELD_DATA_TYPE = base.Columns["DMTF_FIELD_DATA_TYPE"];
                 this.columnDMTF_LOOKUP_LIST = base.Columns["DMTF_LOOKUP_LIST"];
             }
             
@@ -1685,8 +1673,6 @@ namespace AutoDocApp {
                 base.Columns.Add(this.columnDMTF_FIELD_DESCRIPTION);
                 this.columnDMTF_FIELD_TYPE = new global::System.Data.DataColumn("DMTF_FIELD_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDMTF_FIELD_TYPE);
-                this.columnDMTF_FIELD_DATA_TYPE = new global::System.Data.DataColumn("DMTF_FIELD_DATA_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDMTF_FIELD_DATA_TYPE);
                 this.columnDMTF_LOOKUP_LIST = new global::System.Data.DataColumn("DMTF_LOOKUP_LIST", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDMTF_LOOKUP_LIST);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1699,8 +1685,6 @@ namespace AutoDocApp {
                 this.columnDMTF_FIELD_CAPTION.MaxLength = 100;
                 this.columnDMTF_FIELD_DESCRIPTION.MaxLength = 2147483647;
                 this.columnDMTF_FIELD_TYPE.MaxLength = 100;
-                this.columnDMTF_FIELD_DATA_TYPE.AllowDBNull = false;
-                this.columnDMTF_FIELD_DATA_TYPE.MaxLength = 100;
                 this.columnDMTF_LOOKUP_LIST.MaxLength = 100;
             }
             
@@ -2403,17 +2387,6 @@ namespace AutoDocApp {
                 }
                 set {
                     this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_TYPEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DMTF_FIELD_DATA_TYPE {
-                get {
-                    return ((string)(this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DATA_TYPEColumn]));
-                }
-                set {
-                    this[this.tableAT_DOC_MANUAL_TABLE_FIELDS.DMTF_FIELD_DATA_TYPEColumn] = value;
                 }
             }
             
@@ -4487,12 +4460,11 @@ SELECT DATF_TABLE_NAME, DATF_FIELD_NAME, DATF_AUX_WORKSHEET, DATF_ENTITY_WORKSHE
             tableMapping.ColumnMappings.Add("DMTF_FIELD_CAPTION", "DMTF_FIELD_CAPTION");
             tableMapping.ColumnMappings.Add("DMTF_FIELD_DESCRIPTION", "DMTF_FIELD_DESCRIPTION");
             tableMapping.ColumnMappings.Add("DMTF_FIELD_TYPE", "DMTF_FIELD_TYPE");
-            tableMapping.ColumnMappings.Add("DMTF_FIELD_DATA_TYPE", "DMTF_FIELD_DATA_TYPE");
             tableMapping.ColumnMappings.Add("DMTF_LOOKUP_LIST", "DMTF_LOOKUP_LIST");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [AT_DOC_MANUAL_TABLE_FIELDS] WHERE (([DMTF_TABLE_NAME] = @Original_DMTF_TABLE_NAME) AND ([DMTF_FIELD_NAME] = @Original_DMTF_FIELD_NAME) AND ((@IsNull_DMTF_FIELD_CAPTION = 1 AND [DMTF_FIELD_CAPTION] IS NULL) OR ([DMTF_FIELD_CAPTION] = @Original_DMTF_FIELD_CAPTION)) AND ((@IsNull_DMTF_FIELD_TYPE = 1 AND [DMTF_FIELD_TYPE] IS NULL) OR ([DMTF_FIELD_TYPE] = @Original_DMTF_FIELD_TYPE)) AND ([DMTF_FIELD_DATA_TYPE] = @Original_DMTF_FIELD_DATA_TYPE) AND ((@IsNull_DMTF_LOOKUP_LIST = 1 AND [DMTF_LOOKUP_LIST] IS NULL) OR ([DMTF_LOOKUP_LIST] = @Original_DMTF_LOOKUP_LIST)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [AT_DOC_MANUAL_TABLE_FIELDS] WHERE (([DMTF_TABLE_NAME] = @Original_DMTF_TABLE_NAME) AND ([DMTF_FIELD_NAME] = @Original_DMTF_FIELD_NAME) AND ((@IsNull_DMTF_FIELD_CAPTION = 1 AND [DMTF_FIELD_CAPTION] IS NULL) OR ([DMTF_FIELD_CAPTION] = @Original_DMTF_FIELD_CAPTION)) AND ((@IsNull_DMTF_FIELD_TYPE = 1 AND [DMTF_FIELD_TYPE] IS NULL) OR ([DMTF_FIELD_TYPE] = @Original_DMTF_FIELD_TYPE)) AND ((@IsNull_DMTF_LOOKUP_LIST = 1 AND [DMTF_LOOKUP_LIST] IS NULL) OR ([DMTF_LOOKUP_LIST] = @Original_DMTF_LOOKUP_LIST)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4500,32 +4472,29 @@ SELECT DATF_TABLE_NAME, DATF_FIELD_NAME, DATF_AUX_WORKSHEET, DATF_ENTITY_WORKSHE
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [AT_DOC_MANUAL_TABLE_FIELDS] ([DMTF_TABLE_NAME], [DMTF_FIELD_NAME], [DMTF_FIELD_CAPTION], [DMTF_FIELD_DESCRIPTION], [DMTF_FIELD_TYPE], [DMTF_FIELD_DATA_TYPE], [DMTF_LOOKUP_LIST]) VALUES (@DMTF_TABLE_NAME, @DMTF_FIELD_NAME, @DMTF_FIELD_CAPTION, @DMTF_FIELD_DESCRIPTION, @DMTF_FIELD_TYPE, @DMTF_FIELD_DATA_TYPE, @DMTF_LOOKUP_LIST);
-SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_FIELD_DATA_TYPE, DMTF_LOOKUP_LIST FROM AT_DOC_MANUAL_TABLE_FIELDS WHERE (DMTF_FIELD_NAME = @DMTF_FIELD_NAME) AND (DMTF_TABLE_NAME = @DMTF_TABLE_NAME)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [AT_DOC_MANUAL_TABLE_FIELDS] ([DMTF_TABLE_NAME], [DMTF_FIELD_NAME], [DMTF_FIELD_CAPTION], [DMTF_FIELD_DESCRIPTION], [DMTF_FIELD_TYPE], [DMTF_LOOKUP_LIST]) VALUES (@DMTF_TABLE_NAME, @DMTF_FIELD_NAME, @DMTF_FIELD_CAPTION, @DMTF_FIELD_DESCRIPTION, @DMTF_FIELD_TYPE, @DMTF_LOOKUP_LIST);
+SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_LOOKUP_LIST FROM AT_DOC_MANUAL_TABLE_FIELDS WHERE (DMTF_FIELD_NAME = @DMTF_FIELD_NAME) AND (DMTF_TABLE_NAME = @DMTF_TABLE_NAME)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [AT_DOC_MANUAL_TABLE_FIELDS] SET [DMTF_TABLE_NAME] = @DMTF_TABLE_NAME, [DMTF_FIELD_NAME] = @DMTF_FIELD_NAME, [DMTF_FIELD_CAPTION] = @DMTF_FIELD_CAPTION, [DMTF_FIELD_DESCRIPTION] = @DMTF_FIELD_DESCRIPTION, [DMTF_FIELD_TYPE] = @DMTF_FIELD_TYPE, [DMTF_FIELD_DATA_TYPE] = @DMTF_FIELD_DATA_TYPE, [DMTF_LOOKUP_LIST] = @DMTF_LOOKUP_LIST WHERE (([DMTF_TABLE_NAME] = @Original_DMTF_TABLE_NAME) AND ([DMTF_FIELD_NAME] = @Original_DMTF_FIELD_NAME) AND ((@IsNull_DMTF_FIELD_CAPTION = 1 AND [DMTF_FIELD_CAPTION] IS NULL) OR ([DMTF_FIELD_CAPTION] = @Original_DMTF_FIELD_CAPTION)) AND ((@IsNull_DMTF_FIELD_TYPE = 1 AND [DMTF_FIELD_TYPE] IS NULL) OR ([DMTF_FIELD_TYPE] = @Original_DMTF_FIELD_TYPE)) AND ([DMTF_FIELD_DATA_TYPE] = @Original_DMTF_FIELD_DATA_TYPE) AND ((@IsNull_DMTF_LOOKUP_LIST = 1 AND [DMTF_LOOKUP_LIST] IS NULL) OR ([DMTF_LOOKUP_LIST] = @Original_DMTF_LOOKUP_LIST)));
-SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_FIELD_DATA_TYPE, DMTF_LOOKUP_LIST FROM AT_DOC_MANUAL_TABLE_FIELDS WHERE (DMTF_FIELD_NAME = @DMTF_FIELD_NAME) AND (DMTF_TABLE_NAME = @DMTF_TABLE_NAME)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [AT_DOC_MANUAL_TABLE_FIELDS] SET [DMTF_TABLE_NAME] = @DMTF_TABLE_NAME, [DMTF_FIELD_NAME] = @DMTF_FIELD_NAME, [DMTF_FIELD_CAPTION] = @DMTF_FIELD_CAPTION, [DMTF_FIELD_DESCRIPTION] = @DMTF_FIELD_DESCRIPTION, [DMTF_FIELD_TYPE] = @DMTF_FIELD_TYPE, [DMTF_LOOKUP_LIST] = @DMTF_LOOKUP_LIST WHERE (([DMTF_TABLE_NAME] = @Original_DMTF_TABLE_NAME) AND ([DMTF_FIELD_NAME] = @Original_DMTF_FIELD_NAME) AND ((@IsNull_DMTF_FIELD_CAPTION = 1 AND [DMTF_FIELD_CAPTION] IS NULL) OR ([DMTF_FIELD_CAPTION] = @Original_DMTF_FIELD_CAPTION)) AND ((@IsNull_DMTF_FIELD_TYPE = 1 AND [DMTF_FIELD_TYPE] IS NULL) OR ([DMTF_FIELD_TYPE] = @Original_DMTF_FIELD_TYPE)) AND ((@IsNull_DMTF_LOOKUP_LIST = 1 AND [DMTF_LOOKUP_LIST] IS NULL) OR ([DMTF_LOOKUP_LIST] = @Original_DMTF_LOOKUP_LIST)));
+SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_LOOKUP_LIST FROM AT_DOC_MANUAL_TABLE_FIELDS WHERE (DMTF_FIELD_NAME = @DMTF_FIELD_NAME) AND (DMTF_TABLE_NAME = @DMTF_TABLE_NAME)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_TABLE_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_TABLE_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4533,7 +4502,6 @@ SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPT
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_CAPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_CAPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_FIELD_DATA_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_FIELD_DATA_TYPE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DMTF_LOOKUP_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMTF_LOOKUP_LIST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -4548,7 +4516,7 @@ SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPT
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        AT_DOC_MANUAL_TABLE_FIELDS.*\r\nFROM            AT_DOC_MANUAL_TABLE_F" +
@@ -4556,31 +4524,9 @@ SELECT DMTF_TABLE_NAME, DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPT
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"USE [QBCollection_Plus_23_1]
-
-SELECT 
-	DMTF.DMTF_TABLE_NAME,
-	TAB.TAB_PREFIX,
-	DMTF.DMTF_FIELD_NAME,
-	CASE WHEN ISNULL(DMTF.DMTF_FIELD_CAPTION,'')<>'' THEN DMTF.DMTF_FIELD_CAPTION ELSE DATF.DATF_FIELD_CAPTION END  AS ALIAS_FIELD_CAPTION,
-
-	CASE WHEN ISNULL(DMTF.DMTF_FIELD_DESCRIPTION,'')<>'' THEN DMTF.DMTF_FIELD_DESCRIPTION ELSE DATF.DATF_FIELD_DESCRIPTION END  AS ALIAS_FIELD_DESCRIPTION,
-	DMTF.DMTF_FIELD_DATA_TYPE,
-	CASE WHEN ISNULL(DMTF.DMTF_FIELD_TYPE,'')<>'' THEN DMTF.DMTF_FIELD_TYPE ELSE DATF.DATF_FIELD_TYPE END  AS ALIAS_FIELD_TYPE,
-
-	CASE WHEN ISNULL(DMTF.DMTF_LOOKUP_LIST,'')<>'' THEN DMTF.DMTF_LOOKUP_LIST ELSE DATF.DATF_LOOKUP_LIST END  AS ALIAS_LOOKUP_LIST
-
-FROM  PRD_Documentation.dbo.AT_DOC_MANUAL_TABLE_FIELDS DMTF WITH(NOLOCK)
-INNER JOIN QBCollection_Plus_23_1.dbo.Tables TAB WITH(NOLOCK) ON TAB.tab_visible=1 AND TAB.tab_name=DMTF.DMTF_TABLE_NAME
-INNER JOIN QBCollection_Plus_23_1.sys.columns col WITH(NOLOCK) ON col.[name]=DMTF.DMTF_FIELD_NAME AND DMTF.DMTF_TABLE_NAME = OBJECT_NAME(COL.OBJECT_ID)
-LEFT JOIN PRD_Documentation.dbo.AT_DOC_AUTO_TABLE_FIELDS DATF WITH(NOLOCK) ON DMTF.DMTF_TABLE_NAME=DATF.DATF_TABLE_NAME AND DMTF.DMTF_FIELD_NAME=DATF.DATF_FIELD_NAME
-ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.App_InsertFieldsFromDatabase";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].CommandText = "dbo.App_InsertFieldsFromDatabase";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4602,17 +4548,6 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable dataTable = new PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable GetTableFields() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
             PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable dataTable = new PRD_Documentation.AT_DOC_MANUAL_TABLE_FIELDSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4651,7 +4586,7 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_FIELD_DATA_TYPE, string Original_DMTF_LOOKUP_LIST) {
+        public virtual int Delete(string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_LOOKUP_LIST) {
             if ((Original_DMTF_TABLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_DMTF_TABLE_NAME");
             }
@@ -4680,19 +4615,13 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DMTF_FIELD_TYPE));
             }
-            if ((Original_DMTF_FIELD_DATA_TYPE == null)) {
-                throw new global::System.ArgumentNullException("Original_DMTF_FIELD_DATA_TYPE");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_DMTF_FIELD_DATA_TYPE));
-            }
             if ((Original_DMTF_LOOKUP_LIST == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_DMTF_LOOKUP_LIST));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_DMTF_LOOKUP_LIST));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4714,7 +4643,7 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST) {
+        public virtual int Insert(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_LOOKUP_LIST) {
             if ((DMTF_TABLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("DMTF_TABLE_NAME");
             }
@@ -4745,17 +4674,11 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DMTF_FIELD_TYPE));
             }
-            if ((DMTF_FIELD_DATA_TYPE == null)) {
-                throw new global::System.ArgumentNullException("DMTF_FIELD_DATA_TYPE");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DMTF_FIELD_DATA_TYPE));
-            }
             if ((DMTF_LOOKUP_LIST == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(DMTF_LOOKUP_LIST));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DMTF_LOOKUP_LIST));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4777,7 +4700,7 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST, string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_FIELD_DATA_TYPE, string Original_DMTF_LOOKUP_LIST) {
+        public virtual int Update(string DMTF_TABLE_NAME, string DMTF_FIELD_NAME, string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_LOOKUP_LIST, string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_LOOKUP_LIST) {
             if ((DMTF_TABLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("DMTF_TABLE_NAME");
             }
@@ -4808,59 +4731,47 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DMTF_FIELD_TYPE));
             }
-            if ((DMTF_FIELD_DATA_TYPE == null)) {
-                throw new global::System.ArgumentNullException("DMTF_FIELD_DATA_TYPE");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DMTF_FIELD_DATA_TYPE));
-            }
             if ((DMTF_LOOKUP_LIST == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(DMTF_LOOKUP_LIST));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DMTF_LOOKUP_LIST));
             }
             if ((Original_DMTF_TABLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_DMTF_TABLE_NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DMTF_TABLE_NAME));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_DMTF_TABLE_NAME));
             }
             if ((Original_DMTF_FIELD_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_DMTF_FIELD_NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_DMTF_FIELD_NAME));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DMTF_FIELD_NAME));
             }
             if ((Original_DMTF_FIELD_CAPTION == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_DMTF_FIELD_CAPTION));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_DMTF_FIELD_CAPTION));
             }
             if ((Original_DMTF_FIELD_TYPE == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_DMTF_FIELD_TYPE));
-            }
-            if ((Original_DMTF_FIELD_DATA_TYPE == null)) {
-                throw new global::System.ArgumentNullException("Original_DMTF_FIELD_DATA_TYPE");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_DMTF_FIELD_DATA_TYPE));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DMTF_FIELD_TYPE));
             }
             if ((Original_DMTF_LOOKUP_LIST == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_DMTF_LOOKUP_LIST));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_DMTF_LOOKUP_LIST));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4882,16 +4793,15 @@ ORDER BY DMTF.DMTF_TABLE_NAME,COL.column_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_FIELD_DATA_TYPE, string DMTF_LOOKUP_LIST, string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_FIELD_DATA_TYPE, string Original_DMTF_LOOKUP_LIST) {
-            return this.Update(Original_DMTF_TABLE_NAME, Original_DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_FIELD_DATA_TYPE, DMTF_LOOKUP_LIST, Original_DMTF_TABLE_NAME, Original_DMTF_FIELD_NAME, Original_DMTF_FIELD_CAPTION, Original_DMTF_FIELD_TYPE, Original_DMTF_FIELD_DATA_TYPE, Original_DMTF_LOOKUP_LIST);
+        public virtual int Update(string DMTF_FIELD_CAPTION, string DMTF_FIELD_DESCRIPTION, string DMTF_FIELD_TYPE, string DMTF_LOOKUP_LIST, string Original_DMTF_TABLE_NAME, string Original_DMTF_FIELD_NAME, string Original_DMTF_FIELD_CAPTION, string Original_DMTF_FIELD_TYPE, string Original_DMTF_LOOKUP_LIST) {
+            return this.Update(Original_DMTF_TABLE_NAME, Original_DMTF_FIELD_NAME, DMTF_FIELD_CAPTION, DMTF_FIELD_DESCRIPTION, DMTF_FIELD_TYPE, DMTF_LOOKUP_LIST, Original_DMTF_TABLE_NAME, Original_DMTF_FIELD_NAME, Original_DMTF_FIELD_CAPTION, Original_DMTF_FIELD_TYPE, Original_DMTF_LOOKUP_LIST);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertFieldsFromDatabase() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
