@@ -192,7 +192,7 @@ namespace AutoDocApp
             worksheet.Cells[index, 1].Value = tableField.Field<string>("DMTF_FIELD_NAME");
             worksheet.Cells[index, 2].Value = tableField.Field<string>("ALIAS_FIELD_CAPTION");
             worksheet.Cells[index, 3].Value = tableField.Field<string>("ALIAS_FIELD_DESCRIPTION");
-            worksheet.Cells[index, 4].Value = tableField.Field<string>("DMTF_FIELD_DATA_TYPE");
+            worksheet.Cells[index, 4].Value = tableField.Field<string>("ALIAS_FIELD_DATA_TYPE");
             worksheet.Cells[index, 5].Value = tableField.Field<string>("ALIAS_FIELD_TYPE");
             worksheet.Cells[index, 6].Value = tableField.Field<string>("ALIAS_LOOKUP_LIST");
 
