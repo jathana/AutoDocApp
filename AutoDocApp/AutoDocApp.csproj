@@ -130,6 +130,9 @@
     <Content Include="SQL\Agency Assignments_TableFields.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SQL\All_TableFields.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SQL\CaseCustDebt_TableFields.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -57,9 +57,10 @@ namespace AutoDocApp
       private void btnCreateDbFieldsExcel_Click(object sender, EventArgs e)
       {
          DocCreator creator = new DocCreator();
-         creator.CreateExcelOfTableFields(Consts.CUST_CASE_DEBT_GROUP, $"{Consts.CUST_CASE_DEBT_GROUP}.xlsx");
-         creator.CreateExcelOfTableFields(Consts.AGENCY_ASSIGNMENTS_GROUP, $"{Consts.AGENCY_ASSIGNMENTS_GROUP}.xlsx");
-      }
+         //creator.CreateExcelOfTableFields(Consts.CUST_CASE_DEBT_GROUP, $"{Consts.CUST_CASE_DEBT_GROUP}.xlsx");
+         //creator.CreateExcelOfTableFields(Consts.AGENCY_ASSIGNMENTS_GROUP, $"{Consts.AGENCY_ASSIGNMENTS_GROUP}.xlsx");
+         creator.CreateExcelOfTableFields(Consts.ALL_GROUP, $"{Consts.ALL_GROUP}.xlsx");
+        }
 
       private void workerFieldsFromDatabase_DoWork(object sender, DoWorkEventArgs e)
       {

@@ -8,7 +8,9 @@ namespace AutoDocApp
 {
    public class Consts
    {
+      public static string ALL_GROUP = "All";
       public static string CUST_CASE_DEBT_GROUP = "CustCaseDebt";
       public static string AGENCY_ASSIGNMENTS_GROUP = "Agency Assignments";
+
    }
 }

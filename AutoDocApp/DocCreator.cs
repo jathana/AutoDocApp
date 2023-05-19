@@ -29,19 +29,23 @@ namespace AutoDocApp
          //  get tables names list in doc group
          var tablesList = table.AsEnumerable().GroupBy(x => x.Field<string>("DMTF_TABLE_NAME")).Select(x => x.Key).OrderBy(x => x).ToList();
 
+         // create list of unique worksheet names  (table_name, worksheet name)
+         List<(string TableName, string WorksheetName)> worksheetNames = GetWorksheetsNamesDictionary(tablesList);
+
          // Create Workbook object
          Workbook workbook = new Workbook();
          WorksheetCollection worksheets = workbook.Worksheets;
 
          // create Index worksheet
-         CreateIndexWorksheet(workbook, tablesList);
+         CreateIndexWorksheet(workbook, worksheetNames);
 
          foreach (var tableName in tablesList)
          {
             // add table fields in worksheet
             var tableFields = table.AsEnumerable().Where(t => t.Field<string>("DMTF_TABLE_NAME") == tableName).ToList();
 
-            string worksheetName = GetWorksheetName(tableName);
+            // get unique worksheet name
+            string worksheetName = GetUniqueWorksheetName(tableName, worksheetNames);
 
             // create worksheet with table prefix
             Worksheet worksheet = worksheets.Add(worksheetName);
@@ -66,18 +70,50 @@ namespace AutoDocApp
       /// </summary>
       /// <param name="row"></param>
       /// <returns></returns>
-      private string GetWorksheetName(string tableName)
+      private string GetUniqueWorksheetName(string tableName, List<(string TableName, string WorksheetName)> worksheetNames)
       {
-         string retVal = tableName;
-
-         if (tableName.Length > 31)
-         {
-            retVal = $"{tableName.Substring(0, 22)}..{tableName.Substring(tableName.Length - 7, 7)}";
-         }
-         return retVal;
+         return worksheetNames.Where(x=>x.TableName==tableName).Select(x=>x.WorksheetName).FirstOrDefault();
       }
 
-      private void CreateIndexWorksheet(Workbook workbook, List<string> tablesList)
+      /// <summary>
+      /// returns a list with pairs of table name and unique worksheet name. 31 chars name to be used for excel worksheet name. 
+      /// </summary>
+      /// <param name="tablesList"></param>
+      /// <returns></returns>
+      private List<(string TableName, string WorksheetName)> GetWorksheetsNamesDictionary(List<string> tablesList)
+      {
+         List<(string TableName, string WorksheetName)> retVal = new List<(string TableName, string WorksheetName)>();
+
+         foreach (string tableName in tablesList)
+         {
+            // ensure unique name
+            byte duplicateIndex = 0;
+            string duplicateIndexStr = string.Empty;
+            string worksheetName = tableName;
+            while (true)
+            {
+               if (tableName.Length > 31)
+               {
+                  worksheetName = $"{tableName.Substring(0, 22)}.{duplicateIndexStr}.{tableName.Substring(tableName.Length - 7 + duplicateIndexStr.Length, 7 - duplicateIndexStr.Length)}";
+               }
+
+               // unique name found - break
+               if (retVal.Where(x => x.WorksheetName.Equals(worksheetName)).Count()==0)
+               {
+                  retVal.Add((tableName, worksheetName));
+                  break;
+               }
+
+               // name is not unique, replace '..' with '.N.' where N number starting from 1. 
+               duplicateIndex++;
+               duplicateIndexStr = duplicateIndex.ToString();
+
+            }
+         }
+
+         return retVal;
+      }
+      private void CreateIndexWorksheet(Workbook workbook, List<(string TableName, string WorksheetName)> worksheetNames)
       {
 
          Worksheet indexWorkSheet = workbook.Worksheets["Sheet1"];
@@ -86,16 +122,17 @@ namespace AutoDocApp
 
          // write index
          indexWorkSheet.Cells[0, 0].Value = "Table Name";
-         for (int i = 0; i < tablesList.Count; i++)
+         int i = 0;
+         foreach (var item in worksheetNames)
          {
-            string tableName = tablesList[i];
-            indexWorkSheet.Cells[i + 1, 0].Value = tablesList[i];
-            indexWorkSheet.Hyperlinks.Add($"A{i + 2}", $"A{i + 2}", $"{GetWorksheetName(tableName)}!A1",tableName,tableName);
-
+            //string tableName = item.TableName;
+            indexWorkSheet.Cells[i + 1, 0].Value = item.TableName;
+            indexWorkSheet.Hyperlinks.Add($"A{i + 2}", $"A{i + 2}", $"{GetUniqueWorksheetName(item.TableName, worksheetNames)}!A1", item.TableName, item.TableName);
+            i++;
          }
 
          // apply style
-         StyleIndexWorksheet(indexWorkSheet, 0, 0, tablesList.Count + 1, 1);
+         StyleIndexWorksheet(indexWorkSheet, 0, 0, worksheetNames.Count + 1, 1);
       }
 
       private Style FormatAsTable(Worksheet worksheet, int startRow, int startColumn, int totalRows, int totalColumns)
