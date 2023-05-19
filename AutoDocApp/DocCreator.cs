@@ -66,7 +66,7 @@ namespace AutoDocApp
       }
 
       /// <summary>
-      /// returns a 31 chars name to be used for excel worksheet name. Contains table name (up to 23 chars) along with table prefix in the form 'table_name'_(table_prefix)
+      /// returns a 31 chars worksheet name to be used for excel worksheet name for a given table name.
       /// </summary>
       /// <param name="row"></param>
       /// <returns></returns>
@@ -76,7 +76,7 @@ namespace AutoDocApp
       }
 
       /// <summary>
-      /// returns a list with pairs of table name and unique worksheet name. 31 chars name to be used for excel worksheet name. 
+      /// returns a list of pairs with table name and unique worksheet name. worksheet name contains max 31 chars. 
       /// </summary>
       /// <param name="tablesList"></param>
       /// <returns></returns>
